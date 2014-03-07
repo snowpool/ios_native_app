@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SPLDashboardViewController : UIViewController
+@interface SPLDashboardViewController : UITableViewController
 
 @end
