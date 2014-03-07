@@ -21,6 +21,8 @@
 		EA68B46E18CA71C30048CE7C /* SnowpoolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B46D18CA71C30048CE7C /* SnowpoolTests.m */; };
 		EA68B47D18CA7A5B0048CE7C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA68B47C18CA7A5B0048CE7C /* MainStoryboard.storyboard */; };
 		EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */; };
+		EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48518CA844D0048CE7C /* SPLCarpoolViewController.m */; };
+		EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		EA68B47C18CA7A5B0048CE7C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EA68B47E18CA7ACB0048CE7C /* SPLDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLDashboardViewController.h; sourceTree = "<group>"; };
 		EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLDashboardViewController.m; sourceTree = "<group>"; };
+		EA68B48418CA844D0048CE7C /* SPLCarpoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLCarpoolViewController.h; sourceTree = "<group>"; };
+		EA68B48518CA844D0048CE7C /* SPLCarpoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLCarpoolViewController.m; sourceTree = "<group>"; };
+		EA68B48718CA88D00048CE7C /* SPLSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSendMessageViewController.h; sourceTree = "<group>"; };
+		EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSendMessageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,10 @@
 			children = (
 				EA68B47E18CA7ACB0048CE7C /* SPLDashboardViewController.h */,
 				EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */,
+				EA68B48418CA844D0048CE7C /* SPLCarpoolViewController.h */,
+				EA68B48518CA844D0048CE7C /* SPLCarpoolViewController.m */,
+				EA68B48718CA88D00048CE7C /* SPLSendMessageViewController.h */,
+				EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -284,6 +294,8 @@
 				EA68B45918CA71C30048CE7C /* SPLAppDelegate.m in Sources */,
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
+				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
+				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
