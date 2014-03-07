@@ -20,6 +20,7 @@
 @interface SPLSendMessageViewController : UIViewController
 
 @property (nonatomic, weak) id<SPLSendMessageViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UITextView *textView;
 
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)sendButtonPressed:(id)sender;

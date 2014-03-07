@@ -14,6 +14,24 @@
 
 @implementation SPLSendMessageViewController
 
+#pragma mark -
+#pragma mark View lifecycle methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.textView becomeFirstResponder];
+}
+
+#pragma mark -
+#pragma mark IBAction methods
+
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self.delegate sendMessageViewControllerDidSelectCancel:self];
@@ -21,7 +39,7 @@
 
 - (IBAction)sendButtonPressed:(id)sender
 {
-    [self.delegate sendMessageViewController:self didSelectSendWithMessage:@"Test"];
+    [self.delegate sendMessageViewController:self didSelectSendWithMessage:self.textView.text];
 }
 
 @end
