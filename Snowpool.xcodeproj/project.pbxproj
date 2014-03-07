@@ -19,6 +19,8 @@
 		EA68B46418CA71C30048CE7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44C18CA71C30048CE7C /* UIKit.framework */; };
 		EA68B46C18CA71C30048CE7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA68B46A18CA71C30048CE7C /* InfoPlist.strings */; };
 		EA68B46E18CA71C30048CE7C /* SnowpoolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B46D18CA71C30048CE7C /* SnowpoolTests.m */; };
+		EA68B47D18CA7A5B0048CE7C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA68B47C18CA7A5B0048CE7C /* MainStoryboard.storyboard */; };
+		EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		EA68B46918CA71C30048CE7C /* SnowpoolTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnowpoolTests-Info.plist"; sourceTree = "<group>"; };
 		EA68B46B18CA71C30048CE7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA68B46D18CA71C30048CE7C /* SnowpoolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnowpoolTests.m; sourceTree = "<group>"; };
+		EA68B47C18CA7A5B0048CE7C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		EA68B47E18CA7ACB0048CE7C /* SPLDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLDashboardViewController.h; sourceTree = "<group>"; };
+		EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLDashboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +112,13 @@
 		EA68B44E18CA71C30048CE7C /* Snowpool */ = {
 			isa = PBXGroup;
 			children = (
+				EA68B47718CA79740048CE7C /* Controllers */,
+				EA68B47818CA79800048CE7C /* Models */,
+				EA68B47918CA79850048CE7C /* Views */,
+				EA68B47A18CA79970048CE7C /* Support */,
 				EA68B45718CA71C30048CE7C /* SPLAppDelegate.h */,
 				EA68B45818CA71C30048CE7C /* SPLAppDelegate.m */,
+				EA68B47C18CA7A5B0048CE7C /* MainStoryboard.storyboard */,
 				EA68B45A18CA71C30048CE7C /* Images.xcassets */,
 				EA68B44F18CA71C30048CE7C /* Supporting Files */,
 			);
@@ -142,6 +152,36 @@
 				EA68B46A18CA71C30048CE7C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA68B47718CA79740048CE7C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA68B47E18CA7ACB0048CE7C /* SPLDashboardViewController.h */,
+				EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EA68B47818CA79800048CE7C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA68B47918CA79850048CE7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA68B47A18CA79970048CE7C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA68B47D18CA7A5B0048CE7C /* MainStoryboard.storyboard in Resources */,
 				EA68B45318CA71C30048CE7C /* InfoPlist.strings in Resources */,
 				EA68B45B18CA71C30048CE7C /* Images.xcassets in Resources */,
 			);
@@ -241,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA68B45918CA71C30048CE7C /* SPLAppDelegate.m in Sources */,
+				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +484,7 @@
 				EA68B47318CA71C30048CE7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA68B47418CA71C30048CE7C /* Build configuration list for PBXNativeTarget "SnowpoolTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +493,7 @@
 				EA68B47618CA71C30048CE7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
