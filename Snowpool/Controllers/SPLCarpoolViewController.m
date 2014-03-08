@@ -7,6 +7,7 @@
 //
 
 #import "SPLCarpoolViewController.h"
+#import "SVProgressHUD.h"
 
 @interface SPLCarpoolViewController ()
 
@@ -128,6 +129,7 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 - (void)sendMessageViewController:(SPLSendMessageViewController *)controller didSelectSendWithMessage:(NSString *)message
 {
     NSLog(@"Send message with text: %@", message);
+    [SVProgressHUD showSuccessWithStatus:@"Message Sent"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
