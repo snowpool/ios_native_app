@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SPLSignInViewController.h"
 #import "SPLSettingsViewController.h"
+#import "SPLSelectCountryViewController.h"
 
-@interface SPLDashboardViewController : UITableViewController<SPLSignInViewControllerDelegate, SPLSettingsViewControllerDelegate>
+@interface SPLDashboardViewController : UITableViewController<SPLSignInViewControllerDelegate, SPLSettingsViewControllerDelegate, SPLSelectCountryViewControllerDelegate>
 
 @end

@@ -8,6 +8,7 @@
 
 #import "SPLSelectCountryViewController.h"
 #import "SPLUserDefaults.h"
+#import "SPLCountry.h"
 
 @interface SPLSelectCountryViewController ()
 
@@ -25,10 +26,7 @@
 {
     [super viewDidLoad];
     
-    self.countries = @{ @1 : @"New Zealand",
-                        @2 : @"Australia",
-                        @3 : @"United States",
-                        @4 : @"Canada" };
+    self.countries = [SPLCountry all];
 }
 
 - (NSArray *)sortedCountryKeys
@@ -62,7 +60,8 @@
     defaults.selectedCountryKey = self.sortedCountryKeys[indexPath.row];
     [defaults synchronize];
     DebugLog(@"Selected country with key %@", defaults.selectedCountryKey);
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    [self.delegate selectCountryViewControllerDidChangeCountry:self];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class SPLSelectCountryViewController;
+
+@protocol SPLSelectCountryViewControllerDelegate <NSObject>
+
+- (void)selectCountryViewControllerDidChangeCountry:(SPLSelectCountryViewController *)controller;
+
+@end
+
 @interface SPLSelectCountryViewController : UITableViewController
+
+@property (nonatomic, weak) id<SPLSelectCountryViewControllerDelegate> delegate;
 
 @end

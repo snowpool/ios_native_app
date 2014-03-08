@@ -42,6 +42,10 @@
         UINavigationController *navController = segue.destinationViewController;
         SPLSettingsViewController *controller = (SPLSettingsViewController *)navController.topViewController;
         controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"SelectCountry"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        SPLSelectCountryViewController *controller = (SPLSelectCountryViewController *)navController.topViewController;
+        controller.delegate = self;
     }
 }
 
@@ -68,6 +72,14 @@
 #pragma mark SPLSettingsViewControllerDelegate methods
 
 - (void)settingsViewControllerDidCancel:(SPLSettingsViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark SPLSelectCountryViewControllerDelegate methods
+
+- (void)selectCountryViewControllerDidChangeCountry:(SPLSelectCountryViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPLSelectCountryViewController.h"
 
 @class SPLSettingsViewController;
 
@@ -16,9 +17,10 @@
 
 @end
 
-@interface SPLSettingsViewController : UITableViewController
+@interface SPLSettingsViewController : UITableViewController<SPLSelectCountryViewControllerDelegate>
 
 @property (nonatomic, weak) id<SPLSettingsViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UILabel *selectedCountryLabel;
 
 - (IBAction)cancelButtonPressed:(id)sender;
 
