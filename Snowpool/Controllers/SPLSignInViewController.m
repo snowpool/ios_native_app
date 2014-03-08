@@ -7,6 +7,7 @@
 //
 
 #import "SPLSignInViewController.h"
+#import "SPLUser.h"
 
 @interface SPLSignInViewController ()
 
@@ -31,6 +32,7 @@
 
 - (IBAction)signInButtonPressed:(id)sender
 {
+    [[SPLUser currentUser] signInWithToken:@"1234567890"];
     [self.delegate signInViewControllerDidSignIn:self];
 }
 

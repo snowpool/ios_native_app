@@ -8,6 +8,7 @@
 
 #import "SPLDashboardViewController.h"
 #import "SPLUserDefaults.h"
+#import "SPLUser.h"
 
 @interface SPLDashboardViewController ()
 
@@ -32,11 +33,26 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([SPLUser currentUser].isAuthenticated) {
+        self.navigationItem.rightBarButtonItem.title = @"Add Carpool";
+    } else {
+        self.navigationItem.rightBarButtonItem.title = @"Sign In";
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"SignIn"]) {
         UINavigationController *navController = segue.destinationViewController;
         SPLSignInViewController *controller = (SPLSignInViewController *)navController.topViewController;
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"AddCarpool"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        SPLAddCarpoolViewController *controller = (SPLAddCarpoolViewController *)navController.topViewController;
         controller.delegate = self;
     } else if ([segue.identifier isEqualToString:@"Settings"]) {
         UINavigationController *navController = segue.destinationViewController;
@@ -55,6 +71,18 @@
 }
 
 #pragma mark -
+#pragma mark IBAction methods
+
+- (IBAction)rightBarButtonItemPressed:(id)sender
+{
+    if ([SPLUser currentUser].isAuthenticated) {
+        [self performSegueWithIdentifier:@"AddCarpool" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"SignIn" sender:self];
+    }
+}
+
+#pragma mark -
 #pragma mark SPLSignInViewControllerDelegate methods
 
 - (void)signInViewControllerDidCancel:(SPLSignInViewController *)controller
@@ -64,7 +92,19 @@
 
 - (void)signInViewControllerDidSignIn:(SPLSignInViewController *)controller
 {
-    NSLog(@"User did sign in");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark SPLAddCarpoolViewControllerDelegate methods
+
+- (void)addCarpoolViewControllerDidCancel:(SPLAddCarpoolViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addCarpoolViewControllerDidAddCarpool:(SPLAddCarpoolViewController *)controller
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

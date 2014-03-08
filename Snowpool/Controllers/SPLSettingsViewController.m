@@ -9,6 +9,7 @@
 #import "SPLSettingsViewController.h"
 #import "SPLCountry.h"
 #import "SPLUserDefaults.h"
+#import "SPLUser.h"
 
 @interface SPLSettingsViewController ()
 
@@ -18,6 +19,15 @@
 
 #pragma mark -
 #pragma mark View lifecycle methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    if (![SPLUser currentUser].isAuthenticated) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -50,6 +60,7 @@
 
 - (IBAction)signOutButtonPressed:(id)sender
 {
+    [[SPLUser currentUser] signOut];
     [self.delegate settingsViewControllerDidSignOut:self];
 }
 

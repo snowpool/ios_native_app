@@ -30,6 +30,9 @@
 		EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */; };
 		EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */; };
 		EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49718CAF2C10048CE7C /* SPLRoundedButton.m */; };
+		EA68B49C18CB0FE80048CE7C /* RSSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49B18CB0FE80048CE7C /* RSSecrets.m */; };
+		EA68B49F18CB11BF0048CE7C /* SPLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49E18CB11BF0048CE7C /* SPLUser.m */; };
+		EA68B4A218CB14560048CE7C /* SPLAddCarpoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,12 @@
 		EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSignInViewController.m; sourceTree = "<group>"; };
 		EA68B49618CAF2C10048CE7C /* SPLRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLRoundedButton.h; sourceTree = "<group>"; };
 		EA68B49718CAF2C10048CE7C /* SPLRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLRoundedButton.m; sourceTree = "<group>"; };
+		EA68B49A18CB0FE80048CE7C /* RSSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSecrets.h; sourceTree = "<group>"; };
+		EA68B49B18CB0FE80048CE7C /* RSSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSecrets.m; sourceTree = "<group>"; };
+		EA68B49D18CB11BF0048CE7C /* SPLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLUser.h; sourceTree = "<group>"; };
+		EA68B49E18CB11BF0048CE7C /* SPLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLUser.m; sourceTree = "<group>"; };
+		EA68B4A018CB14560048CE7C /* SPLAddCarpoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAddCarpoolViewController.h; sourceTree = "<group>"; };
+		EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAddCarpoolViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +207,8 @@
 				EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */,
 				6BE7A9AE18CAF84D008D49C9 /* SPLSettingsViewController.h */,
 				6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */,
+				EA68B4A018CB14560048CE7C /* SPLAddCarpoolViewController.h */,
+				EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +218,8 @@
 			children = (
 				6BE7A9B118CB0105008D49C9 /* SPLCountry.h */,
 				6BE7A9B218CB0105008D49C9 /* SPLCountry.m */,
+				EA68B49D18CB11BF0048CE7C /* SPLUser.h */,
+				EA68B49E18CB11BF0048CE7C /* SPLUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				EA68B48C18CAAE960048CE7C /* GVUserDefaults */,
+				EA68B49918CB0FE80048CE7C /* RSSecrets */,
 			);
 			path = Externals;
 			sourceTree = SOURCE_ROOT;
@@ -245,6 +259,15 @@
 				EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */,
 			);
 			path = GVUserDefaults;
+			sourceTree = "<group>";
+		};
+		EA68B49918CB0FE80048CE7C /* RSSecrets */ = {
+			isa = PBXGroup;
+			children = (
+				EA68B49A18CB0FE80048CE7C /* RSSecrets.h */,
+				EA68B49B18CB0FE80048CE7C /* RSSecrets.m */,
+			);
+			path = RSSecrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,10 +370,13 @@
 				EA68B45918CA71C30048CE7C /* SPLAppDelegate.m in Sources */,
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
 				EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */,
+				EA68B49C18CB0FE80048CE7C /* RSSecrets.m in Sources */,
 				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
 				6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */,
 				EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */,
+				EA68B4A218CB14560048CE7C /* SPLAddCarpoolViewController.m in Sources */,
 				EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */,
+				EA68B49F18CB11BF0048CE7C /* SPLUser.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
 				EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,

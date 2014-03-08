@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Snowpool Limited. All rights reserved.
 //
 
+#define SPLAuthTokenKey @"SPLAuthTokenKey"
 
 #ifdef DEBUG
 #define DebugLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
