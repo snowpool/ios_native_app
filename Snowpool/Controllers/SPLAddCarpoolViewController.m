@@ -22,6 +22,11 @@
     [self.delegate addCarpoolViewControllerDidCancel:self];
 }
 
+- (void)doneButtonPressed:(id)sender
+{
+    [self.delegate addCarpoolViewControllerDidAddCarpool:self];
+}
+
 - (IBAction)viewWasTapped:(id)sender
 {
     [self.view endEditing:YES];

@@ -673,7 +673,11 @@ Don't be late!</string>
                                 <action selector="cancelButtonPressed:" destination="MxM-ED-ay4" id="KNR-bB-flg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9LS-5M-x3R"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9LS-5M-x3R">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="MxM-ED-ay4" id="ZgN-cl-Zlt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLo-Gw-lio" userLabel="First Responder" sceneMemberID="firstResponder"/>

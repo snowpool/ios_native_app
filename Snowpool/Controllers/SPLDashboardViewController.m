@@ -9,6 +9,7 @@
 #import "SPLDashboardViewController.h"
 #import "SPLUserDefaults.h"
 #import "SPLUser.h"
+#import "SVProgressHUD.h"
 
 @interface SPLDashboardViewController ()
 
@@ -105,6 +106,7 @@
 
 - (void)addCarpoolViewControllerDidAddCarpool:(SPLAddCarpoolViewController *)controller
 {
+    [SVProgressHUD showSuccessWithStatus:@"Carpool Added"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
