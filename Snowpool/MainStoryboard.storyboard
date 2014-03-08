@@ -99,7 +99,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Snowpool" id="88B-r3-4vM">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="BWR-fu-K1n"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="BWR-fu-K1n">
+                            <connections>
+                                <segue destination="4xD-Zh-p13" kind="modal" identifier="Settings" id="e5g-Cn-8SL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Sign In" id="xqE-de-gQX">
                             <connections>
                                 <segue destination="Y28-RF-9z3" kind="modal" identifier="SignIn" id="MgF-ol-2BI"/>
@@ -178,7 +182,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GG8-FZ-C7G">
-                                                    <rect key="frame" x="15" y="11" width="101" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="33" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -335,6 +339,41 @@ Don't be late!</string>
             </objects>
             <point key="canvasLocation" x="669" y="704"/>
         </scene>
+        <!--Settings View Controller - Settings-->
+        <scene sceneID="A6p-Jq-csf">
+            <objects>
+                <tableViewController id="Scb-5y-mWh" customClass="SPLSettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fbZ-FD-SQb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lAl-bf-jFo">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lAl-bf-jFo" id="JP4-Gz-kay">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Scb-5y-mWh" id="6IP-pq-NDU"/>
+                            <outlet property="delegate" destination="Scb-5y-mWh" id="7qz-03-r6k"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="tXO-Vp-p6q">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aU7-yF-jth">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="Scb-5y-mWh" id="4LG-77-zA3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fp-63-QWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="1428"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="JNS-lO-Gvo">
             <objects>
@@ -443,6 +482,24 @@ Don't be late!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11f-sh-zJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1158" y="-759"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6km-d0-8UI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4xD-Zh-p13" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mEb-38-71p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Scb-5y-mWh" kind="relationship" relationship="rootViewController" id="0xK-L0-ltq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QC9-WO-fW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="1428"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

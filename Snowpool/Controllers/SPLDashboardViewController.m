@@ -38,6 +38,10 @@
         UINavigationController *navController = segue.destinationViewController;
         SPLSignInViewController *controller = (SPLSignInViewController *)navController.topViewController;
         controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"Settings"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        SPLSettingsViewController *controller = (SPLSettingsViewController *)navController.topViewController;
+        controller.delegate = self;
     }
 }
 
@@ -57,6 +61,14 @@
 - (void)signInViewControllerDidSignIn:(SPLSignInViewController *)controller
 {
     NSLog(@"User did sign in");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark SPLSettingsViewControllerDelegate methods
+
+- (void)settingsViewControllerDidCancel:(SPLSettingsViewController *)controller
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

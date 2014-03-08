@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */; };
+		6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */; };
 		EA68B44918CA71C30048CE7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44818CA71C30048CE7C /* Foundation.framework */; };
 		EA68B44B18CA71C30048CE7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */; };
 		EA68B44D18CA71C30048CE7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44C18CA71C30048CE7C /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		6BE7A9AB18CAA10E008D49C9 /* SPLSelectCountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSelectCountryViewController.h; sourceTree = "<group>"; };
 		6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSelectCountryViewController.m; sourceTree = "<group>"; };
+		6BE7A9AE18CAF84D008D49C9 /* SPLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSettingsViewController.h; sourceTree = "<group>"; };
+		6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSettingsViewController.m; sourceTree = "<group>"; };
 		EA68B44518CA71C30048CE7C /* Snowpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA68B44818CA71C30048CE7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 				6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */,
 				EA68B49318CAEFC90048CE7C /* SPLSignInViewController.h */,
 				EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */,
+				6BE7A9AE18CAF84D008D49C9 /* SPLSettingsViewController.h */,
+				6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
 				EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */,
 				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
+				6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */,
 				EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */,
 				EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
