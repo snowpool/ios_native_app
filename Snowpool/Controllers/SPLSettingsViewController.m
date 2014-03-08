@@ -53,9 +53,9 @@
 #pragma mark -
 #pragma mark IBAction methods
 
-- (IBAction)cancelButtonPressed:(id)sender
+- (IBAction)doneButtonPressed:(id)sender
 {
-    [self.delegate settingsViewControllerDidCancel:self];
+    [self.delegate settingsViewControllerDidFinish:self];
 }
 
 - (IBAction)signOutButtonPressed:(id)sender

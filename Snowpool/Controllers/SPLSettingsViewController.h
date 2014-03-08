@@ -13,7 +13,7 @@
 
 @protocol SPLSettingsViewControllerDelegate <NSObject>
 
-- (void)settingsViewControllerDidCancel:(SPLSettingsViewController *)controller;
+- (void)settingsViewControllerDidFinish:(SPLSettingsViewController *)controller;
 - (void)settingsViewControllerDidSignOut:(SPLSettingsViewController *)controller;
 
 @end
@@ -24,7 +24,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *selectedCountryLabel;
 @property (nonatomic, weak) IBOutlet UILabel *appVersionLabel;
 
-- (IBAction)cancelButtonPressed:(id)sender;
+- (IBAction)doneButtonPressed:(id)sender;
 - (IBAction)signOutButtonPressed:(id)sender;
 
 @end

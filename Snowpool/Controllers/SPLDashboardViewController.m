@@ -106,14 +106,14 @@
 
 - (void)addCarpoolViewControllerDidAddCarpool:(SPLAddCarpoolViewController *)controller
 {
-    [SVProgressHUD showSuccessWithStatus:@"Carpool Added"];
+    [SVProgressHUD showSuccessWithStatus:@"Carpool Created"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
 #pragma mark SPLSettingsViewControllerDelegate methods
 
-- (void)settingsViewControllerDidCancel:(SPLSettingsViewController *)controller
+- (void)settingsViewControllerDidFinish:(SPLSettingsViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
