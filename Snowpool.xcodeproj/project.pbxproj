@@ -26,6 +26,8 @@
 		EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */; };
 		EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */; };
 		EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */; };
+		EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */; };
+		EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49718CAF2C10048CE7C /* SPLRoundedButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserDefaults.m; sourceTree = "<group>"; };
 		EA68B49018CAAEBA0048CE7C /* SPLUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLUserDefaults.h; sourceTree = "<group>"; };
 		EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLUserDefaults.m; sourceTree = "<group>"; };
+		EA68B49318CAEFC90048CE7C /* SPLSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSignInViewController.h; sourceTree = "<group>"; };
+		EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSignInViewController.m; sourceTree = "<group>"; };
+		EA68B49618CAF2C10048CE7C /* SPLRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLRoundedButton.h; sourceTree = "<group>"; };
+		EA68B49718CAF2C10048CE7C /* SPLRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLRoundedButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,8 @@
 				EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */,
 				6BE7A9AB18CAA10E008D49C9 /* SPLSelectCountryViewController.h */,
 				6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */,
+				EA68B49318CAEFC90048CE7C /* SPLSignInViewController.h */,
+				EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +204,8 @@
 		EA68B47918CA79850048CE7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA68B49618CAF2C10048CE7C /* SPLRoundedButton.h */,
+				EA68B49718CAF2C10048CE7C /* SPLRoundedButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,8 +338,10 @@
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
 				EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */,
 				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
+				EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */,
 				EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
+				EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
 			);

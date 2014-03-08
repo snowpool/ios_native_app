@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPLSignInViewController.h"
 
-@interface SPLDashboardViewController : UITableViewController
+@interface SPLDashboardViewController : UITableViewController<SPLSignInViewControllerDelegate>
 
 @end

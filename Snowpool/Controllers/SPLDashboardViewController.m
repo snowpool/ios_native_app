@@ -32,9 +32,32 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SignIn"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        SPLSignInViewController *controller = (SPLSignInViewController *)navController.topViewController;
+        controller.delegate = self;
+    }
+}
+
 - (void)tableViewDidStartRefresh:(UIRefreshControl *)refreshControl
 {
     [self.refreshControl endRefreshing];
+}
+
+#pragma mark -
+#pragma mark SPLSignInViewControllerDelegate methods
+
+- (void)signInViewControllerDidCancel:(SPLSignInViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)signInViewControllerDidSignIn:(SPLSignInViewController *)controller
+{
+    NSLog(@"User did sign in");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
