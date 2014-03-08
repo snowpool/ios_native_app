@@ -67,7 +67,11 @@
         self.navigationItem.rightBarButtonItem.title = @"Sign In";
     }
     
-    [self requestCarpools];
+    if (self.carpools.count == 0) {
+        // Offset table view to display refresh indicator
+        [self.tableView setContentOffset:CGPointMake(0, -124)];
+        [self requestCarpools];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
