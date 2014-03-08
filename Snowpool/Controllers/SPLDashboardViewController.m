@@ -10,12 +10,35 @@
 #import "SPLUserDefaults.h"
 #import "SPLUser.h"
 #import "SVProgressHUD.h"
+#import "SPLCarpoolService.h"
+#import "SPLCarpool.h"
 
 @interface SPLDashboardViewController ()
+
+@property (nonatomic, strong) NSArray *carpools;
 
 @end
 
 @implementation SPLDashboardViewController
+
+- (void)requestCarpools
+{
+    NSNumber *selectedCountryKey = [SPLUserDefaults standardUserDefaults].selectedCountryKey;
+    if (selectedCountryKey == nil) return;
+    
+    [self.refreshControl beginRefreshing];
+    SPLCarpoolService *carpoolService = [[SPLCarpoolService alloc] init];
+    [carpoolService requestCarpoolsForCountryID:selectedCountryKey success:^(NSArray *carpools) {
+        DebugLog(@"Fetched %d carpools from service", carpools.count);
+        self.carpools = carpools;
+        [self.refreshControl endRefreshing];
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"Error requesting carpools: %@", error);
+        [self.refreshControl endRefreshing];
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    }];
+}
 
 #pragma mark -
 #pragma mark View lifecycle methods
@@ -43,6 +66,8 @@
     } else {
         self.navigationItem.rightBarButtonItem.title = @"Sign In";
     }
+    
+    [self requestCarpools];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -66,9 +91,29 @@
     }
 }
 
+#pragma mark -
+#pragma mark UITableView methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.carpools.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"CarpoolCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    SPLCarpool *carpool = self.carpools[indexPath.row];
+    cell.textLabel.text = carpool.title;
+    
+    return cell;
+}
+
 - (void)tableViewDidStartRefresh:(UIRefreshControl *)refreshControl
 {
-    [self.refreshControl endRefreshing];
+    [self requestCarpools];
 }
 
 #pragma mark -
