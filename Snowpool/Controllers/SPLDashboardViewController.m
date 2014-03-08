@@ -76,6 +76,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)settingsViewControllerDidSignOut:(SPLSettingsViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark -
 #pragma mark SPLSelectCountryViewControllerDelegate methods
 

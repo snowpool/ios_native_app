@@ -16,6 +16,9 @@
 
 @implementation SPLSettingsViewController
 
+#pragma mark -
+#pragma mark View lifecycle methods
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -24,6 +27,9 @@
     if (selectedCountryKey) {
         self.selectedCountryLabel.text = [SPLCountry all][selectedCountryKey];
     }
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    self.appVersionLabel.text = version;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -34,9 +40,17 @@
     }
 }
 
+#pragma mark -
+#pragma mark IBAction methods
+
 - (IBAction)cancelButtonPressed:(id)sender
 {
     [self.delegate settingsViewControllerDidCancel:self];
+}
+
+- (IBAction)signOutButtonPressed:(id)sender
+{
+    [self.delegate settingsViewControllerDidSignOut:self];
 }
 
 #pragma mark -
