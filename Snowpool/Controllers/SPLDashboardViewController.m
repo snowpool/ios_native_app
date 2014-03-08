@@ -27,6 +27,13 @@
                   forControlEvents:UIControlEventValueChanged];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self performSegueWithIdentifier:@"SelectCountry" sender:self];
+}
+
 - (void)tableViewDidStartRefresh:(UIRefreshControl *)refreshControl
 {
     [self.refreshControl endRefreshing];

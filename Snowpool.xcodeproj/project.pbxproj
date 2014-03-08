@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */; };
 		EA68B44918CA71C30048CE7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44818CA71C30048CE7C /* Foundation.framework */; };
 		EA68B44B18CA71C30048CE7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */; };
 		EA68B44D18CA71C30048CE7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44C18CA71C30048CE7C /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BE7A9AB18CAA10E008D49C9 /* SPLSelectCountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSelectCountryViewController.h; sourceTree = "<group>"; };
+		6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSelectCountryViewController.m; sourceTree = "<group>"; };
 		EA68B44518CA71C30048CE7C /* Snowpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA68B44818CA71C30048CE7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +172,8 @@
 				EA68B48518CA844D0048CE7C /* SPLCarpoolViewController.m */,
 				EA68B48718CA88D00048CE7C /* SPLSendMessageViewController.h */,
 				EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */,
+				6BE7A9AB18CAA10E008D49C9 /* SPLSelectCountryViewController.h */,
+				6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 			files = (
 				EA68B45918CA71C30048CE7C /* SPLAppDelegate.m in Sources */,
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
+				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
