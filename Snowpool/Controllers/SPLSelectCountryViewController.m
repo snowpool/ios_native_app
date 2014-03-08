@@ -50,7 +50,8 @@
     
     NSNumber *countryKey = self.sortedCountryKeys[indexPath.row];
     
-    if ([countryKey isEqualToNumber:[SPLUserDefaults standardUserDefaults].selectedCountryKey]) {
+    NSNumber *selectedCountryKey = [SPLUserDefaults standardUserDefaults].selectedCountryKey;
+    if (selectedCountryKey && [selectedCountryKey isEqualToNumber:countryKey]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
