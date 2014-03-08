@@ -62,6 +62,7 @@
 		EA68B48518CA844D0048CE7C /* SPLCarpoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLCarpoolViewController.m; sourceTree = "<group>"; };
 		EA68B48718CA88D00048CE7C /* SPLSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSendMessageViewController.h; sourceTree = "<group>"; };
 		EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSendMessageViewController.m; sourceTree = "<group>"; };
+		EA68B48A18CAAC5C0048CE7C /* SPLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +196,7 @@
 		EA68B47A18CA79970048CE7C /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				EA68B48A18CAAC5C0048CE7C /* SPLConstants.h */,
 			);
 			path = Support;
 			sourceTree = "<group>";

@@ -17,6 +17,9 @@
 
 @implementation SPLSelectCountryViewController
 
+#pragma mark -
+#pragma mark View lifecycle methods
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,6 +34,9 @@
 {
     return [self.countries.allKeys sortedArrayUsingSelector:@selector(compare:)];
 }
+
+#pragma mark -
+#pragma mark UITableView methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -51,7 +57,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Selected country with key %@", self.sortedCountryKeys[indexPath.row]);
+    DebugLog(@"Selected country with key %@", self.sortedCountryKeys[indexPath.row]);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
