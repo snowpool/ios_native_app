@@ -15,11 +15,34 @@
 
 @interface SPLDashboardViewController ()
 
-@property (nonatomic, strong) NSArray *carpools;
+@property (nonatomic, strong) NSArray *groupedDates;
+@property (nonatomic, strong) NSDictionary *carpoolsGroupedByDate;
 
 @end
 
 @implementation SPLDashboardViewController
+{
+    BOOL _hasRequestedCarpools;
+}
+
+- (void)loadCarpoolsFromArray:(NSArray *)carpools
+{
+    NSMutableDictionary *carpoolsGroupedByDate = [NSMutableDictionary dictionary];
+    NSMutableArray *groupedDates = [NSMutableArray array];
+    for (SPLCarpool *carpool in carpools) {
+        if ([groupedDates indexOfObject:carpool.start] == NSNotFound) {
+            [groupedDates addObject:carpool.start];
+        }
+        NSMutableArray *carpoolGroup = [carpoolsGroupedByDate objectForKey:carpool.start];
+        if (!carpoolGroup) {
+            carpoolGroup = [NSMutableArray array];
+            [carpoolsGroupedByDate setObject:carpoolGroup forKey:carpool.start];
+        }
+        [carpoolGroup addObject:carpool];
+    }
+    self.groupedDates = [groupedDates copy];
+    self.carpoolsGroupedByDate = [carpoolsGroupedByDate copy];
+}
 
 - (void)requestCarpools
 {
@@ -30,7 +53,7 @@
     SPLCarpoolService *carpoolService = [[SPLCarpoolService alloc] init];
     [carpoolService requestCarpoolsForCountryID:selectedCountryKey success:^(NSArray *carpools) {
         DebugLog(@"Fetched %d carpools from service", carpools.count);
-        self.carpools = carpools;
+        [self loadCarpoolsFromArray:carpools];
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -67,7 +90,8 @@
         self.navigationItem.rightBarButtonItem.title = @"Sign In";
     }
     
-    if (self.carpools.count == 0) {
+    if (!_hasRequestedCarpools) {
+        _hasRequestedCarpools = YES;
         // Offset table view to display refresh indicator
         [self.tableView setContentOffset:CGPointMake(0, -124)];
         [self requestCarpools];
@@ -98,9 +122,16 @@
 #pragma mark -
 #pragma mark UITableView methods
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.groupedDates.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.carpools.count;
+    NSString *startDate = [self.groupedDates objectAtIndex:section];
+    NSArray *carpools = [self.carpoolsGroupedByDate objectForKey:startDate];
+    return carpools.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,10 +140,17 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    SPLCarpool *carpool = self.carpools[indexPath.row];
+    NSString *startDate = [self.groupedDates objectAtIndex:indexPath.section];
+    NSArray *carpools = [self.carpoolsGroupedByDate objectForKey:startDate];
+    SPLCarpool *carpool = carpools[indexPath.row];
     cell.textLabel.text = carpool.title;
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.groupedDates objectAtIndex:section];
 }
 
 - (void)tableViewDidStartRefresh:(UIRefreshControl *)refreshControl

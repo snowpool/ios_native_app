@@ -46,7 +46,6 @@
 		EA68B4DC18CBCD9C0048CE7C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4BB18CBCD9C0048CE7C /* AFURLResponseSerialization.m */; };
 		EA68B4DD18CBCD9C0048CE7C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4BD18CBCD9C0048CE7C /* AFURLSessionManager.m */; };
 		EA68B4DE18CBCD9C0048CE7C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4BE18CBCD9C0048CE7C /* LICENSE */; };
-		EA68B4DF18CBCD9C0048CE7C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4BF18CBCD9C0048CE7C /* README.md */; };
 		EA68B4E018CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4C218CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.m */; };
 		EA68B4E118CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4C418CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.m */; };
 		EA68B4E218CBCD9C0048CE7C /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4C618CBCD9C0048CE7C /* UIAlertView+AFNetworking.m */; };
@@ -56,7 +55,6 @@
 		EA68B4E618CBCD9C0048CE7C /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4CF18CBCD9C0048CE7C /* UIWebView+AFNetworking.m */; };
 		EA68B4E718CBCD9C0048CE7C /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4D118CBCD9C0048CE7C /* LICENCE.txt */; };
 		EA68B4E818CBCD9C0048CE7C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4D318CBCD9C0048CE7C /* Reachability.m */; };
-		EA68B4E918CBCD9C0048CE7C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4D418CBCD9C0048CE7C /* README.md */; };
 		EA68B4ED18CBCE310048CE7C /* SPLCarpoolService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4EC18CBCE310048CE7C /* SPLCarpoolService.m */; };
 		EA68B4F018CBCE460048CE7C /* SPLAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4EF18CBCE460048CE7C /* SPLAuthService.m */; };
 		EA68B4F318CBD0630048CE7C /* SPLCarpool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4F218CBD0630048CE7C /* SPLCarpool.m */; };
@@ -523,13 +521,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA68B4DF18CBCD9C0048CE7C /* README.md in Resources */,
 				EA68B47D18CA7A5B0048CE7C /* MainStoryboard.storyboard in Resources */,
 				EA68B45318CA71C30048CE7C /* InfoPlist.strings in Resources */,
 				EA68B45B18CA71C30048CE7C /* Images.xcassets in Resources */,
 				EA68B4E718CBCD9C0048CE7C /* LICENCE.txt in Resources */,
 				EA68B4A718CB23220048CE7C /* SVProgressHUD.bundle in Resources */,
-				EA68B4E918CBCD9C0048CE7C /* README.md in Resources */,
 				EA68B4DE18CBCD9C0048CE7C /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
