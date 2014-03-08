@@ -161,6 +161,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="a2C-Jp-cbr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarpoolDetailCell" textLabel="GG8-FZ-C7G" detailTextLabel="NKw-K1-oIY" style="IBUITableViewCellStyleValue1" id="Bv9-Ho-b2X">
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bv9-Ho-b2X" id="y0s-Dm-rjQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GG8-FZ-C7G">
+                                                    <rect key="frame" x="15" y="11" width="101" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NKw-K1-oIY">
+                                                    <rect key="frame" x="261" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarpoolNotesCell" rowHeight="88" id="9Zc-aW-J44">
+                                        <rect key="frame" x="0.0" y="163" width="320" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Zc-aW-J44" id="D1q-PO-U8Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ems-ae-MVc">
+                                                    <rect key="frame" x="10" y="0.0" width="301" height="87"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Heading up the mountain at about 7am.
+
+Don't be late!</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YU7-sJ-sir" id="pYn-zK-PRc"/>
+                                    <outlet property="delegate" destination="YU7-sJ-sir" id="HIm-QX-KQa"/>
+                                </connections>
+                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gB-QN-r50">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -178,12 +234,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6gB-QN-r50" secondAttribute="trailing" id="09e-PV-vPH"/>
+                            <constraint firstItem="a2C-Jp-cbr" firstAttribute="leading" secondItem="6gB-QN-r50" secondAttribute="leading" id="FrP-AE-cDT"/>
+                            <constraint firstItem="a2C-Jp-cbr" firstAttribute="trailing" secondItem="6gB-QN-r50" secondAttribute="trailing" id="GEq-pu-iny"/>
                             <constraint firstItem="62h-CM-Ii3" firstAttribute="top" secondItem="6gB-QN-r50" secondAttribute="bottom" id="UDw-6Y-Imd"/>
+                            <constraint firstItem="6gB-QN-r50" firstAttribute="top" secondItem="a2C-Jp-cbr" secondAttribute="bottom" id="Ub3-cy-sbI"/>
+                            <constraint firstItem="a2C-Jp-cbr" firstAttribute="top" secondItem="9Pn-7z-wrH" secondAttribute="top" id="dS0-Vh-GDd"/>
                             <constraint firstItem="6gB-QN-r50" firstAttribute="leading" secondItem="9Pn-7z-wrH" secondAttribute="leading" id="i1K-oe-1da"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Carpool" id="BvZ-SU-Vd6"/>
                     <connections>
+                        <outlet property="tableView" destination="a2C-Jp-cbr" id="J1a-x0-m1V"/>
                         <segue destination="Tzd-Yd-VQ1" kind="modal" identifier="SendMessage" id="WkL-eu-oBq"/>
                     </connections>
                 </viewController>

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SPLSendMessageViewController.h"
 
-@interface SPLCarpoolViewController : UIViewController<UIActionSheetDelegate, SPLSendMessageViewControllerDelegate>
+@interface SPLCarpoolViewController : UIViewController<UIActionSheetDelegate, SPLSendMessageViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 - (IBAction)actionButtonPressed:(id)sender;
 
