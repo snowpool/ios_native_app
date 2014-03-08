@@ -33,6 +33,8 @@
 		EA68B49C18CB0FE80048CE7C /* RSSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49B18CB0FE80048CE7C /* RSSecrets.m */; };
 		EA68B49F18CB11BF0048CE7C /* SPLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49E18CB11BF0048CE7C /* SPLUser.m */; };
 		EA68B4A218CB14560048CE7C /* SPLAddCarpoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */; };
+		EA68B4A718CB23220048CE7C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4A418CB23220048CE7C /* SVProgressHUD.bundle */; };
+		EA68B4A818CB23220048CE7C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4A618CB23220048CE7C /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,9 @@
 		EA68B49E18CB11BF0048CE7C /* SPLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLUser.m; sourceTree = "<group>"; };
 		EA68B4A018CB14560048CE7C /* SPLAddCarpoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAddCarpoolViewController.h; sourceTree = "<group>"; };
 		EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAddCarpoolViewController.m; sourceTree = "<group>"; };
+		EA68B4A418CB23220048CE7C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		EA68B4A518CB23220048CE7C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		EA68B4A618CB23220048CE7C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +251,7 @@
 		EA68B48B18CAAE960048CE7C /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				EA68B4A318CB23220048CE7C /* SVProgressHUD */,
 				EA68B48C18CAAE960048CE7C /* GVUserDefaults */,
 				EA68B49918CB0FE80048CE7C /* RSSecrets */,
 			);
@@ -268,6 +274,16 @@
 				EA68B49B18CB0FE80048CE7C /* RSSecrets.m */,
 			);
 			path = RSSecrets;
+			sourceTree = "<group>";
+		};
+		EA68B4A318CB23220048CE7C /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				EA68B4A418CB23220048CE7C /* SVProgressHUD.bundle */,
+				EA68B4A518CB23220048CE7C /* SVProgressHUD.h */,
+				EA68B4A618CB23220048CE7C /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +365,7 @@
 				EA68B47D18CA7A5B0048CE7C /* MainStoryboard.storyboard in Resources */,
 				EA68B45318CA71C30048CE7C /* InfoPlist.strings in Resources */,
 				EA68B45B18CA71C30048CE7C /* Images.xcassets in Resources */,
+				EA68B4A718CB23220048CE7C /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +393,7 @@
 				EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */,
 				EA68B4A218CB14560048CE7C /* SPLAddCarpoolViewController.m in Sources */,
 				EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */,
+				EA68B4A818CB23220048CE7C /* SVProgressHUD.m in Sources */,
 				EA68B49F18CB11BF0048CE7C /* SPLUser.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
 				EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */,
