@@ -14,6 +14,9 @@
 
 @interface SPLDashboardViewController : UITableViewController<SPLSignInViewControllerDelegate, SPLAddCarpoolViewControllerDelegate, SPLSettingsViewControllerDelegate, SPLSelectCountryViewControllerDelegate>
 
+@property (nonatomic, weak) IBOutlet UISegmentedControl *filter;
+
 - (IBAction)rightBarButtonItemPressed:(id)sender;
+- (IBAction)filterValueChanged:(id)sender;
 
 @end

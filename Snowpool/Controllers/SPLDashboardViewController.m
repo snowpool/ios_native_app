@@ -15,6 +15,7 @@
 
 @interface SPLDashboardViewController ()
 
+@property (nonatomic, strong) NSArray *carpools;
 @property (nonatomic, strong) NSArray *groupedDates;
 @property (nonatomic, strong) NSDictionary *carpoolsGroupedByDate;
 
@@ -25,11 +26,18 @@
     BOOL _hasRequestedCarpools;
 }
 
-- (void)loadCarpoolsFromArray:(NSArray *)carpools
+- (void)loadGroupedCarpools
 {
+    NSArray *filteredCarpools = self.carpools;
+    if (self.filter.selectedSegmentIndex > 0) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isSeeking = %d",
+                                  self.filter.selectedSegmentIndex == 1 ? NO : YES];
+        filteredCarpools = [self.carpools filteredArrayUsingPredicate:predicate];
+    }
+    
     NSMutableDictionary *carpoolsGroupedByDate = [NSMutableDictionary dictionary];
     NSMutableArray *groupedDates = [NSMutableArray array];
-    for (SPLCarpool *carpool in carpools) {
+    for (SPLCarpool *carpool in filteredCarpools) {
         if ([groupedDates indexOfObject:carpool.start] == NSNotFound) {
             [groupedDates addObject:carpool.start];
         }
@@ -53,7 +61,8 @@
     SPLCarpoolService *carpoolService = [[SPLCarpoolService alloc] init];
     [carpoolService requestCarpoolsForCountryID:selectedCountryKey success:^(NSArray *carpools) {
         DebugLog(@"Fetched %d carpools from service", carpools.count);
-        [self loadCarpoolsFromArray:carpools];
+        self.carpools = carpools;
+        [self loadGroupedCarpools];
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -168,6 +177,12 @@
     } else {
         [self performSegueWithIdentifier:@"SignIn" sender:self];
     }
+}
+
+- (IBAction)filterValueChanged:(id)sender
+{
+    [self loadGroupedCarpools];
+    [self.tableView reloadData];
 }
 
 #pragma mark -

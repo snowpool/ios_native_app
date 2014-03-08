@@ -42,6 +42,9 @@
                                         <segment title="Offered"/>
                                         <segment title="Wanted"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="filterValueChanged:" destination="BpC-oj-9VD" eventType="valueChanged" id="Hwu-XE-rOI"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -87,6 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filter" destination="Qxi-AA-BHl" id="z0p-Ep-WS3"/>
                         <segue destination="z36-Uh-ZVh" kind="modal" identifier="SelectCountry" animates="NO" id="DwM-9Y-sg4"/>
                         <segue destination="Y28-RF-9z3" kind="modal" identifier="SignIn" id="cl3-sH-0hg"/>
                         <segue destination="hOQ-XX-atx" kind="modal" identifier="AddCarpool" id="tUh-CJ-egn"/>
