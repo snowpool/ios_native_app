@@ -22,5 +22,6 @@
 @property (nonatomic, weak) id<SPLAddCarpoolViewControllerDelegate> delegate;
 
 - (IBAction)cancelButtonPressed:(id)sender;
+- (IBAction)viewWasTapped:(id)sender;
 
 @end
