@@ -49,6 +49,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     NSNumber *countryKey = self.sortedCountryKeys[indexPath.row];
+    
+    if ([countryKey isEqualToNumber:[SPLUserDefaults standardUserDefaults].selectedCountryKey]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     cell.textLabel.text = self.countries[countryKey];
     
     return cell;
