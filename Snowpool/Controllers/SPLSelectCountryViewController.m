@@ -7,6 +7,7 @@
 //
 
 #import "SPLSelectCountryViewController.h"
+#import "SPLUserDefaults.h"
 
 @interface SPLSelectCountryViewController ()
 
@@ -57,7 +58,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DebugLog(@"Selected country with key %@", self.sortedCountryKeys[indexPath.row]);
+    SPLUserDefaults *defaults = [SPLUserDefaults standardUserDefaults];
+    defaults.selectedCountryKey = self.sortedCountryKeys[indexPath.row];
+    [defaults synchronize];
+    DebugLog(@"Selected country with key %@", defaults.selectedCountryKey);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -103,7 +103,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Sign In" id="xqE-de-gQX"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="z36-Uh-ZVh" kind="modal" identifier="SelectCountry" id="DwM-9Y-sg4"/>
+                        <segue destination="z36-Uh-ZVh" kind="modal" identifier="SelectCountry" animates="NO" id="DwM-9Y-sg4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uR-0Q-KZc" userLabel="First Responder" sceneMemberID="firstResponder"/>

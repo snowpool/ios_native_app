@@ -7,6 +7,7 @@
 //
 
 #import "SPLDashboardViewController.h"
+#import "SPLUserDefaults.h"
 
 @interface SPLDashboardViewController ()
 
@@ -25,13 +26,10 @@
     [self.refreshControl addTarget:self
                             action:@selector(tableViewDidStartRefresh:)
                   forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     
-    [self performSegueWithIdentifier:@"SelectCountry" sender:self];
+    if ([SPLUserDefaults standardUserDefaults].selectedCountryKey == nil) {
+        [self performSegueWithIdentifier:@"SelectCountry" sender:self];
+    }
 }
 
 - (void)tableViewDidStartRefresh:(UIRefreshControl *)refreshControl

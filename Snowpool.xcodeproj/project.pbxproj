@@ -24,6 +24,8 @@
 		EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */; };
 		EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48518CA844D0048CE7C /* SPLCarpoolViewController.m */; };
 		EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */; };
+		EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */; };
+		EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		EA68B48718CA88D00048CE7C /* SPLSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSendMessageViewController.h; sourceTree = "<group>"; };
 		EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSendMessageViewController.m; sourceTree = "<group>"; };
 		EA68B48A18CAAC5C0048CE7C /* SPLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLConstants.h; sourceTree = "<group>"; };
+		EA68B48D18CAAE960048CE7C /* GVUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUserDefaults.h; sourceTree = "<group>"; };
+		EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserDefaults.m; sourceTree = "<group>"; };
+		EA68B49018CAAEBA0048CE7C /* SPLUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLUserDefaults.h; sourceTree = "<group>"; };
+		EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLUserDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		EA68B44E18CA71C30048CE7C /* Snowpool */ = {
 			isa = PBXGroup;
 			children = (
+				EA68B48B18CAAE960048CE7C /* Externals */,
 				EA68B47718CA79740048CE7C /* Controllers */,
 				EA68B47818CA79800048CE7C /* Models */,
 				EA68B47918CA79850048CE7C /* Views */,
@@ -197,8 +204,27 @@
 			isa = PBXGroup;
 			children = (
 				EA68B48A18CAAC5C0048CE7C /* SPLConstants.h */,
+				EA68B49018CAAEBA0048CE7C /* SPLUserDefaults.h */,
+				EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		EA68B48B18CAAE960048CE7C /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				EA68B48C18CAAE960048CE7C /* GVUserDefaults */,
+			);
+			path = Externals;
+			sourceTree = SOURCE_ROOT;
+		};
+		EA68B48C18CAAE960048CE7C /* GVUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				EA68B48D18CAAE960048CE7C /* GVUserDefaults.h */,
+				EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */,
+			);
+			path = GVUserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +326,9 @@
 			files = (
 				EA68B45918CA71C30048CE7C /* SPLAppDelegate.m in Sources */,
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
+				EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */,
 				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
+				EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
