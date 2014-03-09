@@ -27,6 +27,17 @@
         _title = dict[@"title"];
         _start = dict[@"start"];
         _isSeeking = [dict[@"seeking"] boolValue];
+        _leavingFrom = dict[@"leavingFrom"];
+        _name = dict[@"name"];
+        _fieldName = dict[@"fieldName"];
+        _message = dict[@"message"];
+        _telephone = dict[@"telephone"];
+        _spacesFree = [dict[@"spacesFree"] integerValue];
+        _userID = [dict[@"userID"] integerValue];
+        _fieldID = [dict[@"fieldID"] integerValue];
+        _spacesFree = [dict[@"spacesFree"] integerValue];
+        _hasDrivenBefore = [dict[@"drivenBefore"] boolValue];
+
     }
     return self;
 }
