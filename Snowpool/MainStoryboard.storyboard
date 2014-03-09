@@ -556,6 +556,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="leavingFrom" destination="Y6V-rl-4BJ" id="HaQ-gX-wEc"/>
+                        <outlet property="telephone" destination="uLd-AX-OSk" id="NC8-A9-0cA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLo-Gw-lio" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="t1h-od-gn2">

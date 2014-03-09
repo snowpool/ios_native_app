@@ -19,7 +19,6 @@
 - (void)createCarpoolWithFieldID:(NSInteger)fieldID
                      dateLeaving:(NSDate *)dateLeaving
                    dateReturning:(NSDate *)dateReturning
-                            name:(NSString *)name
                       spacesFree:(NSInteger)spacesFree
                      leavingFrom:(NSString *)leavingFrom
                        telephone:(NSString *)telephone

@@ -20,6 +20,11 @@
 @interface SPLAddCarpoolViewController : UITableViewController
 
 @property (nonatomic, weak) id<SPLAddCarpoolViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UISwitch *carpoolWanted;
+@property (nonatomic, weak) IBOutlet UISwitch *drivenHereBefore;
+@property (nonatomic, weak) IBOutlet UITextField *leavingFrom;
+@property (nonatomic, weak) IBOutlet UITextField *telephone;
+@property (nonatomic, weak) IBOutlet UITextView *message;
 
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)doneButtonPressed:(id)sender;
