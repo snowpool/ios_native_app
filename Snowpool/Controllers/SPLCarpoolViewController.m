@@ -9,6 +9,7 @@
 #import "SPLCarpoolViewController.h"
 #import "SVProgressHUD.h"
 #import "SPLCarpoolService.h"
+#import "SPLUser.h"
 
 @interface SPLCarpoolViewController ()
 
@@ -38,7 +39,9 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    if (self.carpool.userID == [SPLUser currentUser].userID){
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     [self displayCarpool];
 }
 
