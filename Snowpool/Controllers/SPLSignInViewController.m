@@ -7,13 +7,34 @@
 //
 
 #import "SPLSignInViewController.h"
+#import "SPLAuthService.h"
 #import "SPLUser.h"
+#import "SVProgressHUD.h"
 
 @interface SPLSignInViewController ()
 
 @end
 
 @implementation SPLSignInViewController
+
+- (void)signInWithEmail:(NSString *)email password:(NSString *)password
+{
+    [SVProgressHUD showWithStatus:@"Signing In"];
+    SPLAuthService *authService = [[SPLAuthService alloc] init];
+    [authService loginWithEmail:email password:password
+      success:^(NSString *token, NSInteger userID) {
+          [[SPLUser currentUser] signInWithUserID:userID token: token];
+          [SVProgressHUD dismiss];
+          [self.delegate signInViewControllerDidSignIn:self];
+    } failure:^(NSError *error, NSInteger statusCode) {
+        if (statusCode == 401) {
+            [SVProgressHUD showErrorWithStatus:@"Incorrect Email or Password"];
+        } else {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        }
+        NSLog(@"Error signing in: %@", error);
+    }];
+}
 
 #pragma mark -
 #pragma mark View lifecycle methods
@@ -32,8 +53,7 @@
 
 - (IBAction)signInButtonPressed:(id)sender
 {
-    [[SPLUser currentUser] signInWithToken:@"1234567890"];
-    [self.delegate signInViewControllerDidSignIn:self];
+    [self signInWithEmail:self.emailTextField.text password:self.passwordTextField.text];
 }
 
 @end

@@ -25,9 +25,10 @@
     return [RSSecrets stringForKey:SPLAuthTokenKey] != nil;
 }
 
-- (void)signInWithToken:(NSString *)token;
+- (void)signInWithUserID:(NSInteger )userID token:(NSString *)token
 {
     [RSSecrets setString:token forKey:SPLAuthTokenKey];
+    [RSSecrets setString:[NSString stringWithFormat:@"%d", userID] forKey: SPLAuthUserID];
 }
 
 - (void)signOut

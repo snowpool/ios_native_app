@@ -10,11 +10,14 @@
 
 @interface SPLUser : NSObject
 
+@property (nonatomic, readonly) NSString *token;
+@property (nonatomic, readonly) NSInteger userID;
+
 + (instancetype)currentUser;
 
 @property (nonatomic, readonly) BOOL isAuthenticated;
 
-- (void)signInWithToken:(NSString *)token;
+- (void)signInWithUserID:(NSInteger )userID token:(NSString *)token;
 - (void)signOut;
 
 @end

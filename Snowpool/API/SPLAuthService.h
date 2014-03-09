@@ -10,4 +10,8 @@
 
 @interface SPLAuthService : NSObject
 
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password
+                  success:(void (^)(NSString *token, NSInteger userID))success
+                  failure:(void (^)(NSError *error, NSInteger statusCode))failure;
+
 @end

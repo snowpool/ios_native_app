@@ -7,7 +7,8 @@
 //
 
 #define SPLAuthTokenKey @"SPLAuthTokenKey"
-#define SPLServiceBaseURL @"http://api.snowpool.org:3000"
+#define SPLAuthUserID @"SPLAuthUserID"
+#define SPLServiceBaseURL @"http://api.snowpooltest.org:3000"
 
 #ifdef DEBUG
 #define DebugLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
