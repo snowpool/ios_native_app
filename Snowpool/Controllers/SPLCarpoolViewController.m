@@ -19,6 +19,19 @@
 
 NSString * const kCarpoolActionSendMessage = @"Send Message";
 
+- (void)displayCarpool
+{
+    self.dateLeavingLabel.text = self.carpool.start;
+    self.dateReturningLabel.text = self.carpool.dateReturning;
+    self.nameLabel.text = self.carpool.name;
+    self.spacesLabel.text = [NSString stringWithFormat:@"%d", self.carpool.spacesFree];
+    self.telephoneLabel.text = self.carpool.telephone;
+    self.drivenHereBeforeLabel.text = self.carpool.hasDrivenBefore ? @"Yes" : @"No";
+    self.leavingFromLabel.text = self.carpool.leavingFrom;
+    
+    
+}
+
 #pragma mark -
 #pragma mark View lifecycle methods
 
@@ -26,20 +39,8 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 {
     [super viewDidLoad];
     
-    self.carpoolDetails = @[@{@"Date Leaving": @"8 Mar 2014"},
-                            @{@"Date Returning": @"8 Mar 2014"},
-                            @{@"Name": @"Patrick - Snowpool"},
-                            @{@"Spaces": @"1"},
-                            @{@"Telephone": @"123456"},
-                            @{@"Driven Here Before": @"No"},
-                            @{@"Leaving From": @"Christchurch"}
-                            ];
-    
-    DebugLog(@"Selected carpool: %@", self.carpool.title);
+    [self displayCarpool];
 }
-
-#pragma mark -
-#pragma mark View lifecycle methods
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -50,57 +51,12 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     }
 }
 
-#pragma mark -
-#pragma mark UITableView methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return self.carpoolDetails.count;
-    } else {
-        return 1;
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *DetailCellIdentifier = @"CarpoolDetailCell";
-    static NSString *NotesCellIdentifier = @"CarpoolNotesCell";
-    
-    UITableViewCell *cell = nil;
-    if (indexPath.section == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:DetailCellIdentifier];
-        NSDictionary *carpoolDetail = self.carpoolDetails[indexPath.row];
-        cell.textLabel.text = [[carpoolDetail allKeys] firstObject];
-        cell.detailTextLabel.text = [[carpoolDetail allValues] firstObject];
-        
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:NotesCellIdentifier];
-    }
-    
-    return cell;
-}
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return @"Carpool to Mt. Cheeseman";
+        return [NSString stringWithFormat:@"Carpool To %@", self.carpool.fieldName];
     } else {
         return @"Notes";
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0) {
-        return 44;
-    } else {
-        return 72;
     }
 }
 

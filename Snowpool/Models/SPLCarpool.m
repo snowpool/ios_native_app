@@ -27,8 +27,9 @@
         _title = dict[@"title"];
         _start = dict[@"start"];
         _isSeeking = [dict[@"seeking"] boolValue];
-        _leavingFrom = dict[@"leavingFrom"];
+        _leavingFrom = dict[@"returning"];
         _name = dict[@"name"];
+        _dateReturning = dict[@"dateReturning"];
         _fieldName = dict[@"fieldName"];
         _message = dict[@"message"];
         _telephone = dict[@"telephone"];

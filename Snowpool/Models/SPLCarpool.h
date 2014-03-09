@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSInteger carpoolID;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *start;
+@property (nonatomic, readonly) NSString *dateReturning;
 @property (nonatomic, readonly) NSString *leavingFrom;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *fieldName;
