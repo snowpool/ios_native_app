@@ -57,7 +57,7 @@
                          success:(void (^)())success
                          failure:(void (^)(NSError *error))failure
 {
-    [_manager GET:@"/pools.js"
+    [_manager POST:@"/pools.js"
        parameters:@{
                     @"token": [SPLUser currentUser].token,
                     @"pool": @{
