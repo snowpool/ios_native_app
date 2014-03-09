@@ -12,6 +12,7 @@
 #import "SVProgressHUD.h"
 #import "SPLCarpoolService.h"
 #import "SPLCarpool.h"
+#import "SPLCarpoolViewController.h"
 
 @interface SPLDashboardViewController ()
 
@@ -72,6 +73,13 @@
     }];
 }
 
+- (SPLCarpool *)carpoolAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *startDate = [self.groupedDates objectAtIndex:indexPath.section];
+    NSArray *carpools = [self.carpoolsGroupedByDate objectForKey:startDate];
+    return carpools[indexPath.row];
+}
+
 #pragma mark -
 #pragma mark View lifecycle methods
 
@@ -125,6 +133,10 @@
         UINavigationController *navController = segue.destinationViewController;
         SPLSelectCountryViewController *controller = (SPLSelectCountryViewController *)navController.topViewController;
         controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"CarpoolDetails"]) {
+        SPLCarpoolViewController *controller = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender];
+        controller.carpool = [self carpoolAtIndexPath:indexPath];
     }
 }
 
@@ -149,9 +161,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSString *startDate = [self.groupedDates objectAtIndex:indexPath.section];
-    NSArray *carpools = [self.carpoolsGroupedByDate objectForKey:startDate];
-    SPLCarpool *carpool = carpools[indexPath.row];
+    SPLCarpool *carpool = [self carpoolAtIndexPath:indexPath];
     cell.textLabel.text = carpool.title;
     
     return cell;

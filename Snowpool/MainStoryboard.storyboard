@@ -67,7 +67,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YU7-sJ-sir" kind="push" id="Xrq-Pd-ShB"/>
+                                    <segue destination="YU7-sJ-sir" kind="push" identifier="CarpoolDetails" id="Xrq-Pd-ShB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

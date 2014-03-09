@@ -34,6 +34,8 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
                             @{@"Driven Here Before": @"No"},
                             @{@"Leaving From": @"Christchurch"}
                             ];
+    
+    DebugLog(@"Selected carpool: %@", self.carpool.title);
 }
 
 #pragma mark -
