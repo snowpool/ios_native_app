@@ -9,6 +9,7 @@
 #import "SPLCarpoolService.h"
 #import "SPLCarpool.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "SPLUser.h"
 
 @interface SPLCarpoolService ()
 
@@ -44,4 +45,38 @@
            }];
 }
 
+- (void)createCarpoolWithFieldID:(NSInteger)fieldID
+                     dateLeaving:(NSDate *)dateLeaving
+                   dateReturning:(NSDate *)dateReturning
+                            name:(NSString *)name
+                      spacesFree:(NSInteger)spacesFree
+                     leavingFrom:(NSString *)leavingFrom
+                       telephone:(NSString *)telephone
+                   carpoolWanted:(Boolean)carpoolWanted
+                drivenHereBefore:(Boolean)drivenHereBefore
+                         message:(NSString *)message
+                         success:(void (^)())success
+                         failure:(void (^)(NSError *error))failure
+{
+    [_manager GET:@"/pools.js"
+       parameters:@{
+                    @"token": [SPLUser currentUser].token,
+                    @"pool": @{
+                            @"leaving_from": leavingFrom,
+                            @"field_id": @(fieldID),
+                            @"leaving_date": dateLeaving,
+                            @"returning_date": dateReturning,
+                            @"spaces_free": @(spacesFree),
+                            @"telephone": telephone,
+                            @"seeking": @(carpoolWanted),
+                            @"message": message,
+                            @"driven_here_before": @(drivenHereBefore)
+                            }
+                    }
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              success();
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              failure(error);
+          }];
+}
 @end

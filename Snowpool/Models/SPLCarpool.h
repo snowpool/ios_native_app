@@ -10,7 +10,6 @@
 
 @interface SPLCarpool : NSObject
 
-
 @property (nonatomic, readonly) NSInteger carpoolID;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *start;
