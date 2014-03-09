@@ -20,8 +20,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *telephoneLabel;
 @property (nonatomic, weak) IBOutlet UILabel *drivenHereBeforeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *leavingFromLabel;
-@property (nonatomic, weak) IBOutlet UILabel *notesLabel;
-
+@property (nonatomic, weak) IBOutlet UITextView *notesTextView;
 
 - (IBAction)actionButtonPressed:(id)sender;
 

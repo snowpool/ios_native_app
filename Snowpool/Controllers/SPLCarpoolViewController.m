@@ -28,8 +28,7 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     self.telephoneLabel.text = self.carpool.telephone;
     self.drivenHereBeforeLabel.text = self.carpool.hasDrivenBefore ? @"Yes" : @"No";
     self.leavingFromLabel.text = self.carpool.leavingFrom;
-    
-    
+    self.notesTextView.text = self.carpool.message;
 }
 
 #pragma mark -
@@ -51,12 +50,25 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     }
 }
 
+#pragma mark -
+#pragma mark UITableView methods
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
         return [NSString stringWithFormat:@"Carpool To %@", self.carpool.fieldName];
     } else {
         return @"Notes";
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1 && self.carpool.message.length > 0) {
+        CGRect textRect = [self.carpool.message boundingRectWithSize:CGSizeMake(self.notesTextView.frame.size.width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: self.notesTextView.font} context:nil];
+        return textRect.size.height + 28;
+    } else {
+        return 44.f;
     }
 }
 

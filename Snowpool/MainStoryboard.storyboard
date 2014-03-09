@@ -864,6 +864,21 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QC3-VT-paS" id="cfQ-lS-c2s">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Test text" translatesAutoresizingMaskIntoConstraints="NO" id="YPl-gZ-Gys">
+                                                    <rect key="frame" x="8" y="4" width="304" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YPl-gZ-Gys" firstAttribute="top" secondItem="cfQ-lS-c2s" secondAttribute="top" constant="4" id="08s-QH-mgd"/>
+                                                <constraint firstAttribute="bottom" secondItem="YPl-gZ-Gys" secondAttribute="bottom" constant="4" id="6of-6G-lfZ"/>
+                                                <constraint firstItem="YPl-gZ-Gys" firstAttribute="leading" secondItem="cfQ-lS-c2s" secondAttribute="leading" constant="8" id="ni2-jQ-8dR"/>
+                                                <constraint firstAttribute="trailing" secondItem="YPl-gZ-Gys" secondAttribute="trailing" constant="8" id="ruZ-z9-rbl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -887,6 +902,7 @@
                         <outlet property="drivenHereBeforeLabel" destination="OKc-dh-VuS" id="cJo-NR-HLu"/>
                         <outlet property="leavingFromLabel" destination="3V1-5n-heJ" id="VoD-PR-sf9"/>
                         <outlet property="nameLabel" destination="odA-Nk-lGU" id="hLd-bH-cMR"/>
+                        <outlet property="notesTextView" destination="YPl-gZ-Gys" id="9EE-yD-SQC"/>
                         <outlet property="spacesLabel" destination="s1p-Nh-S6c" id="STW-OG-DjG"/>
                         <outlet property="telephoneLabel" destination="L1m-QX-Y8m" id="DY0-Uf-9oX"/>
                         <segue destination="Tzd-Yd-VQ1" kind="modal" identifier="SendMessage" id="Lle-Xt-BPt"/>
