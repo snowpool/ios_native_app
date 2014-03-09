@@ -68,7 +68,7 @@
     defaults.selectedCountryKey = self.sortedCountryKeys[indexPath.row];
     [defaults synchronize];
     DebugLog(@"Selected country with key %@", defaults.selectedCountryKey);
-
+    [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidChangeCountry object:nil];
     [self.delegate selectCountryViewControllerDidChangeCountry:self];
 }
 

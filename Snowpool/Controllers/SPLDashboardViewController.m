@@ -87,6 +87,10 @@
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(countryDidChange:)
+                                                 name:SPLDidChangeCountry object:nil];
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
                             action:@selector(tableViewDidStartRefresh:)
@@ -95,6 +99,11 @@
     if ([SPLUserDefaults standardUserDefaults].selectedCountryKey == nil) {
         [self performSegueWithIdentifier:@"SelectCountry" sender:self];
     }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -193,6 +202,11 @@
 {
     [self loadGroupedCarpools];
     [self.tableView reloadData];
+}
+
+- (void)countryDidChange:(NSNotification *)notification
+{
+    [self requestCarpools];
 }
 
 #pragma mark -
