@@ -679,7 +679,7 @@
         <scene sceneID="Rb7-qV-oxp">
             <objects>
                 <tableViewController id="fep-ZS-kqO" customClass="SPLCarpoolViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uxi-Ji-jzq">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uxi-Ji-jzq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -694,7 +694,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Date Leaving" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oXM-gw-Qm4">
-                                                    <rect key="frame" x="15" y="11" width="33" height="21"/>
+                                                    <rect key="frame" x="15" y="11" width="101" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -874,7 +874,13 @@
                             <outlet property="delegate" destination="fep-ZS-kqO" id="0jy-mA-ZVs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Carpool" id="Kq1-oc-pLB"/>
+                    <navigationItem key="navigationItem" title="Carpool" id="Kq1-oc-pLB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="e6R-96-CHc">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="fep-ZS-kqO" id="q1B-sr-sYj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLeavingLabel" destination="XQY-vF-TgQ" id="FKr-bQ-5dq"/>
                         <outlet property="dateReturningLabel" destination="Yfb-RQ-NYw" id="UrA-4J-T4K"/>
@@ -883,6 +889,7 @@
                         <outlet property="nameLabel" destination="odA-Nk-lGU" id="hLd-bH-cMR"/>
                         <outlet property="spacesLabel" destination="s1p-Nh-S6c" id="STW-OG-DjG"/>
                         <outlet property="telephoneLabel" destination="L1m-QX-Y8m" id="DY0-Uf-9oX"/>
+                        <segue destination="Tzd-Yd-VQ1" kind="modal" identifier="SendMessage" id="Lle-Xt-BPt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7YU-Xk-pm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
