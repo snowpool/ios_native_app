@@ -39,9 +39,7 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (self.carpool.userID == [SPLUser currentUser].userID){
-        self.navigationItem.rightBarButtonItem = nil;
-    }
+    
     [self displayCarpool];
 }
 
@@ -81,7 +79,13 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 
 - (IBAction)actionButtonPressed:(id)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
+    UIActionSheet *actionSheet = nil;
+
+    if (self.carpool.userID == [SPLUser currentUser].userID){
+        actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:nil, nil];
+    } else {
+        actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
+    }
     [actionSheet showFromBarButtonItem:(UIBarButtonItem *)sender animated:YES];
 }
 
@@ -89,6 +93,8 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 {
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:kCarpoolActionSendMessage]) {
         [self performSegueWithIdentifier:@"SendMessage" sender:self];
+    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Delete"]) {
+        NSLog(@"Holy deleted carpool batman!!");
     }
 }
 
