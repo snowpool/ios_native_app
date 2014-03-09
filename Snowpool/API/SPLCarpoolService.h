@@ -28,4 +28,9 @@
                             success:(void (^)())success
                             failure:(void (^)(NSError *error))failure;
 
+- (void)sendMessageToCarpoolWithID:(NSInteger)carpoolID
+                           message:(NSString *)message
+                           success:(void (^)())success
+                           failure:(void (^)(NSError *error))failure;
+
 @end

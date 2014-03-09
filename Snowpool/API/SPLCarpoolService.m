@@ -78,4 +78,20 @@
               failure(error);
           }];
 }
+
+- (void)sendMessageToCarpoolWithID:(NSInteger)carpoolID message:(NSString *)message
+                           success:(void (^)())success
+                           failure:(void (^)(NSError *error))failure;
+{
+    [_manager POST:[NSString stringWithFormat:@"/pools/%d/sendmessage.js", carpoolID]
+        parameters:@{
+                     @"token": [SPLUser currentUser].token,
+                     @"message": message
+                     }
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              success();
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              failure(error);
+          }];
+}
 @end

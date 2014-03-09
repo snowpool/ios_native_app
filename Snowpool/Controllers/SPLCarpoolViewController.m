@@ -8,6 +8,7 @@
 
 #import "SPLCarpoolViewController.h"
 #import "SVProgressHUD.h"
+#import "SPLCarpoolService.h"
 
 @interface SPLCarpoolViewController ()
 
@@ -98,9 +99,16 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 
 - (void)sendMessageViewController:(SPLSendMessageViewController *)controller didSelectSendWithMessage:(NSString *)message
 {
-    NSLog(@"Send message with text: %@", message);
-    [SVProgressHUD showSuccessWithStatus:@"Message Sent"];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [SVProgressHUD showWithStatus:@"Sending Message"];
+    SPLCarpoolService *carpoolService = [[SPLCarpoolService alloc] init];
+    [carpoolService sendMessageToCarpoolWithID:self.carpool.carpoolID message:message
+                                       success:^() {
+                            [SVProgressHUD dismiss];
+                        } failure:^(NSError *error) {
+                            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+                            NSLog(@"Error signing in: %@", error);
+                        }];
+
 }
 
 @end
