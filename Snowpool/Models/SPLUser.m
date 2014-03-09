@@ -22,7 +22,17 @@
 
 - (BOOL)isAuthenticated
 {
-    return [RSSecrets stringForKey:SPLAuthTokenKey] != nil;
+    return self.token != nil;
+}
+
+- (NSInteger)userID
+{
+    return [[RSSecrets stringForKey:SPLAuthUserID] integerValue];
+}
+
+- (NSString *)token
+{
+    return [RSSecrets stringForKey:SPLAuthTokenKey];
 }
 
 - (void)signInWithUserID:(NSInteger )userID token:(NSString *)token

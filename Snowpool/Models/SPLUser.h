@@ -12,10 +12,9 @@
 
 @property (nonatomic, readonly) NSString *token;
 @property (nonatomic, readonly) NSInteger userID;
+@property (nonatomic, readonly) BOOL isAuthenticated;
 
 + (instancetype)currentUser;
-
-@property (nonatomic, readonly) BOOL isAuthenticated;
 
 - (void)signInWithUserID:(NSInteger )userID token:(NSString *)token;
 - (void)signOut;
