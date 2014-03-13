@@ -94,4 +94,10 @@
               failure(error);
           }];
 }
+
+- (void)cancel
+{
+    [_manager.operationQueue cancelAllOperations];
+}
+
 @end

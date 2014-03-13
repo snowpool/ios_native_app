@@ -13,6 +13,8 @@
 
 @interface SPLSignInViewController ()
 
+@property (nonatomic, strong) SPLAuthService *authService;
+
 @end
 
 @implementation SPLSignInViewController
@@ -20,8 +22,7 @@
 - (void)signInWithEmail:(NSString *)email password:(NSString *)password
 {
     [SVProgressHUD showWithStatus:@"Signing In"];
-    SPLAuthService *authService = [[SPLAuthService alloc] init];
-    [authService loginWithEmail:email password:password
+    [_authService loginWithEmail:email password:password
       success:^(NSString *token, NSInteger userID) {
           [[SPLUser currentUser] signInWithUserID:userID token: token];
           [SVProgressHUD dismiss];
@@ -43,11 +44,14 @@
 {
     [super viewDidLoad];
     
+    self.authService = [[SPLAuthService alloc] init];
     [self.emailTextField becomeFirstResponder];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender
 {
+    [_authService cancel];
+    [SVProgressHUD dismiss];
     [self.delegate signInViewControllerDidCancel:self];
 }
 
