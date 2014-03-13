@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62AE763519384A4694EE3A00 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C4D3A5D13A469684354E4F /* libPods.a */; };
 		6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */; };
 		6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */; };
 		6BE7A9B318CB0105008D49C9 /* SPLCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9B218CB0105008D49C9 /* SPLCountry.m */; };
@@ -27,34 +28,12 @@
 		EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B47F18CA7ACB0048CE7C /* SPLDashboardViewController.m */; };
 		EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48518CA844D0048CE7C /* SPLCarpoolViewController.m */; };
 		EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */; };
-		EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */; };
 		EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */; };
 		EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49418CAEFC90048CE7C /* SPLSignInViewController.m */; };
 		EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49718CAF2C10048CE7C /* SPLRoundedButton.m */; };
 		EA68B49C18CB0FE80048CE7C /* RSSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49B18CB0FE80048CE7C /* RSSecrets.m */; };
 		EA68B49F18CB11BF0048CE7C /* SPLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B49E18CB11BF0048CE7C /* SPLUser.m */; };
 		EA68B4A218CB14560048CE7C /* SPLAddCarpoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */; };
-		EA68B4A718CB23220048CE7C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4A418CB23220048CE7C /* SVProgressHUD.bundle */; };
-		EA68B4A818CB23220048CE7C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4A618CB23220048CE7C /* SVProgressHUD.m */; };
-		EA68B4D518CBCD9C0048CE7C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4AC18CBCD9C0048CE7C /* AFHTTPRequestOperation.m */; };
-		EA68B4D618CBCD9C0048CE7C /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4AE18CBCD9C0048CE7C /* AFHTTPRequestOperationManager.m */; };
-		EA68B4D718CBCD9C0048CE7C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4B018CBCD9C0048CE7C /* AFHTTPSessionManager.m */; };
-		EA68B4D818CBCD9C0048CE7C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4B318CBCD9C0048CE7C /* AFNetworkReachabilityManager.m */; };
-		EA68B4D918CBCD9C0048CE7C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4B518CBCD9C0048CE7C /* AFSecurityPolicy.m */; };
-		EA68B4DA18CBCD9C0048CE7C /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4B718CBCD9C0048CE7C /* AFURLConnectionOperation.m */; };
-		EA68B4DB18CBCD9C0048CE7C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4B918CBCD9C0048CE7C /* AFURLRequestSerialization.m */; };
-		EA68B4DC18CBCD9C0048CE7C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4BB18CBCD9C0048CE7C /* AFURLResponseSerialization.m */; };
-		EA68B4DD18CBCD9C0048CE7C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4BD18CBCD9C0048CE7C /* AFURLSessionManager.m */; };
-		EA68B4DE18CBCD9C0048CE7C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4BE18CBCD9C0048CE7C /* LICENSE */; };
-		EA68B4E018CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4C218CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.m */; };
-		EA68B4E118CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4C418CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.m */; };
-		EA68B4E218CBCD9C0048CE7C /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4C618CBCD9C0048CE7C /* UIAlertView+AFNetworking.m */; };
-		EA68B4E318CBCD9C0048CE7C /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4C818CBCD9C0048CE7C /* UIButton+AFNetworking.m */; };
-		EA68B4E418CBCD9C0048CE7C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4CA18CBCD9C0048CE7C /* UIImageView+AFNetworking.m */; };
-		EA68B4E518CBCD9C0048CE7C /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4CD18CBCD9C0048CE7C /* UIProgressView+AFNetworking.m */; };
-		EA68B4E618CBCD9C0048CE7C /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4CF18CBCD9C0048CE7C /* UIWebView+AFNetworking.m */; };
-		EA68B4E718CBCD9C0048CE7C /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA68B4D118CBCD9C0048CE7C /* LICENCE.txt */; };
-		EA68B4E818CBCD9C0048CE7C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4D318CBCD9C0048CE7C /* Reachability.m */; };
 		EA68B4ED18CBCE310048CE7C /* SPLCarpoolService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4EC18CBCE310048CE7C /* SPLCarpoolService.m */; };
 		EA68B4F018CBCE460048CE7C /* SPLAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4EF18CBCE460048CE7C /* SPLAuthService.m */; };
 		EA68B4F318CBD0630048CE7C /* SPLCarpool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4F218CBD0630048CE7C /* SPLCarpool.m */; };
@@ -71,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3221251ADB0E4812974ACEAA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		62C4D3A5D13A469684354E4F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE7A9AB18CAA10E008D49C9 /* SPLSelectCountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSelectCountryViewController.h; sourceTree = "<group>"; };
 		6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSelectCountryViewController.m; sourceTree = "<group>"; };
 		6BE7A9AE18CAF84D008D49C9 /* SPLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSettingsViewController.h; sourceTree = "<group>"; };
@@ -103,8 +84,6 @@
 		EA68B48718CA88D00048CE7C /* SPLSendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSendMessageViewController.h; sourceTree = "<group>"; };
 		EA68B48818CA88D00048CE7C /* SPLSendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSendMessageViewController.m; sourceTree = "<group>"; };
 		EA68B48A18CAAC5C0048CE7C /* SPLConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPLConstants.h; sourceTree = "<group>"; };
-		EA68B48D18CAAE960048CE7C /* GVUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUserDefaults.h; sourceTree = "<group>"; };
-		EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserDefaults.m; sourceTree = "<group>"; };
 		EA68B49018CAAEBA0048CE7C /* SPLUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLUserDefaults.h; sourceTree = "<group>"; };
 		EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLUserDefaults.m; sourceTree = "<group>"; };
 		EA68B49318CAEFC90048CE7C /* SPLSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSignInViewController.h; sourceTree = "<group>"; };
@@ -117,49 +96,6 @@
 		EA68B49E18CB11BF0048CE7C /* SPLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLUser.m; sourceTree = "<group>"; };
 		EA68B4A018CB14560048CE7C /* SPLAddCarpoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAddCarpoolViewController.h; sourceTree = "<group>"; };
 		EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAddCarpoolViewController.m; sourceTree = "<group>"; };
-		EA68B4A418CB23220048CE7C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		EA68B4A518CB23220048CE7C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		EA68B4A618CB23220048CE7C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		EA68B4AB18CBCD9C0048CE7C /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		EA68B4AC18CBCD9C0048CE7C /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		EA68B4AD18CBCD9C0048CE7C /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		EA68B4AE18CBCD9C0048CE7C /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		EA68B4AF18CBCD9C0048CE7C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		EA68B4B018CBCD9C0048CE7C /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		EA68B4B118CBCD9C0048CE7C /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		EA68B4B218CBCD9C0048CE7C /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		EA68B4B318CBCD9C0048CE7C /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		EA68B4B418CBCD9C0048CE7C /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		EA68B4B518CBCD9C0048CE7C /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		EA68B4B618CBCD9C0048CE7C /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		EA68B4B718CBCD9C0048CE7C /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		EA68B4B818CBCD9C0048CE7C /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		EA68B4B918CBCD9C0048CE7C /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		EA68B4BA18CBCD9C0048CE7C /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		EA68B4BB18CBCD9C0048CE7C /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		EA68B4BC18CBCD9C0048CE7C /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		EA68B4BD18CBCD9C0048CE7C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		EA68B4BE18CBCD9C0048CE7C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		EA68B4BF18CBCD9C0048CE7C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		EA68B4C118CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		EA68B4C218CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		EA68B4C318CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		EA68B4C418CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		EA68B4C518CBCD9C0048CE7C /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
-		EA68B4C618CBCD9C0048CE7C /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
-		EA68B4C718CBCD9C0048CE7C /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
-		EA68B4C818CBCD9C0048CE7C /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		EA68B4C918CBCD9C0048CE7C /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		EA68B4CA18CBCD9C0048CE7C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		EA68B4CB18CBCD9C0048CE7C /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		EA68B4CC18CBCD9C0048CE7C /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		EA68B4CD18CBCD9C0048CE7C /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		EA68B4CE18CBCD9C0048CE7C /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		EA68B4CF18CBCD9C0048CE7C /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		EA68B4D118CBCD9C0048CE7C /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
-		EA68B4D218CBCD9C0048CE7C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		EA68B4D318CBCD9C0048CE7C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		EA68B4D418CBCD9C0048CE7C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EA68B4EB18CBCE310048CE7C /* SPLCarpoolService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLCarpoolService.h; sourceTree = "<group>"; };
 		EA68B4EC18CBCE310048CE7C /* SPLCarpoolService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLCarpoolService.m; sourceTree = "<group>"; };
 		EA68B4EE18CBCE460048CE7C /* SPLAuthService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAuthService.h; sourceTree = "<group>"; };
@@ -176,6 +112,7 @@
 				EA68B44B18CA71C30048CE7C /* CoreGraphics.framework in Frameworks */,
 				EA68B44D18CA71C30048CE7C /* UIKit.framework in Frameworks */,
 				EA68B44918CA71C30048CE7C /* Foundation.framework in Frameworks */,
+				62AE763519384A4694EE3A00 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +136,7 @@
 				EA68B46718CA71C30048CE7C /* SnowpoolTests */,
 				EA68B44718CA71C30048CE7C /* Frameworks */,
 				EA68B44618CA71C30048CE7C /* Products */,
+				3221251ADB0E4812974ACEAA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +156,7 @@
 				EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */,
 				EA68B44C18CA71C30048CE7C /* UIKit.framework */,
 				EA68B46118CA71C30048CE7C /* XCTest.framework */,
+				62C4D3A5D13A469684354E4F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -327,23 +266,10 @@
 		EA68B48B18CAAE960048CE7C /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				EA68B4A918CBCD9C0048CE7C /* AFNetworking */,
-				EA68B4D018CBCD9C0048CE7C /* Reachability */,
-				EA68B4A318CB23220048CE7C /* SVProgressHUD */,
-				EA68B48C18CAAE960048CE7C /* GVUserDefaults */,
 				EA68B49918CB0FE80048CE7C /* RSSecrets */,
 			);
 			path = Externals;
 			sourceTree = SOURCE_ROOT;
-		};
-		EA68B48C18CAAE960048CE7C /* GVUserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				EA68B48D18CAAE960048CE7C /* GVUserDefaults.h */,
-				EA68B48E18CAAE960048CE7C /* GVUserDefaults.m */,
-			);
-			path = GVUserDefaults;
-			sourceTree = "<group>";
 		};
 		EA68B49918CB0FE80048CE7C /* RSSecrets */ = {
 			isa = PBXGroup;
@@ -352,86 +278,6 @@
 				EA68B49B18CB0FE80048CE7C /* RSSecrets.m */,
 			);
 			path = RSSecrets;
-			sourceTree = "<group>";
-		};
-		EA68B4A318CB23220048CE7C /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				EA68B4A418CB23220048CE7C /* SVProgressHUD.bundle */,
-				EA68B4A518CB23220048CE7C /* SVProgressHUD.h */,
-				EA68B4A618CB23220048CE7C /* SVProgressHUD.m */,
-			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		EA68B4A918CBCD9C0048CE7C /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				EA68B4AA18CBCD9C0048CE7C /* AFNetworking */,
-				EA68B4BE18CBCD9C0048CE7C /* LICENSE */,
-				EA68B4BF18CBCD9C0048CE7C /* README.md */,
-				EA68B4C018CBCD9C0048CE7C /* UIKit+AFNetworking */,
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		EA68B4AA18CBCD9C0048CE7C /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				EA68B4AB18CBCD9C0048CE7C /* AFHTTPRequestOperation.h */,
-				EA68B4AC18CBCD9C0048CE7C /* AFHTTPRequestOperation.m */,
-				EA68B4AD18CBCD9C0048CE7C /* AFHTTPRequestOperationManager.h */,
-				EA68B4AE18CBCD9C0048CE7C /* AFHTTPRequestOperationManager.m */,
-				EA68B4AF18CBCD9C0048CE7C /* AFHTTPSessionManager.h */,
-				EA68B4B018CBCD9C0048CE7C /* AFHTTPSessionManager.m */,
-				EA68B4B118CBCD9C0048CE7C /* AFNetworking.h */,
-				EA68B4B218CBCD9C0048CE7C /* AFNetworkReachabilityManager.h */,
-				EA68B4B318CBCD9C0048CE7C /* AFNetworkReachabilityManager.m */,
-				EA68B4B418CBCD9C0048CE7C /* AFSecurityPolicy.h */,
-				EA68B4B518CBCD9C0048CE7C /* AFSecurityPolicy.m */,
-				EA68B4B618CBCD9C0048CE7C /* AFURLConnectionOperation.h */,
-				EA68B4B718CBCD9C0048CE7C /* AFURLConnectionOperation.m */,
-				EA68B4B818CBCD9C0048CE7C /* AFURLRequestSerialization.h */,
-				EA68B4B918CBCD9C0048CE7C /* AFURLRequestSerialization.m */,
-				EA68B4BA18CBCD9C0048CE7C /* AFURLResponseSerialization.h */,
-				EA68B4BB18CBCD9C0048CE7C /* AFURLResponseSerialization.m */,
-				EA68B4BC18CBCD9C0048CE7C /* AFURLSessionManager.h */,
-				EA68B4BD18CBCD9C0048CE7C /* AFURLSessionManager.m */,
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		EA68B4C018CBCD9C0048CE7C /* UIKit+AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				EA68B4C118CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.h */,
-				EA68B4C218CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.m */,
-				EA68B4C318CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.h */,
-				EA68B4C418CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.m */,
-				EA68B4C518CBCD9C0048CE7C /* UIAlertView+AFNetworking.h */,
-				EA68B4C618CBCD9C0048CE7C /* UIAlertView+AFNetworking.m */,
-				EA68B4C718CBCD9C0048CE7C /* UIButton+AFNetworking.h */,
-				EA68B4C818CBCD9C0048CE7C /* UIButton+AFNetworking.m */,
-				EA68B4C918CBCD9C0048CE7C /* UIImageView+AFNetworking.h */,
-				EA68B4CA18CBCD9C0048CE7C /* UIImageView+AFNetworking.m */,
-				EA68B4CB18CBCD9C0048CE7C /* UIKit+AFNetworking.h */,
-				EA68B4CC18CBCD9C0048CE7C /* UIProgressView+AFNetworking.h */,
-				EA68B4CD18CBCD9C0048CE7C /* UIProgressView+AFNetworking.m */,
-				EA68B4CE18CBCD9C0048CE7C /* UIWebView+AFNetworking.h */,
-				EA68B4CF18CBCD9C0048CE7C /* UIWebView+AFNetworking.m */,
-			);
-			path = "UIKit+AFNetworking";
-			sourceTree = "<group>";
-		};
-		EA68B4D018CBCD9C0048CE7C /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				EA68B4D118CBCD9C0048CE7C /* LICENCE.txt */,
-				EA68B4D218CBCD9C0048CE7C /* Reachability.h */,
-				EA68B4D318CBCD9C0048CE7C /* Reachability.m */,
-				EA68B4D418CBCD9C0048CE7C /* README.md */,
-			);
-			path = Reachability;
 			sourceTree = "<group>";
 		};
 		EA68B4EA18CBCDFA0048CE7C /* API */ = {
@@ -452,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA68B47118CA71C30048CE7C /* Build configuration list for PBXNativeTarget "Snowpool" */;
 			buildPhases = (
+				C6542CC115A54C1DBD085037 /* Check Pods Manifest.lock */,
 				EA68B44118CA71C30048CE7C /* Sources */,
 				EA68B44218CA71C30048CE7C /* Frameworks */,
 				EA68B44318CA71C30048CE7C /* Resources */,
+				7120FEB6D2274098BE1D5BD5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -524,9 +372,6 @@
 				EA68B47D18CA7A5B0048CE7C /* MainStoryboard.storyboard in Resources */,
 				EA68B45318CA71C30048CE7C /* InfoPlist.strings in Resources */,
 				EA68B45B18CA71C30048CE7C /* Images.xcassets in Resources */,
-				EA68B4E718CBCD9C0048CE7C /* LICENCE.txt in Resources */,
-				EA68B4A718CB23220048CE7C /* SVProgressHUD.bundle in Resources */,
-				EA68B4DE18CBCD9C0048CE7C /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,36 +385,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7120FEB6D2274098BE1D5BD5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6542CC115A54C1DBD085037 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EA68B44118CA71C30048CE7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA68B4E518CBCD9C0048CE7C /* UIProgressView+AFNetworking.m in Sources */,
-				EA68B4E418CBCD9C0048CE7C /* UIImageView+AFNetworking.m in Sources */,
-				EA68B4D518CBCD9C0048CE7C /* AFHTTPRequestOperation.m in Sources */,
 				EA68B45918CA71C30048CE7C /* SPLAppDelegate.m in Sources */,
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
-				EA68B4E618CBCD9C0048CE7C /* UIWebView+AFNetworking.m in Sources */,
 				EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */,
 				EA68B49C18CB0FE80048CE7C /* RSSecrets.m in Sources */,
 				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
-				EA68B4E118CBCD9C0048CE7C /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */,
-				EA68B4D718CBCD9C0048CE7C /* AFHTTPSessionManager.m in Sources */,
-				EA68B4E018CBCD9C0048CE7C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */,
-				EA68B4E218CBCD9C0048CE7C /* UIAlertView+AFNetworking.m in Sources */,
 				EA68B4A218CB14560048CE7C /* SPLAddCarpoolViewController.m in Sources */,
-				EA68B4E818CBCD9C0048CE7C /* Reachability.m in Sources */,
-				EA68B4D818CBCD9C0048CE7C /* AFNetworkReachabilityManager.m in Sources */,
-				EA68B4DD18CBCD9C0048CE7C /* AFURLSessionManager.m in Sources */,
 				6BE7A9B618CBC247008D49C9 /* SPLSkiField.m in Sources */,
-				EA68B48F18CAAE960048CE7C /* GVUserDefaults.m in Sources */,
-				EA68B4DA18CBCD9C0048CE7C /* AFURLConnectionOperation.m in Sources */,
-				EA68B4DC18CBCD9C0048CE7C /* AFURLResponseSerialization.m in Sources */,
-				EA68B4A818CB23220048CE7C /* SVProgressHUD.m in Sources */,
-				EA68B4DB18CBCD9C0048CE7C /* AFURLRequestSerialization.m in Sources */,
 				EA68B4F018CBCE460048CE7C /* SPLAuthService.m in Sources */,
 				EA68B4ED18CBCE310048CE7C /* SPLCarpoolService.m in Sources */,
 				EA68B4F318CBD0630048CE7C /* SPLCarpool.m in Sources */,
@@ -578,9 +440,6 @@
 				EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
 				6BE7A9B318CB0105008D49C9 /* SPLCountry.m in Sources */,
-				EA68B4E318CBCD9C0048CE7C /* UIButton+AFNetworking.m in Sources */,
-				EA68B4D618CBCD9C0048CE7C /* AFHTTPRequestOperationManager.m in Sources */,
-				EA68B4D918CBCD9C0048CE7C /* AFSecurityPolicy.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +556,7 @@
 		};
 		EA68B47218CA71C30048CE7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3221251ADB0E4812974ACEAA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -710,6 +570,7 @@
 		};
 		EA68B47318CA71C30048CE7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3221251ADB0E4812974ACEAA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
