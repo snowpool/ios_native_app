@@ -22,6 +22,7 @@
 @property (nonatomic, weak) id<SPLSignInViewControllerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet UITextField *emailTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)signInButtonPressed:(id)sender;

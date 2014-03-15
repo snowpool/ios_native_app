@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22E2153318D3E1E4007C7999 /* SPLAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2153218D3E1E4007C7999 /* SPLAppearance.m */; };
+		22E2153618D3E385007C7999 /* UIButton+Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2153518D3E385007C7999 /* UIButton+Appearance.m */; };
 		62AE763519384A4694EE3A00 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C4D3A5D13A469684354E4F /* libPods.a */; };
 		6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AC18CAA10E008D49C9 /* SPLSelectCountryViewController.m */; };
 		6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22E2153118D3E1E4007C7999 /* SPLAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAppearance.h; sourceTree = "<group>"; };
+		22E2153218D3E1E4007C7999 /* SPLAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAppearance.m; sourceTree = "<group>"; };
+		22E2153418D3E385007C7999 /* UIButton+Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Appearance.h"; sourceTree = "<group>"; };
+		22E2153518D3E385007C7999 /* UIButton+Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Appearance.m"; sourceTree = "<group>"; };
 		3221251ADB0E4812974ACEAA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		62C4D3A5D13A469684354E4F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE7A9AB18CAA10E008D49C9 /* SPLSelectCountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSelectCountryViewController.h; sourceTree = "<group>"; };
@@ -259,6 +265,10 @@
 				EA68B48A18CAAC5C0048CE7C /* SPLConstants.h */,
 				EA68B49018CAAEBA0048CE7C /* SPLUserDefaults.h */,
 				EA68B49118CAAEBA0048CE7C /* SPLUserDefaults.m */,
+				22E2153118D3E1E4007C7999 /* SPLAppearance.h */,
+				22E2153218D3E1E4007C7999 /* SPLAppearance.m */,
+				22E2153418D3E385007C7999 /* UIButton+Appearance.h */,
+				22E2153518D3E385007C7999 /* UIButton+Appearance.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -436,11 +446,13 @@
 				EA68B4ED18CBCE310048CE7C /* SPLCarpoolService.m in Sources */,
 				EA68B4F318CBD0630048CE7C /* SPLCarpool.m in Sources */,
 				EA68B49F18CB11BF0048CE7C /* SPLUser.m in Sources */,
+				22E2153618D3E385007C7999 /* UIButton+Appearance.m in Sources */,
 				EA68B45518CA71C30048CE7C /* main.m in Sources */,
 				EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
 				6BE7A9B318CB0105008D49C9 /* SPLCountry.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
+				22E2153318D3E1E4007C7999 /* SPLAppearance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

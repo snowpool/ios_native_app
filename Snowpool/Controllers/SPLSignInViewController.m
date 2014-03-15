@@ -21,6 +21,7 @@
 
 - (void)signInWithEmail:(NSString *)email password:(NSString *)password
 {
+    self.loginButton.enabled = NO;
     [SVProgressHUD showWithStatus:@"Signing In"];
     [_authService loginWithEmail:email password:password
       success:^(NSString *token, NSInteger userID) {
@@ -33,6 +34,7 @@
         } else {
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         }
+        self.loginButton.enabled = YES;
         NSLog(@"Error signing in: %@", error);
     }];
 }
