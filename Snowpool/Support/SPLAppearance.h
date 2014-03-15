@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIButton+Appearance.h"
 
 @interface SPLAppearance : NSObject
 

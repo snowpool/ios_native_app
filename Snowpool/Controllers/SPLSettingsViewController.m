@@ -50,6 +50,11 @@
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
 #pragma mark -
 #pragma mark IBAction methods
 

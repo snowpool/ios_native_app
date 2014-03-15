@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22C0D43818D3FA7D00A21A5C /* SPLModalNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D43718D3FA7D00A21A5C /* SPLModalNavigationBar.m */; };
+		22C0D43B18D3FD5100A21A5C /* SPLModalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D43A18D3FD5100A21A5C /* SPLModalNavigationController.m */; };
+		22C0D43E18D3FDE800A21A5C /* SPLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D43D18D3FDE800A21A5C /* SPLNavigationController.m */; };
 		22E2153318D3E1E4007C7999 /* SPLAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2153218D3E1E4007C7999 /* SPLAppearance.m */; };
 		22E2153618D3E385007C7999 /* UIButton+Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2153518D3E385007C7999 /* UIButton+Appearance.m */; };
 		62AE763519384A4694EE3A00 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C4D3A5D13A469684354E4F /* libPods.a */; };
@@ -52,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22C0D43618D3FA7D00A21A5C /* SPLModalNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLModalNavigationBar.h; sourceTree = "<group>"; };
+		22C0D43718D3FA7D00A21A5C /* SPLModalNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLModalNavigationBar.m; sourceTree = "<group>"; };
+		22C0D43918D3FD5100A21A5C /* SPLModalNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLModalNavigationController.h; sourceTree = "<group>"; };
+		22C0D43A18D3FD5100A21A5C /* SPLModalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLModalNavigationController.m; sourceTree = "<group>"; };
+		22C0D43C18D3FDE800A21A5C /* SPLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLNavigationController.h; sourceTree = "<group>"; };
+		22C0D43D18D3FDE800A21A5C /* SPLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLNavigationController.m; sourceTree = "<group>"; };
 		22E2153118D3E1E4007C7999 /* SPLAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAppearance.h; sourceTree = "<group>"; };
 		22E2153218D3E1E4007C7999 /* SPLAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAppearance.m; sourceTree = "<group>"; };
 		22E2153418D3E385007C7999 /* UIButton+Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Appearance.h"; sourceTree = "<group>"; };
@@ -255,6 +264,12 @@
 			children = (
 				EA68B49618CAF2C10048CE7C /* SPLRoundedButton.h */,
 				EA68B49718CAF2C10048CE7C /* SPLRoundedButton.m */,
+				22C0D43618D3FA7D00A21A5C /* SPLModalNavigationBar.h */,
+				22C0D43718D3FA7D00A21A5C /* SPLModalNavigationBar.m */,
+				22C0D43918D3FD5100A21A5C /* SPLModalNavigationController.h */,
+				22C0D43A18D3FD5100A21A5C /* SPLModalNavigationController.m */,
+				22C0D43C18D3FDE800A21A5C /* SPLNavigationController.h */,
+				22C0D43D18D3FDE800A21A5C /* SPLNavigationController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,7 +449,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA68B45918CA71C30048CE7C /* SPLAppDelegate.m in Sources */,
+				22C0D43E18D3FDE800A21A5C /* SPLNavigationController.m in Sources */,
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
+				22C0D43818D3FA7D00A21A5C /* SPLModalNavigationBar.m in Sources */,
 				EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */,
 				EA68B49C18CB0FE80048CE7C /* RSSecrets.m in Sources */,
 				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
@@ -451,6 +468,7 @@
 				EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
 				6BE7A9B318CB0105008D49C9 /* SPLCountry.m in Sources */,
+				22C0D43B18D3FD5100A21A5C /* SPLModalNavigationController.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
 				22E2153318D3E1E4007C7999 /* SPLAppearance.m in Sources */,
 			);
