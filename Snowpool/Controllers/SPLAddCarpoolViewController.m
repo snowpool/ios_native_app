@@ -7,24 +7,45 @@
 //
 
 #import "SPLAddCarpoolViewController.h"
+#import "SPLCarpoolService.h"
 
 @interface SPLAddCarpoolViewController ()
+
+@property (nonatomic, strong) SPLCarpoolService *carpoolService;
 
 @end
 
 @implementation SPLAddCarpoolViewController
+
+- (void)createCarpool
+{
+    [SVProgressHUD showSuccessWithStatus:@"Carpool Created"];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark View lifecycle methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.carpoolService = [[SPLCarpoolService alloc] init];
+}
 
 #pragma mark -
 #pragma mark IBAction methods
 
 - (IBAction)cancelButtonPressed:(id)sender
 {
-    [self.delegate addCarpoolViewControllerDidCancel:self];
+    [_carpoolService cancel];
+    [SVProgressHUD dismiss];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)doneButtonPressed:(id)sender
 {
-    [self.delegate addCarpoolViewControllerDidAddCarpool:self];
+    [self createCarpool];
 }
 
 - (IBAction)viewWasTapped:(id)sender

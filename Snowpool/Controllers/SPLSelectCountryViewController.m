@@ -19,6 +19,13 @@
 
 @implementation SPLSelectCountryViewController
 
+NSString *const SPLCountryDidChangeNotification = @"SPLCountryDidChangeNotification";
+
+- (NSArray *)sortedCountryKeys
+{
+    return [self.countries.allKeys sortedArrayUsingSelector:@selector(compare:)];
+}
+
 #pragma mark -
 #pragma mark View lifecycle methods
 
@@ -27,11 +34,6 @@
     [super viewDidLoad];
     
     self.countries = [SPLCountry all];
-}
-
-- (NSArray *)sortedCountryKeys
-{
-    return [self.countries.allKeys sortedArrayUsingSelector:@selector(compare:)];
 }
 
 #pragma mark -
@@ -68,7 +70,7 @@
     defaults.selectedCountryKey = self.sortedCountryKeys[indexPath.row];
     [defaults synchronize];
     DebugLog(@"Selected country with key %@", defaults.selectedCountryKey);
-    [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidChangeCountry object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SPLCountryDidChangeNotification object:nil];
     [self.delegate selectCountryViewControllerDidChangeCountry:self];
 }
 

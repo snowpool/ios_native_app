@@ -12,6 +12,8 @@
 
 @implementation SPLUser
 
+NSString *const SPLUserAuthenticationDidChangeNotification = @"SPLUserAuthenticationDidChangeNotification";
+
 + (instancetype)currentUser
 {
     static dispatch_once_t pred;
@@ -39,11 +41,13 @@
 {
     [RSSecrets setString:token forKey:SPLAuthTokenKey];
     [RSSecrets setString:[NSString stringWithFormat:@"%d", userID] forKey: SPLAuthUserID];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SPLUserAuthenticationDidChangeNotification object:self];
 }
 
 - (void)signOut
 {
     [RSSecrets removeKey:SPLAuthTokenKey];
+    [[NSNotificationCenter defaultCenter] postNotificationName:SPLUserAuthenticationDidChangeNotification object:self];
 }
 
 @end

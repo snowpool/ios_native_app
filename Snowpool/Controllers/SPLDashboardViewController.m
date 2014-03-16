@@ -9,7 +9,6 @@
 #import "SPLDashboardViewController.h"
 #import "SPLUserDefaults.h"
 #import "SPLUser.h"
-#import "SVProgressHUD.h"
 #import "SPLCarpoolService.h"
 #import "SPLCarpool.h"
 #import "SPLCarpoolViewController.h"
@@ -19,6 +18,7 @@
 @property (nonatomic, strong) NSArray *carpools;
 @property (nonatomic, strong) NSArray *groupedDates;
 @property (nonatomic, strong) NSDictionary *carpoolsGroupedByDate;
+@property (nonatomic, strong) SPLCarpoolService *carpoolService;
 
 @end
 
@@ -59,8 +59,7 @@
     if (selectedCountryKey == nil) return;
     
     [self.refreshControl beginRefreshing];
-    SPLCarpoolService *carpoolService = [[SPLCarpoolService alloc] init];
-    [carpoolService requestCarpoolsForCountryID:selectedCountryKey success:^(NSArray *carpools) {
+    [_carpoolService requestCarpoolsForCountryID:selectedCountryKey success:^(NSArray *carpools) {
         DebugLog(@"Fetched %d carpools from service", carpools.count);
         self.carpools = carpools;
         [self loadGroupedCarpools];
@@ -80,6 +79,15 @@
     return carpools[indexPath.row];
 }
 
+- (void)setRightBarButtonItemTitle
+{
+    if ([SPLUser currentUser].isAuthenticated) {
+        self.navigationItem.rightBarButtonItem.title = @"Add Carpool";
+    } else {
+        self.navigationItem.rightBarButtonItem.title = @"Sign In";
+    }
+}
+
 #pragma mark -
 #pragma mark View lifecycle methods
 
@@ -89,12 +97,19 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(countryDidChange:)
-                                                 name:SPLDidChangeCountry object:nil];
+                                                 name:SPLCountryDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userAuthenticationDidChange:)
+                                                 name:SPLUserAuthenticationDidChangeNotification object:nil];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
                             action:@selector(tableViewDidStartRefresh:)
                   forControlEvents:UIControlEventValueChanged];
+    
+    self.carpoolService = [[SPLCarpoolService alloc] init];
+    
+    [self setRightBarButtonItemTitle];
     
     if ([SPLUserDefaults standardUserDefaults].selectedCountryKey == nil) {
         [self performSegueWithIdentifier:@"SelectCountry" sender:self];
@@ -110,12 +125,6 @@
 {
     [super viewWillAppear:animated];
     
-    if ([SPLUser currentUser].isAuthenticated) {
-        self.navigationItem.rightBarButtonItem.title = @"Add Carpool";
-    } else {
-        self.navigationItem.rightBarButtonItem.title = @"Sign In";
-    }
-    
     if (!_hasRequestedCarpools) {
         _hasRequestedCarpools = YES;
         // Offset table view to display refresh indicator
@@ -126,19 +135,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"SignIn"]) {
-        UINavigationController *navController = segue.destinationViewController;
-        SPLSignInViewController *controller = (SPLSignInViewController *)navController.topViewController;
-        controller.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"AddCarpool"]) {
-        UINavigationController *navController = segue.destinationViewController;
-        SPLAddCarpoolViewController *controller = (SPLAddCarpoolViewController *)navController.topViewController;
-        controller.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"Settings"]) {
-        UINavigationController *navController = segue.destinationViewController;
-        SPLSettingsViewController *controller = (SPLSettingsViewController *)navController.topViewController;
-        controller.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"SelectCountry"]) {
+    if ([segue.identifier isEqualToString:@"SelectCountry"]) {
         UINavigationController *navController = segue.destinationViewController;
         SPLSelectCountryViewController *controller = (SPLSelectCountryViewController *)navController.topViewController;
         controller.delegate = self;
@@ -204,49 +201,17 @@
     [self.tableView reloadData];
 }
 
+#pragma mark -
+#pragma mark NSNofitication methods
+
 - (void)countryDidChange:(NSNotification *)notification
 {
     [self requestCarpools];
 }
 
-#pragma mark -
-#pragma mark SPLSignInViewControllerDelegate methods
-
-- (void)signInViewControllerDidCancel:(SPLSignInViewController *)controller
+- (void)userAuthenticationDidChange:(NSNotification *)notification
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)signInViewControllerDidSignIn:(SPLSignInViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark -
-#pragma mark SPLAddCarpoolViewControllerDelegate methods
-
-- (void)addCarpoolViewControllerDidCancel:(SPLAddCarpoolViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)addCarpoolViewControllerDidAddCarpool:(SPLAddCarpoolViewController *)controller
-{
-    [SVProgressHUD showSuccessWithStatus:@"Carpool Created"];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark -
-#pragma mark SPLSettingsViewControllerDelegate methods
-
-- (void)settingsViewControllerDidFinish:(SPLSettingsViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)settingsViewControllerDidSignOut:(SPLSettingsViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self setRightBarButtonItemTitle];
 }
 
 #pragma mark -

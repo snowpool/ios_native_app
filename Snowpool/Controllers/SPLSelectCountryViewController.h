@@ -18,6 +18,8 @@
 
 @interface SPLSelectCountryViewController : UITableViewController
 
+extern NSString *const SPLCountryDidChangeNotification;
+
 @property (nonatomic, weak) id<SPLSelectCountryViewControllerDelegate> delegate;
 
 @end

@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SPLSendMessageViewController.h"
 #import "SPLCarpool.h"
 
-@interface SPLCarpoolViewController : UITableViewController<UIActionSheetDelegate, SPLSendMessageViewControllerDelegate>
+@interface SPLCarpoolViewController : UITableViewController<UIActionSheetDelegate>
 
 @property (nonatomic, strong) SPLCarpool *carpool;
 @property (nonatomic, weak) IBOutlet UILabel *dateLeavingLabel;

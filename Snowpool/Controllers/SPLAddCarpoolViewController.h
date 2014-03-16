@@ -8,18 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class SPLAddCarpoolViewController;
-
-@protocol SPLAddCarpoolViewControllerDelegate <NSObject>
-
-- (void)addCarpoolViewControllerDidCancel:(SPLAddCarpoolViewController *)controller;
-- (void)addCarpoolViewControllerDidAddCarpool:(SPLAddCarpoolViewController *)controller;
-
-@end
-
 @interface SPLAddCarpoolViewController : UITableViewController
 
-@property (nonatomic, weak) id<SPLAddCarpoolViewControllerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet UISwitch *carpoolWanted;
 @property (nonatomic, weak) IBOutlet UISwitch *drivenHereBefore;
 @property (nonatomic, weak) IBOutlet UITextField *leavingFrom;

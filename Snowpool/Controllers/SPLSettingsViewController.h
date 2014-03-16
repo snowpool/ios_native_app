@@ -9,18 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SPLSelectCountryViewController.h"
 
-@class SPLSettingsViewController;
-
-@protocol SPLSettingsViewControllerDelegate <NSObject>
-
-- (void)settingsViewControllerDidFinish:(SPLSettingsViewController *)controller;
-- (void)settingsViewControllerDidSignOut:(SPLSettingsViewController *)controller;
-
-@end
-
 @interface SPLSettingsViewController : UITableViewController<SPLSelectCountryViewControllerDelegate>
 
-@property (nonatomic, weak) id<SPLSettingsViewControllerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet UILabel *selectedCountryLabel;
 @property (nonatomic, weak) IBOutlet UILabel *appVersionLabel;
 

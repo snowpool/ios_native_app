@@ -9,7 +9,6 @@
 #import "SPLSignInViewController.h"
 #import "SPLAuthService.h"
 #import "SPLUser.h"
-#import "SVProgressHUD.h"
 
 @interface SPLSignInViewController ()
 
@@ -27,7 +26,7 @@
       success:^(NSString *token, NSInteger userID) {
           [[SPLUser currentUser] signInWithUserID:userID token: token];
           [SVProgressHUD dismiss];
-          [self.delegate signInViewControllerDidSignIn:self];
+          [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error, NSInteger statusCode) {
         if (statusCode == 401) {
             [SVProgressHUD showErrorWithStatus:@"Incorrect Email or Password"];
@@ -54,7 +53,7 @@
 {
     [_authService cancel];
     [SVProgressHUD dismiss];
-    [self.delegate signInViewControllerDidCancel:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)signInButtonPressed:(id)sender
