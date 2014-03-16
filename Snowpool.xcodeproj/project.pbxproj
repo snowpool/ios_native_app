@@ -10,6 +10,8 @@
 		22C0D43818D3FA7D00A21A5C /* SPLModalNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D43718D3FA7D00A21A5C /* SPLModalNavigationBar.m */; };
 		22C0D43B18D3FD5100A21A5C /* SPLModalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D43A18D3FD5100A21A5C /* SPLModalNavigationController.m */; };
 		22C0D43E18D3FDE800A21A5C /* SPLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D43D18D3FDE800A21A5C /* SPLNavigationController.m */; };
+		22C0D44118D53AD800A21A5C /* SPLTableSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D44018D53AD800A21A5C /* SPLTableSectionHeaderView.m */; };
+		22C0D44418D53DE300A21A5C /* UILabel+Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C0D44318D53DE300A21A5C /* UILabel+Appearance.m */; };
 		22E2153318D3E1E4007C7999 /* SPLAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2153218D3E1E4007C7999 /* SPLAppearance.m */; };
 		22E2153618D3E385007C7999 /* UIButton+Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2153518D3E385007C7999 /* UIButton+Appearance.m */; };
 		62AE763519384A4694EE3A00 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C4D3A5D13A469684354E4F /* libPods.a */; };
@@ -61,6 +63,10 @@
 		22C0D43A18D3FD5100A21A5C /* SPLModalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLModalNavigationController.m; sourceTree = "<group>"; };
 		22C0D43C18D3FDE800A21A5C /* SPLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLNavigationController.h; sourceTree = "<group>"; };
 		22C0D43D18D3FDE800A21A5C /* SPLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLNavigationController.m; sourceTree = "<group>"; };
+		22C0D43F18D53AD800A21A5C /* SPLTableSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLTableSectionHeaderView.h; sourceTree = "<group>"; };
+		22C0D44018D53AD800A21A5C /* SPLTableSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLTableSectionHeaderView.m; sourceTree = "<group>"; };
+		22C0D44218D53DE300A21A5C /* UILabel+Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Appearance.h"; sourceTree = "<group>"; };
+		22C0D44318D53DE300A21A5C /* UILabel+Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Appearance.m"; sourceTree = "<group>"; };
 		22E2153118D3E1E4007C7999 /* SPLAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAppearance.h; sourceTree = "<group>"; };
 		22E2153218D3E1E4007C7999 /* SPLAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAppearance.m; sourceTree = "<group>"; };
 		22E2153418D3E385007C7999 /* UIButton+Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Appearance.h"; sourceTree = "<group>"; };
@@ -270,6 +276,8 @@
 				22C0D43A18D3FD5100A21A5C /* SPLModalNavigationController.m */,
 				22C0D43C18D3FDE800A21A5C /* SPLNavigationController.h */,
 				22C0D43D18D3FDE800A21A5C /* SPLNavigationController.m */,
+				22C0D43F18D53AD800A21A5C /* SPLTableSectionHeaderView.h */,
+				22C0D44018D53AD800A21A5C /* SPLTableSectionHeaderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +292,8 @@
 				22E2153218D3E1E4007C7999 /* SPLAppearance.m */,
 				22E2153418D3E385007C7999 /* UIButton+Appearance.h */,
 				22E2153518D3E385007C7999 /* UIButton+Appearance.m */,
+				22C0D44218D53DE300A21A5C /* UILabel+Appearance.h */,
+				22C0D44318D53DE300A21A5C /* UILabel+Appearance.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -459,6 +469,7 @@
 				EA68B49818CAF2C10048CE7C /* SPLRoundedButton.m in Sources */,
 				EA68B4A218CB14560048CE7C /* SPLAddCarpoolViewController.m in Sources */,
 				6BE7A9B618CBC247008D49C9 /* SPLSkiField.m in Sources */,
+				22C0D44418D53DE300A21A5C /* UILabel+Appearance.m in Sources */,
 				EA68B4F018CBCE460048CE7C /* SPLAuthService.m in Sources */,
 				EA68B4ED18CBCE310048CE7C /* SPLCarpoolService.m in Sources */,
 				EA68B4F318CBD0630048CE7C /* SPLCarpool.m in Sources */,
@@ -470,6 +481,7 @@
 				6BE7A9B318CB0105008D49C9 /* SPLCountry.m in Sources */,
 				22C0D43B18D3FD5100A21A5C /* SPLModalNavigationController.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
+				22C0D44118D53AD800A21A5C /* SPLTableSectionHeaderView.m in Sources */,
 				22E2153318D3E1E4007C7999 /* SPLAppearance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

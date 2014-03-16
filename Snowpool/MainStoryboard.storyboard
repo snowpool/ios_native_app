@@ -93,7 +93,7 @@
                         <outlet property="filter" destination="Qxi-AA-BHl" id="z0p-Ep-WS3"/>
                         <segue destination="z36-Uh-ZVh" kind="modal" identifier="SelectCountry" animates="NO" id="DwM-9Y-sg4"/>
                         <segue destination="Y28-RF-9z3" kind="modal" identifier="SignIn" id="cl3-sH-0hg"/>
-                        <segue destination="MxM-ED-ay4" kind="push" identifier="AddCarpool" id="pJe-gm-QkM"/>
+                        <segue destination="TZt-Mn-Ppb" kind="modal" identifier="AddCarpool" id="pJe-gm-QkM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uR-0Q-KZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -568,7 +568,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1158" y="-1468"/>
+            <point key="canvasLocation" x="1684" y="-1468"/>
         </scene>
         <!--Modal Navigation Controller-->
         <scene sceneID="JNS-lO-Gvo">
@@ -934,6 +934,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC9-WO-fW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1158" y="1430"/>
+        </scene>
+        <!--Modal Navigation Controller-->
+        <scene sceneID="iJs-7N-WmO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZt-Mn-Ppb" customClass="SPLModalNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hlj-pm-Cxd" customClass="SPLModalNavigationBar">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MxM-ED-ay4" kind="relationship" relationship="rootViewController" id="XNf-LP-bVH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1d-0Z-m72" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="-1468"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

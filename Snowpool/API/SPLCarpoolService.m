@@ -85,7 +85,7 @@
 {
     [_manager POST:[NSString stringWithFormat:@"/pools/%d/sendmessage.js", carpoolID]
         parameters:@{
-                     @"token": [SPLUser currentUser].token,
+                     @"token": [SPLUser currentUser].token, // TODO: What if user is not signed in?
                      @"message": message
                      }
           success:^(AFHTTPRequestOperation *operation, id responseObject) {

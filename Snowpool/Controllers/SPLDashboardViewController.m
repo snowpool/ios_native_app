@@ -12,6 +12,7 @@
 #import "SPLCarpoolService.h"
 #import "SPLCarpool.h"
 #import "SPLCarpoolViewController.h"
+#import "SPLTableSectionHeaderView.h"
 
 @interface SPLDashboardViewController ()
 
@@ -176,6 +177,14 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return [self.groupedDates objectAtIndex:section];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    SPLTableSectionHeaderView *view = [[SPLTableSectionHeaderView alloc] init];
+    view.titleLabel.text = [self tableView:tableView titleForHeaderInSection:section];
+    
+    return view;
 }
 
 - (void)tableViewDidStartRefresh:(UIRefreshControl *)refreshControl

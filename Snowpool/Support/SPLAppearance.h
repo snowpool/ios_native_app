@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UIButton+Appearance.h"
+#import "UILabel+Appearance.h"
 
 @interface SPLAppearance : NSObject
 

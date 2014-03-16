@@ -10,6 +10,6 @@
 
 @interface UIButton (Appearance)
 
-- (void)spl_setTitleFont:(UIFont *)font;
+- (void)spl_setTitleFont:(UIFont *)font UI_APPEARANCE_SELECTOR;
 
 @end
