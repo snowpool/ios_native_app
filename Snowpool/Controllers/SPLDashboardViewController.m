@@ -170,6 +170,7 @@
     
     SPLCarpool *carpool = [self carpoolAtIndexPath:indexPath];
     cell.textLabel.text = carpool.title;
+    cell.detailTextLabel.text = carpool.isSeeking ? @"Wanted" : @"Offered";
     
     return cell;
 }
