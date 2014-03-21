@@ -33,6 +33,10 @@
                            success:(void (^)())success
                            failure:(void (^)(NSError *error))failure;
 
+- (void)deleteCarpoolWithID:(NSInteger)carpoolID
+                    success:(void (^)())success
+                    failure:(void (^)(NSError *error))failure;
+
 - (void)cancel;
 
 @end

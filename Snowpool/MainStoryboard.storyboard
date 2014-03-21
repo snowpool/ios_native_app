@@ -918,6 +918,7 @@
                         <outlet property="spacesLabel" destination="s1p-Nh-S6c" id="STW-OG-DjG"/>
                         <outlet property="telephoneLabel" destination="L1m-QX-Y8m" id="DY0-Uf-9oX"/>
                         <segue destination="Tzd-Yd-VQ1" kind="modal" identifier="SendMessage" id="Lle-Xt-BPt"/>
+                        <segue destination="BpC-oj-9VD" kind="push" identifier="Delete" id="7kT-Ac-RJV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7YU-Xk-pm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -967,6 +968,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8qT-AS-RHS"/>
+        <segue reference="7kT-Ac-RJV"/>
+        <segue reference="XH9-La-yZu"/>
     </inferredMetricsTieBreakers>
 </document>
