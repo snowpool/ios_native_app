@@ -97,7 +97,7 @@
 
 - (void)deleteCarpoolWithID:(NSInteger)carpoolID
                     success:(void (^)())success
-                    failure:(void (^)(NSError *))failure
+                    failure:(void (^)(NSError *, NSInteger statusCode))failure
 {
     [_manager POST:[NSString stringWithFormat:@"/pools/%d.js", carpoolID]
         parameters:@{
@@ -107,7 +107,7 @@
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
                success();
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-               failure(error);
+               failure(error, operation.response.statusCode);
            }];
 }
 

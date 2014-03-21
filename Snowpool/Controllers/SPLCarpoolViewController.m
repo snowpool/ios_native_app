@@ -56,14 +56,20 @@ NSString * const kCarpoolActionDelete = @"Delete";
     }else if ([segue.identifier isEqualToString:@"Delete"]) {
         [SVProgressHUD showWithStatus:@"Deleting Carpool"];
         [_carpoolService deleteCarpoolWithID:self.carpool.carpoolID
-                                            success:^() {
-                                                [SVProgressHUD dismiss];
-                                                [self dismissViewControllerAnimated:YES completion:nil];
-                                            } failure:^(NSError *error) {
-                                                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-                                                NSLog(@"Error deleting carpool: %@", error);
-                                            }];
-      
+                                     success:^() {
+                                         [SVProgressHUD dismiss];
+                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                     } failure:^(NSError *error, NSInteger statusCode) {
+                                         if (statusCode == 401) {
+                                             [SVProgressHUD showErrorWithStatus:@"Cannot delete carpool, has your password changed?"];
+                                             [[SPLUser currentUser] signOut];
+                                             [self dismissViewControllerAnimated:YES completion:nil];
+                                         }else{
+                                             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+                                             NSLog(@"Error deleting carpool: %@", error);
+                                         }
+                                         
+                                     }];
     }
 }
 
