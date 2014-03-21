@@ -32,13 +32,22 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     self.notesTextView.text = self.carpool.message;
 }
 
+- (void)setVisibiltyOfActionButton
+{
+    if (![SPLUser currentUser].isAuthenticated) {
+        self.navigationItem.rightBarButtonItem = nil;  //Interesting, I thought I'd have to recreated it on next view.  Seems not
+    }
+}
+
 #pragma mark -
 #pragma mark View lifecycle methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    [self setVisibiltyOfActionButton];
+
     [self displayCarpool];
 }
 
