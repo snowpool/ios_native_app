@@ -38,7 +38,7 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self displayCarpool];
 }
 
@@ -79,8 +79,11 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 - (IBAction)actionButtonPressed:(id)sender
 {
     UIActionSheet *actionSheet = nil;
-
-    if (self.carpool.userID == [SPLUser currentUser].userID){
+    if (![SPLUser currentUser].isAuthenticated) {
+        actionSheet = [[UIActionSheet alloc] initWithTitle:@"You must sign in (or sign up on snowpool.org) to send a message"
+                                                  delegate:self cancelButtonTitle:@"Cancel"
+                                    destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+    }else if (self.carpool.userID == [SPLUser currentUser].userID){
         actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:nil, nil];
     } else {
         actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
