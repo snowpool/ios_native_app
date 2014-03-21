@@ -50,18 +50,23 @@
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
 #pragma mark -
 #pragma mark IBAction methods
 
 - (IBAction)doneButtonPressed:(id)sender
 {
-    [self.delegate settingsViewControllerDidFinish:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)signOutButtonPressed:(id)sender
 {
     [[SPLUser currentUser] signOut];
-    [self.delegate settingsViewControllerDidSignOut:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -

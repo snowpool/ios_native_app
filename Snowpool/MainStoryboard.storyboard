@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VT2-Op-Yce">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VT2-Op-Yce">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Navigation Controller-->
         <scene sceneID="0aB-YZ-CvH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VT2-Op-Yce" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VT2-Op-Yce" customClass="SPLNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="emy-FT-FUS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -20,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNE-oa-LFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173" y="-27"/>
+            <point key="canvasLocation" x="125" y="-27"/>
         </scene>
         <!--Dashboard View Controller - Snowpool-->
         <scene sceneID="wtv-RI-PmM">
@@ -50,18 +50,25 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarpoolCell" textLabel="5Ct-RN-lij" style="IBUITableViewCellStyleDefault" id="psv-t2-3Yn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarpoolCell" textLabel="5Ct-RN-lij" detailTextLabel="wga-xv-95u" style="IBUITableViewCellStyleValue1" id="psv-t2-3Yn">
                                 <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psv-t2-3Yn" id="Rl2-QO-NWz">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Mt. Cheeseman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Ct-RN-lij">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Ct-RN-lij">
+                                            <rect key="frame" x="15" y="11" width="33" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wga-xv-95u">
+                                            <rect key="frame" x="241" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -93,12 +100,12 @@
                         <outlet property="filter" destination="Qxi-AA-BHl" id="z0p-Ep-WS3"/>
                         <segue destination="z36-Uh-ZVh" kind="modal" identifier="SelectCountry" animates="NO" id="DwM-9Y-sg4"/>
                         <segue destination="Y28-RF-9z3" kind="modal" identifier="SignIn" id="cl3-sH-0hg"/>
-                        <segue destination="hOQ-XX-atx" kind="modal" identifier="AddCarpool" id="tUh-CJ-egn"/>
+                        <segue destination="TZt-Mn-Ppb" kind="modal" identifier="AddCarpool" id="pJe-gm-QkM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uR-0Q-KZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="-27"/>
+            <point key="canvasLocation" x="621" y="-27"/>
         </scene>
         <!--Select Country View Controller - Snowpool-->
         <scene sceneID="pOf-tG-oGo">
@@ -137,7 +144,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoM-jO-QgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="704"/>
+            <point key="canvasLocation" x="2144" y="706"/>
         </scene>
         <!--Send Message View Controller - Send Message-->
         <scene sceneID="LSt-gu-0sD">
@@ -181,13 +188,13 @@
             </objects>
             <point key="canvasLocation" x="2144" y="-27"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Modal Navigation Controller-->
         <scene sceneID="8sc-yd-Y86">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tzd-Yd-VQ1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tzd-Yd-VQ1" customClass="SPLModalNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jnh-xy-AA8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="90y-uv-HM3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="90y-uv-HM3" customClass="SPLModalNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -200,12 +207,12 @@
             </objects>
             <point key="canvasLocation" x="1667" y="-27"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Modal Navigation Controller-->
         <scene sceneID="91q-Ac-H52">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z36-Uh-ZVh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z36-Uh-ZVh" customClass="SPLModalNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="elF-vm-LjU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="elF-vm-LjU" customClass="SPLModalNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -216,7 +223,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6Z-Av-NU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="704"/>
+            <point key="canvasLocation" x="1158" y="706"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="A6p-Jq-csf">
@@ -307,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fp-63-QWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="1428"/>
+            <point key="canvasLocation" x="1667" y="1430"/>
         </scene>
         <!--Add Carpool View Controller - Add Carpool-->
         <scene sceneID="nu6-Pz-Z7b">
@@ -568,14 +575,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1158" y="-1479"/>
+            <point key="canvasLocation" x="1684" y="-1468"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Modal Navigation Controller-->
         <scene sceneID="JNS-lO-Gvo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y28-RF-9z3" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y28-RF-9z3" customClass="SPLModalNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iGQ-AO-g6e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iGQ-AO-g6e" customClass="SPLModalNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -586,7 +593,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dsd-Dq-Xkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="-759"/>
+            <point key="canvasLocation" x="1158" y="-769"/>
         </scene>
         <!--Sign In View Controller - Sign In-->
         <scene sceneID="rxy-QU-b7N">
@@ -672,12 +679,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="cBE-PE-lYg" id="jtJ-kr-j7O"/>
+                        <outlet property="loginButton" destination="qPD-Kx-KmV" id="0D8-2g-yA7"/>
                         <outlet property="passwordTextField" destination="ZLy-2a-5kw" id="Idi-0Z-Inb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11f-sh-zJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="-759"/>
+            <point key="canvasLocation" x="1647" y="-769"/>
         </scene>
         <!--Carpool View Controller - Carpool-->
         <scene sceneID="Rb7-qV-oxp">
@@ -916,12 +924,12 @@
             </objects>
             <point key="canvasLocation" x="1158" y="-27"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Modal Navigation Controller-->
         <scene sceneID="6km-d0-8UI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4xD-Zh-p13" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4xD-Zh-p13" customClass="SPLModalNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mEb-38-71p">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mEb-38-71p" customClass="SPLModalNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -932,25 +940,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC9-WO-fW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="1428"/>
+            <point key="canvasLocation" x="1158" y="1430"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mqK-hj-AeM">
+        <!--Modal Navigation Controller-->
+        <scene sceneID="iJs-7N-WmO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hOQ-XX-atx" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZt-Mn-Ppb" customClass="SPLModalNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BnW-3f-fBS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hlj-pm-Cxd" customClass="SPLModalNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MxM-ED-ay4" kind="relationship" relationship="rootViewController" id="Yyv-R3-3J7"/>
+                        <segue destination="MxM-ED-ay4" kind="relationship" relationship="rootViewController" id="XNf-LP-bVH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rFM-tA-Egy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1d-0Z-m72" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="-1479"/>
+            <point key="canvasLocation" x="1158" y="-1468"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -10,7 +10,7 @@
 
 @implementation SPLCountry
 
-+(NSDictionary *)all
++ (NSDictionary *)all
 {
     return @{ @1 : @"New Zealand",
               @2 : @"Australia",

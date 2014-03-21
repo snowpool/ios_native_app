@@ -10,6 +10,8 @@
 
 @interface SPLUser : NSObject
 
+extern NSString *const SPLUserAuthenticationDidChangeNotification;
+
 @property (nonatomic, readonly) NSString *token;
 @property (nonatomic, readonly) NSInteger userID;
 @property (nonatomic, readonly) BOOL isAuthenticated;

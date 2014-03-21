@@ -8,18 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class SPLSendMessageViewController;
-
-@protocol SPLSendMessageViewControllerDelegate <NSObject>
-
-- (void)sendMessageViewControllerDidSelectCancel:(SPLSendMessageViewController *)controller;
-- (void)sendMessageViewController:(SPLSendMessageViewController *)controller didSelectSendWithMessage:(NSString *)message;
-
-@end
-
 @interface SPLSendMessageViewController : UIViewController
 
-@property (nonatomic, weak) id<SPLSendMessageViewControllerDelegate> delegate;
+@property (nonatomic, assign) NSInteger carpoolID;
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 
 - (IBAction)cancelButtonPressed:(id)sender;

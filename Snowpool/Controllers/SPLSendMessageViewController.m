@@ -7,12 +7,28 @@
 //
 
 #import "SPLSendMessageViewController.h"
+#import "SPLCarpoolService.h"
 
 @interface SPLSendMessageViewController ()
+
+@property (nonatomic, strong) SPLCarpoolService *carpoolService;
 
 @end
 
 @implementation SPLSendMessageViewController
+
+- (void)sendMessageWithText:(NSString *)message
+{
+    [SVProgressHUD showWithStatus:@"Sending Message"];
+    [_carpoolService sendMessageToCarpoolWithID:self.carpoolID message:message
+                                       success:^() {
+                                           [SVProgressHUD dismiss];
+                                           [self dismissViewControllerAnimated:YES completion:nil];
+                                       } failure:^(NSError *error) {
+                                           [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+                                           NSLog(@"Error sending message: %@", error);
+                                       }];
+}
 
 #pragma mark -
 #pragma mark View lifecycle methods
@@ -20,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.carpoolService = [[SPLCarpoolService alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -34,12 +52,14 @@
 
 - (IBAction)cancelButtonPressed:(id)sender
 {
-    [self.delegate sendMessageViewControllerDidSelectCancel:self];
+    [_carpoolService cancel];
+    [SVProgressHUD dismiss];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)sendButtonPressed:(id)sender
 {
-    [self.delegate sendMessageViewController:self didSelectSendWithMessage:self.textView.text];
+    [self sendMessageWithText:self.textView.text];
 }
 
 @end

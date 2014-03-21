@@ -14,4 +14,6 @@
                   success:(void (^)(NSString *token, NSInteger userID))success
                   failure:(void (^)(NSError *error, NSInteger statusCode))failure;
 
+- (void)cancel;
+
 @end

@@ -9,9 +9,10 @@
 #import "SPLSignInViewController.h"
 #import "SPLAuthService.h"
 #import "SPLUser.h"
-#import "SVProgressHUD.h"
 
 @interface SPLSignInViewController ()
+
+@property (nonatomic, strong) SPLAuthService *authService;
 
 @end
 
@@ -19,19 +20,20 @@
 
 - (void)signInWithEmail:(NSString *)email password:(NSString *)password
 {
+    self.loginButton.enabled = NO;
     [SVProgressHUD showWithStatus:@"Signing In"];
-    SPLAuthService *authService = [[SPLAuthService alloc] init];
-    [authService loginWithEmail:email password:password
+    [_authService loginWithEmail:email password:password
       success:^(NSString *token, NSInteger userID) {
           [[SPLUser currentUser] signInWithUserID:userID token: token];
           [SVProgressHUD dismiss];
-          [self.delegate signInViewControllerDidSignIn:self];
+          [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error, NSInteger statusCode) {
         if (statusCode == 401) {
             [SVProgressHUD showErrorWithStatus:@"Incorrect Email or Password"];
         } else {
             [SVProgressHUD showErrorWithStatus:error.localizedDescription];
         }
+        self.loginButton.enabled = YES;
         NSLog(@"Error signing in: %@", error);
     }];
 }
@@ -43,12 +45,15 @@
 {
     [super viewDidLoad];
     
+    self.authService = [[SPLAuthService alloc] init];
     [self.emailTextField becomeFirstResponder];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender
 {
-    [self.delegate signInViewControllerDidCancel:self];
+    [_authService cancel];
+    [SVProgressHUD dismiss];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)signInButtonPressed:(id)sender

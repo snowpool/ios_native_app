@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SPLSignInViewController.h"
-#import "SPLAddCarpoolViewController.h"
-#import "SPLSettingsViewController.h"
 #import "SPLSelectCountryViewController.h"
 
-@interface SPLDashboardViewController : UITableViewController<SPLSignInViewControllerDelegate, SPLAddCarpoolViewControllerDelegate, SPLSettingsViewControllerDelegate, SPLSelectCountryViewControllerDelegate>
+@interface SPLDashboardViewController : UITableViewController<SPLSelectCountryViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UISegmentedControl *filter;
 

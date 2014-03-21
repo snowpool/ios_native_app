@@ -7,9 +7,8 @@
 //
 
 #import "SPLCarpoolViewController.h"
-#import "SVProgressHUD.h"
-#import "SPLCarpoolService.h"
 #import "SPLUser.h"
+#import "SPLSendMessageViewController.h"
 
 @interface SPLCarpoolViewController ()
 
@@ -48,7 +47,7 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     if ([segue.identifier isEqualToString:@"SendMessage"]) {
         UINavigationController *navController = segue.destinationViewController;
         SPLSendMessageViewController *controller = (SPLSendMessageViewController *)navController.topViewController;
-        controller.delegate = self;
+        controller.carpoolID = self.carpool.carpoolID;
     }
 }
 
@@ -96,28 +95,6 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Delete"]) {
         NSLog(@"Holy deleted carpool batman!!");
     }
-}
-
-#pragma mark -
-#pragma mark SPLSendMessageViewControllerDelegate methods
-
-- (void)sendMessageViewControllerDidSelectCancel:(SPLSendMessageViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)sendMessageViewController:(SPLSendMessageViewController *)controller didSelectSendWithMessage:(NSString *)message
-{
-    [SVProgressHUD showWithStatus:@"Sending Message"];
-    SPLCarpoolService *carpoolService = [[SPLCarpoolService alloc] init];
-    [carpoolService sendMessageToCarpoolWithID:self.carpool.carpoolID message:message
-                                       success:^() {
-                            [SVProgressHUD dismiss];
-                        } failure:^(NSError *error) {
-                            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-                            NSLog(@"Error signing in: %@", error);
-                        }];
-
 }
 
 @end
