@@ -32,21 +32,12 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     self.notesTextView.text = self.carpool.message;
 }
 
-- (void)setVisibiltyOfActionButton
-{
-    if (![SPLUser currentUser].isAuthenticated) {
-        self.navigationItem.rightBarButtonItem = nil;  //Interesting, I thought I'd have to recreated it on next view.  Seems not
-    }
-}
-
 #pragma mark -
 #pragma mark View lifecycle methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self setVisibiltyOfActionButton];
 
     [self displayCarpool];
 }
@@ -88,8 +79,11 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 - (IBAction)actionButtonPressed:(id)sender
 {
     UIActionSheet *actionSheet = nil;
-
-    if (self.carpool.userID == [SPLUser currentUser].userID){
+    if (![SPLUser currentUser].isAuthenticated) {
+        actionSheet = [[UIActionSheet alloc] initWithTitle:@"You must sign in (or sign up on snowpool.org) to send a message"
+                                                  delegate:self cancelButtonTitle:@"Cancel"
+                                    destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+    }else if (self.carpool.userID == [SPLUser currentUser].userID){
         actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:nil, nil];
     } else {
         actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
