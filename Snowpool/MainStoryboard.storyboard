@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VT2-Op-Yce">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VT2-Op-Yce">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -918,7 +918,6 @@
                         <outlet property="spacesLabel" destination="s1p-Nh-S6c" id="STW-OG-DjG"/>
                         <outlet property="telephoneLabel" destination="L1m-QX-Y8m" id="DY0-Uf-9oX"/>
                         <segue destination="Tzd-Yd-VQ1" kind="modal" identifier="SendMessage" id="Lle-Xt-BPt"/>
-                        <segue destination="BpC-oj-9VD" kind="push" identifier="Delete" id="7kT-Ac-RJV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7YU-Xk-pm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -968,7 +967,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7kT-Ac-RJV"/>
         <segue reference="XH9-La-yZu"/>
     </inferredMetricsTieBreakers>
 </document>
