@@ -35,6 +35,26 @@ NSString * const kCarpoolActionDelete = @"Delete";
     self.notesTextView.text = self.carpool.message;
 }
 
+//delete the varpool and return 
+- (void)deleteCarpool
+{
+    [SVProgressHUD showWithStatus:@"Deleting Carpool"];
+    [_carpoolService deleteCarpoolWithID:self.carpool.carpoolID
+                                 success:^() {
+                                     [SVProgressHUD dismiss];
+                                     [self.navigationController popViewControllerAnimated:YES];
+                                 } failure:^(NSError *error, NSInteger statusCode) {
+                                     if (statusCode == 401) {
+                                         [SVProgressHUD showErrorWithStatus:@"Cannot delete carpool, has your password changed?"];
+                                         [[SPLUser currentUser] signOut];
+                                     }else{
+                                         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+                                         NSLog(@"Error deleting carpool: %@", error);
+                                     }
+                                     
+                                 }];
+
+}
 #pragma mark -
 #pragma mark View lifecycle methods
 
@@ -54,17 +74,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
         SPLSendMessageViewController *controller = (SPLSendMessageViewController *)navController.topViewController;
         controller.carpoolID = self.carpool.carpoolID;
     }else if ([segue.identifier isEqualToString:@"Delete"]) {
-        [SVProgressHUD showWithStatus:@"Deleting Carpool"];
-        [_carpoolService deleteCarpoolWithID:self.carpool.carpoolID
-                                            success:^() {
-                                                [SVProgressHUD dismiss];
-                                                [self dismissViewControllerAnimated:YES completion:nil];
-                                            } failure:^(NSError *error) {
-                                                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-                                                NSLog(@"Error deleting carpool: %@", error);
-                                            }];
-      
-    }
+           }
 }
 
 #pragma mark -
@@ -112,7 +122,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:kCarpoolActionSendMessage]) {
         [self performSegueWithIdentifier:@"SendMessage" sender:self];
     } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:kCarpoolActionDelete]) {
-        [self performSegueWithIdentifier:@"Delete" sender:self];
+        [self deleteCarpool];
     }
 }
 
