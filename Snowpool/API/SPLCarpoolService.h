@@ -31,7 +31,11 @@
 - (void)sendMessageToCarpoolWithID:(NSInteger)carpoolID
                            message:(NSString *)message
                            success:(void (^)())success
-                           failure:(void (^)(NSError *error))failure;
+                           failure:(void (^)(NSError *error, NSInteger statusCode))failure;
+
+- (void)deleteCarpoolWithID:(NSInteger)carpoolID
+                    success:(void (^)())success
+                    failure:(void (^)(NSError *error, NSInteger statusCode))failure;
 
 - (void)cancel;
 

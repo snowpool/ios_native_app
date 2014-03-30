@@ -9,16 +9,20 @@
 #import "SPLCarpoolViewController.h"
 #import "SPLUser.h"
 #import "SPLSendMessageViewController.h"
+#import "SPLCarpoolService.h"
 
 @interface SPLCarpoolViewController ()
 
 @property (nonatomic, strong) NSArray *carpoolDetails;
+@property (nonatomic, strong) SPLCarpoolService *carpoolService;
 
 @end
 
 @implementation SPLCarpoolViewController
 
+NSString *const SPLDidDeleteCarpoolNotification = @"SPLDidDeleteCarpoolNotification";
 NSString * const kCarpoolActionSendMessage = @"Send Message";
+NSString * const kCarpoolActionDelete = @"Delete";
 
 - (void)displayCarpool
 {
@@ -32,12 +36,35 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
     self.notesTextView.text = self.carpool.message;
 }
 
+//delete the varpool and return 
+- (void)deleteCarpool
+{
+    [SVProgressHUD showWithStatus:@"Deleting Carpool"];
+    [_carpoolService deleteCarpoolWithID:self.carpool.carpoolID
+                                 success:^() {
+                                     [SVProgressHUD dismiss];
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidDeleteCarpoolNotification object:nil];
+                                     [self.navigationController popViewControllerAnimated:YES];
+                                 } failure:^(NSError *error, NSInteger statusCode) {
+                                     if (statusCode == 401) {
+                                         [SVProgressHUD showErrorWithStatus:@"Cannot delete carpool, has your password changed?"];
+                                         [[SPLUser currentUser] signOut];
+                                     }else{
+                                         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+                                         NSLog(@"Error deleting carpool: %@", error);
+                                     }
+                                     
+                                 }];
+
+}
 #pragma mark -
 #pragma mark View lifecycle methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.carpoolService = [[SPLCarpoolService alloc] init];
     
     [self displayCarpool];
 }
@@ -48,7 +75,8 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
         UINavigationController *navController = segue.destinationViewController;
         SPLSendMessageViewController *controller = (SPLSendMessageViewController *)navController.topViewController;
         controller.carpoolID = self.carpool.carpoolID;
-    }
+    }else if ([segue.identifier isEqualToString:@"Delete"]) {
+           }
 }
 
 #pragma mark -
@@ -78,22 +106,31 @@ NSString * const kCarpoolActionSendMessage = @"Send Message";
 
 - (IBAction)actionButtonPressed:(id)sender
 {
-    UIActionSheet *actionSheet = nil;
-
-    if (self.carpool.userID == [SPLUser currentUser].userID){
-        actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:nil, nil];
+    if (![SPLUser currentUser].isAuthenticated) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign In"
+                                                        message:@"You must sign in (or sign up on snowpool.org) to send a message."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     } else {
-        actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
+        UIActionSheet *actionSheet = nil;
+
+        if (self.carpool.userID == [SPLUser currentUser].userID){
+            actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:kCarpoolActionDelete otherButtonTitles:nil, nil];
+        } else {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
+        }
+        [actionSheet showFromBarButtonItem:(UIBarButtonItem *)sender animated:YES];
     }
-    [actionSheet showFromBarButtonItem:(UIBarButtonItem *)sender animated:YES];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:kCarpoolActionSendMessage]) {
         [self performSegueWithIdentifier:@"SendMessage" sender:self];
-    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Delete"]) {
-        NSLog(@"Holy deleted carpool batman!!");
+    } else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:kCarpoolActionDelete]) {
+        [self deleteCarpool];
     }
 }
 

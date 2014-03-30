@@ -9,9 +9,9 @@
 #define SPLAuthTokenKey @"SPLAuthTokenKey"
 #define SPLAuthUserID @"SPLAuthUserID"
 #if TARGET_IPHONE_SIMULATOR
-    #define SPLServiceBaseURL @"http://api.snowpool.org:3000"
+    #define SPLServiceBaseURL @"http://api.lvh.me:3000"
 #else
-    #define SPLServiceBaseURL @"http://api.snowpool.org:3000"
+    #define SPLServiceBaseURL @"http://snowpool-development.herokuapp.com"
 #endif
 
 #ifdef DEBUG

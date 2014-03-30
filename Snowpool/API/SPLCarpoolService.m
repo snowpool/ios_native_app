@@ -81,7 +81,7 @@
 
 - (void)sendMessageToCarpoolWithID:(NSInteger)carpoolID message:(NSString *)message
                            success:(void (^)())success
-                           failure:(void (^)(NSError *error))failure;
+                           failure:(void (^)(NSError *error, NSInteger statusCode))failure;
 {
     [_manager POST:[NSString stringWithFormat:@"/pools/%d/sendmessage.js", carpoolID]
         parameters:@{
@@ -91,8 +91,24 @@
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               success();
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              failure(error);
+              failure(error, operation.response.statusCode);
           }];
+}
+
+- (void)deleteCarpoolWithID:(NSInteger)carpoolID
+                    success:(void (^)())success
+                    failure:(void (^)(NSError *, NSInteger statusCode))failure
+{
+    [_manager POST:[NSString stringWithFormat:@"/pools/%d.js", carpoolID]
+        parameters:@{
+                     @"token": [SPLUser currentUser].token,
+                     @"_method": @"delete"
+                     }
+           success:^(AFHTTPRequestOperation *operation, id responseObject) {
+               success();
+           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+               failure(error, operation.response.statusCode);
+           }];
 }
 
 - (void)cancel

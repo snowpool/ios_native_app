@@ -8,6 +8,7 @@
 
 #import "SPLSendMessageViewController.h"
 #import "SPLCarpoolService.h"
+#import "SPLUser.h"
 
 @interface SPLSendMessageViewController ()
 
@@ -23,10 +24,19 @@
     [_carpoolService sendMessageToCarpoolWithID:self.carpoolID message:message
                                        success:^() {
                                            [SVProgressHUD dismiss];
-                                           [self dismissViewControllerAnimated:YES completion:nil];
-                                       } failure:^(NSError *error) {
-                                           [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-                                           NSLog(@"Error sending message: %@", error);
+                                           
+                                           [self dismissViewControllerAnimated:YES completion:^(void) {
+                                               [SVProgressHUD showSuccessWithStatus:@"Message has been sent"];
+                                           }];
+                                       } failure:^(NSError *error, NSInteger statusCode) {
+                                           if (statusCode == 401) {
+                                               [SVProgressHUD showErrorWithStatus:@"Cannot send message, has your password changed?"];
+                                               [[SPLUser currentUser] signOut];
+                                               [self dismissViewControllerAnimated:YES completion:nil];
+                                           }else{
+                                               [SVProgressHUD showErrorWithStatus:@"Couldn't send message, did you send an empty message?, are you connected to the internet?"];
+                                               NSLog(@"Error sending message: %@", error);
+                                           }
                                        }];
 }
 

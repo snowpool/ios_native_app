@@ -102,6 +102,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userAuthenticationDidChange:)
                                                  name:SPLUserAuthenticationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(carpoolWasDeleted:)
+                                                 name:SPLDidDeleteCarpoolNotification object:nil];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
@@ -224,6 +227,10 @@
     [self setRightBarButtonItemTitle];
 }
 
+- (void)carpoolWasDeleted:(NSNotification *)notification
+{
+    [self requestCarpools];
+}
 #pragma mark -
 #pragma mark SPLSelectCountryViewControllerDelegate methods
 

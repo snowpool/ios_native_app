@@ -11,6 +11,8 @@
 
 @interface SPLCarpoolViewController : UITableViewController<UIActionSheetDelegate>
 
+extern NSString *const SPLDidDeleteCarpoolNotification;
+
 @property (nonatomic, strong) SPLCarpool *carpool;
 @property (nonatomic, weak) IBOutlet UILabel *dateLeavingLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateReturningLabel;
