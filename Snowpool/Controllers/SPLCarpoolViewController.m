@@ -106,17 +106,23 @@ NSString * const kCarpoolActionDelete = @"Delete";
 
 - (IBAction)actionButtonPressed:(id)sender
 {
-    UIActionSheet *actionSheet = nil;
     if (![SPLUser currentUser].isAuthenticated) {
-        actionSheet = [[UIActionSheet alloc] initWithTitle:@"You must sign in (or sign up on snowpool.org) to send a message"
-                                                  delegate:self cancelButtonTitle:@"Cancel"
-                                    destructiveButtonTitle:nil otherButtonTitles:nil, nil];
-    }else if (self.carpool.userID == [SPLUser currentUser].userID){
-        actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:kCarpoolActionDelete otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign In"
+                                                        message:@"You must sign in (or sign up on snowpool.org) to send a message."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     } else {
-        actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
+        UIActionSheet *actionSheet = nil;
+
+        if (self.carpool.userID == [SPLUser currentUser].userID){
+            actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:kCarpoolActionDelete otherButtonTitles:nil, nil];
+        } else {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:kCarpoolActionSendMessage, nil];
+        }
+        [actionSheet showFromBarButtonItem:(UIBarButtonItem *)sender animated:YES];
     }
-    [actionSheet showFromBarButtonItem:(UIBarButtonItem *)sender animated:YES];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
