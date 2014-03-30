@@ -20,6 +20,7 @@
 
 @implementation SPLCarpoolViewController
 
+NSString *const SPLDidDeleteCarpoolNotification = @"SPLDidDeleteCarpoolNotification";
 NSString * const kCarpoolActionSendMessage = @"Send Message";
 NSString * const kCarpoolActionDelete = @"Delete";
 
@@ -42,6 +43,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
     [_carpoolService deleteCarpoolWithID:self.carpool.carpoolID
                                  success:^() {
                                      [SVProgressHUD dismiss];
+                                     [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidDeleteCarpoolNotification object:nil];
                                      [self.navigationController popViewControllerAnimated:YES];
                                  } failure:^(NSError *error, NSInteger statusCode) {
                                      if (statusCode == 401) {
