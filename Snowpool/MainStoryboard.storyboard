@@ -555,6 +555,7 @@
                         <outlet property="carpoolWanted" destination="8gF-aH-Soh" id="h6E-zB-4YM"/>
                         <outlet property="drivenHereBefore" destination="c58-g8-jM3" id="xsY-aD-j8X"/>
                         <outlet property="leavingFrom" destination="Y6V-rl-4BJ" id="HaQ-gX-wEc"/>
+                        <outlet property="spacesFree" destination="qCt-MV-biI" id="3IF-Vo-k5v"/>
                         <outlet property="telephone" destination="uLd-AX-OSk" id="NC8-A9-0cA"/>
                     </connections>
                 </tableViewController>
@@ -565,7 +566,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1684" y="-1468"/>
+            <point key="canvasLocation" x="1667" y="-1468"/>
         </scene>
         <!--Modal Navigation Controller-->
         <scene sceneID="JNS-lO-Gvo">
@@ -957,6 +958,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XH9-La-yZu"/>
+        <segue reference="8qT-AS-RHS"/>
     </inferredMetricsTieBreakers>
 </document>
