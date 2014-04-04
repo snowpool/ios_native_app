@@ -39,7 +39,7 @@
 {
     if ([segue.identifier isEqualToString:@"SelectSpacesFree"]) {
         SPLSpacesFreeViewController *controller = segue.destinationViewController;
-        controller.spacesFree = 3;
+        controller.spacesFree = [self.spacesFree.text intValue];
         controller.delegate = self;
     }
 }
