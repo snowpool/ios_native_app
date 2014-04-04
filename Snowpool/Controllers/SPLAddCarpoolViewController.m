@@ -35,6 +35,14 @@
     self.carpoolService = [[SPLCarpoolService alloc] init];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SelectCountry"]) {
+        SPLSpacesFreeViewController *controller = segue.destinationViewController;
+        controller.delegate = self;
+    }
+}
+
 #pragma mark -
 #pragma mark IBAction methods
 

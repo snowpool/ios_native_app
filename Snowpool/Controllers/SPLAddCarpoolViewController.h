@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPLSpacesFreeViewController.h"
 
-@interface SPLAddCarpoolViewController : UITableViewController
+@interface SPLAddCarpoolViewController : UITableViewController<SPLSpacesFreeViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UISwitch *carpoolWanted;
 @property (nonatomic, weak) IBOutlet UISwitch *drivenHereBefore;

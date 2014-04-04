@@ -19,6 +19,7 @@
 		6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */; };
 		6BE7A9B318CB0105008D49C9 /* SPLCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9B218CB0105008D49C9 /* SPLCountry.m */; };
 		6BE7A9B618CBC247008D49C9 /* SPLSkiField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9B518CBC247008D49C9 /* SPLSkiField.m */; };
+		6BE9571A18EF5C52003D9B7A /* SPLSpacesFreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9571918EF5C52003D9B7A /* SPLSpacesFreeViewController.m */; };
 		EA68B44918CA71C30048CE7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44818CA71C30048CE7C /* Foundation.framework */; };
 		EA68B44B18CA71C30048CE7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */; };
 		EA68B44D18CA71C30048CE7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44C18CA71C30048CE7C /* UIKit.framework */; };
@@ -81,6 +82,8 @@
 		6BE7A9B218CB0105008D49C9 /* SPLCountry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLCountry.m; sourceTree = "<group>"; };
 		6BE7A9B418CBC247008D49C9 /* SPLSkiField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSkiField.h; sourceTree = "<group>"; };
 		6BE7A9B518CBC247008D49C9 /* SPLSkiField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSkiField.m; sourceTree = "<group>"; };
+		6BE9571818EF5C52003D9B7A /* SPLSpacesFreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSpacesFreeViewController.h; sourceTree = "<group>"; };
+		6BE9571918EF5C52003D9B7A /* SPLSpacesFreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSpacesFreeViewController.m; sourceTree = "<group>"; };
 		EA68B44518CA71C30048CE7C /* Snowpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA68B44818CA71C30048CE7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -246,6 +249,8 @@
 				6BE7A9AF18CAF84D008D49C9 /* SPLSettingsViewController.m */,
 				EA68B4A018CB14560048CE7C /* SPLAddCarpoolViewController.h */,
 				EA68B4A118CB14560048CE7C /* SPLAddCarpoolViewController.m */,
+				6BE9571818EF5C52003D9B7A /* SPLSpacesFreeViewController.h */,
+				6BE9571918EF5C52003D9B7A /* SPLSpacesFreeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				EA68B48018CA7ACB0048CE7C /* SPLDashboardViewController.m in Sources */,
 				22C0D43818D3FA7D00A21A5C /* SPLModalNavigationBar.m in Sources */,
 				EA68B49218CAAEBA0048CE7C /* SPLUserDefaults.m in Sources */,
+				6BE9571A18EF5C52003D9B7A /* SPLSpacesFreeViewController.m in Sources */,
 				EA68B49C18CB0FE80048CE7C /* RSSecrets.m in Sources */,
 				6BE7A9AD18CAA10E008D49C9 /* SPLSelectCountryViewController.m in Sources */,
 				6BE7A9B018CAF84D008D49C9 /* SPLSettingsViewController.m in Sources */,
