@@ -29,7 +29,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
     self.dateLeavingLabel.text = self.carpool.start;
     self.dateReturningLabel.text = self.carpool.dateReturning;
     self.nameLabel.text = self.carpool.name;
-    self.spacesLabel.text = [NSString stringWithFormat:@"%d", self.carpool.spacesFree];
+    self.spacesLabel.text = [NSString stringWithFormat:@"%ld", self.carpool.spacesFree];
     self.telephoneLabel.text = self.carpool.telephone;
     self.drivenHereBeforeLabel.text = self.carpool.hasDrivenBefore ? @"Yes" : @"No";
     self.leavingFromLabel.text = self.carpool.leavingFrom;
@@ -95,7 +95,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
 {
     if (indexPath.section == 1 && self.carpool.message.length > 0) {
         CGRect textRect = [self.carpool.message boundingRectWithSize:CGSizeMake(self.notesTextView.frame.size.width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: self.notesTextView.font} context:nil];
-        return textRect.size.height + 28;
+        return textRect.size.height + 88;
     } else {
         return 44.f;
     }

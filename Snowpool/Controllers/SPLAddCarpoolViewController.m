@@ -19,6 +19,8 @@
 
 - (void)createCarpool
 {
+    NSLog(@"this telephone %@",self.telephone.text);
+    NSLog( self.drivenHereBefore.isOn ? @"YES" : @"NO");
     [SVProgressHUD showSuccessWithStatus:@"Carpool Created"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
