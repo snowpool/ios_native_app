@@ -12,7 +12,7 @@
 
 @protocol SPLSpacesFreeViewControllerDelegate <NSObject>
 
-- (void)spacesFreeViewControllerDidChangeCountry:(SPLSpacesFreeViewController *)controller;
+- (void)spacesFreeViewControllerDidChangeNumberOfSpaces:(SPLSpacesFreeViewController *)controller;
 
 @end
 

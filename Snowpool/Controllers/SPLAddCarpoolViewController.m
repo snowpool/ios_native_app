@@ -59,4 +59,15 @@
     [self createCarpool];
 }
 
+
+#pragma mark -
+#pragma mark SPLSpacesFreeViewController methods
+
+- (void)spacesFreeViewControllerDidChangeNumberOfSpaces:(SPLSpacesFreeViewController *)controller
+{
+    self.spacesFree.text = [NSString stringWithFormat:@"%d", controller.spacesFree];
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 @end

@@ -41,7 +41,7 @@
     //kill the old cell
     [self clearOldCellOnTableView:tableView andActivateNewCellForIndexPath:indexPath];
 
- //   [self.delegate selectCountryViewControllerDidChangeCountry:self];
+    [self.delegate spacesFreeViewControllerDidChangeNumberOfSpaces:self];
 }
 
 - (void)clearOldCellOnTableView:(UITableView *)tableView andActivateNewCellForIndexPath:(NSIndexPath *)indexPath {
