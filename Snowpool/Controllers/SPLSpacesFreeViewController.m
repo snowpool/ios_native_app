@@ -19,6 +19,10 @@
     [super viewDidLoad];
 }
 
+
+#pragma mark -
+#pragma mark UITableView methods
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
@@ -29,6 +33,26 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    DebugLog(@"Selected this number of spaces with key %d", indexPath.row);
+    
+    //kill the old cell
+    [self clearOldCellOnTableView:tableView andActivateNewCellForIndexPath:indexPath];
+
+ //   [self.delegate selectCountryViewControllerDidChangeCountry:self];
+}
+
+- (void)clearOldCellOnTableView:(UITableView *)tableView andActivateNewCellForIndexPath:(NSIndexPath *)indexPath {
+    NSIndexPath *oldPath = [NSIndexPath indexPathForRow:self.spacesFree -1 inSection:0];
+    UITableViewCell *oldCell = [super tableView:tableView cellForRowAtIndexPath:oldPath];
+    oldCell.accessoryType = UITableViewCellAccessoryNone;
+
+    self.spacesFree = indexPath.row + 1;
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+}
 
 @end
 
