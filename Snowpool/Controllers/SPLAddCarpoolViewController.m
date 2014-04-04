@@ -37,7 +37,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"SelectCountry"]) {
+    if ([segue.identifier isEqualToString:@"SelectSpacesFree"]) {
         SPLSpacesFreeViewController *controller = segue.destinationViewController;
         controller.delegate = self;
     }
@@ -56,11 +56,6 @@
 - (void)doneButtonPressed:(id)sender
 {
     [self createCarpool];
-}
-
-- (IBAction)viewWasTapped:(id)sender
-{
-    [self.view endEditing:YES];
 }
 
 @end
