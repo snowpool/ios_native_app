@@ -9,6 +9,7 @@
 #import "SPLAddCarpoolViewController.h"
 #import "SPLCarpoolService.h"
 #import "SPLSkiField.h"
+#import "SPLUserDefaults.h"
 
 @interface SPLAddCarpoolViewController ()
 
@@ -18,6 +19,27 @@
 @end
 
 @implementation SPLAddCarpoolViewController
+
+- (void)saveLastValidCity:(NSString *)city andTelephone:(NSString *)telephone
+{
+    SPLUserDefaults *defaults = [SPLUserDefaults standardUserDefaults];
+    defaults.telephone = telephone;
+    defaults.city = city;
+    [defaults synchronize];
+}
+
+- (void)setupDefaults
+{
+    SPLUserDefaults *defaults = [SPLUserDefaults standardUserDefaults];
+    
+    if (defaults.telephone) {
+        self.telephone.text = defaults.telephone;
+    }
+    
+    if (defaults.city){
+        self.leavingFrom.text = defaults.city;
+    }
+}
 
 - (void)createCarpool
 {
@@ -32,6 +54,7 @@
                              drivenHereBefore:self.drivenHereBefore.isOn
                                       message:self.message.text
                                       success:^() {
+                                          [self saveLastValidCity:self.leavingFrom.text andTelephone:self.telephone.text];
                                           [SVProgressHUD dismiss];
                                           
                                           [self dismissViewControllerAnimated:YES completion:^(void) {
@@ -54,6 +77,7 @@
 {
     [super viewDidLoad];
     self.carpoolService = [[SPLCarpoolService alloc] init];
+    [self setupDefaults];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

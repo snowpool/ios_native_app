@@ -11,6 +11,8 @@
 @interface SPLUserDefaults : GVUserDefaults
 
 @property (nonatomic, strong) NSNumber *selectedCountryKey;
+@property (nonatomic, strong) NSString *telephone;
+@property (nonatomic, strong) NSString *city;
 
 + (instancetype)standardUserDefaults;
 
