@@ -61,6 +61,7 @@
                             @"token": [SPLUser currentUser].token,
                             @"pool": @{
                                     @"leaving_from": leavingFrom,
+                                    @"message": message,
                                     @"field_id": @(fieldID),
                                     @"leaving_date": dateLeaving,
                                     @"returning_date": dateReturning,
