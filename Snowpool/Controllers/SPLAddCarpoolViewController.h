@@ -13,6 +13,8 @@
 
 @interface SPLAddCarpoolViewController : UITableViewController<SPLSpacesFreeViewControllerDelegate, SPLSelectDateViewControllerDelegate, SPLSelectFieldViewControllerDelegate>
 
+extern NSString *const SPLDidCreateCarpoolNotification;
+
 @property (nonatomic, weak) IBOutlet UISwitch *carpoolWanted;
 @property (nonatomic, weak) IBOutlet UISwitch *drivenHereBefore;
 @property (nonatomic, weak) IBOutlet UITextField *leavingFrom;

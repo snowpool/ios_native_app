@@ -76,8 +76,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
         UINavigationController *navController = segue.destinationViewController;
         SPLSendMessageViewController *controller = (SPLSendMessageViewController *)navController.topViewController;
         controller.carpoolID = self.carpool.carpoolID;
-    }else if ([segue.identifier isEqualToString:@"Delete"]) {
-           }
+    }
 }
 
 #pragma mark -

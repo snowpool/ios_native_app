@@ -11,6 +11,7 @@
 @interface SPLUserDefaults : GVUserDefaults
 
 @property (nonatomic, strong) NSNumber *selectedCountryKey;
+@property (nonatomic, strong) NSNumber *lastSkiFieldVisitedID;
 @property (nonatomic, strong) NSString *telephone;
 @property (nonatomic, strong) NSString *city;
 

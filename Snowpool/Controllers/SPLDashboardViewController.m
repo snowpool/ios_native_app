@@ -12,6 +12,7 @@
 #import "SPLCarpoolService.h"
 #import "SPLCarpool.h"
 #import "SPLCarpoolViewController.h"
+#import "SPLAddCarpoolViewController.h"
 #import "SPLTableSectionHeaderView.h"
 
 @interface SPLDashboardViewController ()
@@ -105,6 +106,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(carpoolWasDeleted:)
                                                  name:SPLDidDeleteCarpoolNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(carpoolWasCreated:)
+                                                 name:SPLDidCreateCarpoolNotification object:nil];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
@@ -228,6 +232,11 @@
 }
 
 - (void)carpoolWasDeleted:(NSNotification *)notification
+{
+    [self requestCarpools];
+}
+
+- (void)carpoolWasCreated:(NSNotification *)notification
 {
     [self requestCarpools];
 }

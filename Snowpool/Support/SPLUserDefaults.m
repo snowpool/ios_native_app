@@ -13,6 +13,7 @@
 @dynamic selectedCountryKey;
 @dynamic telephone;
 @dynamic city;
+@dynamic lastSkiFieldVisitedID;
 
 + (instancetype)standardUserDefaults
 {

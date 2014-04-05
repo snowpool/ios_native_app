@@ -21,11 +21,14 @@
 
 @implementation SPLAddCarpoolViewController
 
-- (void)saveLastValidCity:(NSString *)city andTelephone:(NSString *)telephone
+NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotification";
+
+- (void)saveLastValidCity:(NSString *)city andTelephone:(NSString *)telephone andSkiFieldID:(NSNumber *)skiFieldID
 {
     SPLUserDefaults *defaults = [SPLUserDefaults standardUserDefaults];
     defaults.telephone = telephone;
     defaults.city = city;
+    defaults.lastSkiFieldVisitedID = skiFieldID;
     [defaults synchronize];
 }
 
@@ -39,6 +42,11 @@
     
     if (defaults.city){
         self.leavingFrom.text = defaults.city;
+    }
+    
+    if (defaults.lastSkiFieldVisitedID){
+        self.selectedSkiFieldID = defaults.lastSkiFieldVisitedID;
+        self.skiFieldTitle.text = [SPLSkiField titleForFieldWithID:self.selectedSkiFieldID];
     }
 }
 
@@ -65,12 +73,11 @@
                              drivenHereBefore:self.drivenHereBefore.isOn
                                       message:self.message.text
                                       success:^() {
-                                          [self saveLastValidCity:self.leavingFrom.text andTelephone:self.telephone.text];
                                           [SVProgressHUD dismiss];
-                                          
-                                          [self dismissViewControllerAnimated:YES completion:^(void) {
-                                              [SVProgressHUD showSuccessWithStatus:@"Carpool has been created"];
-                                          }];
+                                          [self saveLastValidCity:self.leavingFrom.text andTelephone:self.telephone.text andSkiFieldID:self.selectedSkiFieldID];
+                                          [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidCreateCarpoolNotification object:nil];
+                                          //why is this dismiss not pop?
+                                          [self.navigationController dismissViewControllerAnimated:YES completion:nil];
                                       } failure:^(NSError *error, NSInteger statusCode, NSDictionary *errorsHash) {
                                           NSLog(@"Error creating carpool: %@", error);
                                           if (statusCode == 401) {
@@ -144,7 +151,6 @@
 
 - (void)selectSkiFieldControllerDidChangeSkiField:(SPLSelectFieldViewController *)controller
 {
-    NSLog(@"hello");
     self.skiFieldTitle.text = [SPLSkiField titleForFieldWithID:controller.selectedSkiFieldID];
     self.selectedSkiFieldID = controller.selectedSkiFieldID;
     [controller dismissViewControllerAnimated:YES completion:nil];
