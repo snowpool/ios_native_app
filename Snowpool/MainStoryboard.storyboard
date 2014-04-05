@@ -379,6 +379,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Y92-m8-HwE" kind="modal" identifier="SelectDateLeaving" id="PL1-Fc-kJl"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="nAX-y1-78x" detailTextLabel="LNX-4U-JLR" style="IBUITableViewCellStyleValue1" id="WTB-mO-3XQ">
                                         <rect key="frame" x="0.0" y="207" width="320" height="44"/>
@@ -403,6 +406,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Y92-m8-HwE" kind="modal" identifier="SelectDateReturning" id="9Je-Ky-ZkS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -568,7 +574,44 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1667" y="-1468"/>
+            <point key="canvasLocation" x="1749" y="-1468"/>
+        </scene>
+        <!--Select Date View Controller-->
+        <scene sceneID="gSm-jx-crk">
+            <objects>
+                <tableViewController id="Y92-m8-HwE" customClass="SPLSelectDateViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="GNp-Af-xU0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SelectDateCell" textLabel="Xgv-p6-Vxy" style="IBUITableViewCellStyleDefault" id="2cd-ZK-8Jd">
+                                <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2cd-ZK-8Jd" id="ffz-tT-KeJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xgv-p6-Vxy">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Y92-m8-HwE" id="78n-Tn-ODl"/>
+                            <outlet property="delegate" destination="Y92-m8-HwE" id="snX-XR-k4v"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65I-mr-86S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3090" y="-2185"/>
         </scene>
         <!--Spaces Free View Controller-->
         <scene sceneID="5iy-EA-KsI">
@@ -695,7 +738,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMN-sG-1t3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2110" y="-1468"/>
+            <point key="canvasLocation" x="3090" y="-1468"/>
         </scene>
         <!--Modal Navigation Controller-->
         <scene sceneID="JNS-lO-Gvo">
@@ -1088,5 +1131,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="8qT-AS-RHS"/>
+        <segue reference="9Je-Ky-ZkS"/>
     </inferredMetricsTieBreakers>
 </document>

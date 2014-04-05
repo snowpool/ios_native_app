@@ -42,6 +42,14 @@
         controller.spacesFree = [self.spacesFree.text intValue];
         controller.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:@"SelectDateLeaving"]) {
+        SPLSelectDateViewController *controller = segue.destinationViewController;
+        controller.dateTypeToSelect = @"leaving";
+    }
+    else if ([segue.identifier isEqualToString:@"SelectDateReturning"]) {
+        SPLSelectDateViewController *controller = segue.destinationViewController;
+        controller.dateTypeToSelect = @"returning";
+    }
 }
 
 #pragma mark -

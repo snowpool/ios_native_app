@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SPLSpacesFreeViewController.h"
+#import "SPLSelectDateViewController.h"
 
 @interface SPLAddCarpoolViewController : UITableViewController<SPLSpacesFreeViewControllerDelegate>
 
