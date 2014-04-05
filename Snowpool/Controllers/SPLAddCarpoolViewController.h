@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SPLSpacesFreeViewController.h"
 #import "SPLSelectDateViewController.h"
+#import "SPLSelectFieldViewController.h"
 
-@interface SPLAddCarpoolViewController : UITableViewController<SPLSpacesFreeViewControllerDelegate, SPLSelectDateViewControllerDelegate >
+@interface SPLAddCarpoolViewController : UITableViewController<SPLSpacesFreeViewControllerDelegate, SPLSelectDateViewControllerDelegate, SPLSelectFieldViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UISwitch *carpoolWanted;
 @property (nonatomic, weak) IBOutlet UISwitch *drivenHereBefore;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *spacesFree;
 @property (weak, nonatomic) IBOutlet UILabel *dateLeaving;
 @property (weak, nonatomic) IBOutlet UILabel *dateReturning;
+@property (weak, nonatomic) IBOutlet UILabel *skiFieldTitle;
 
 
 - (IBAction)cancelButtonPressed:(id)sender;

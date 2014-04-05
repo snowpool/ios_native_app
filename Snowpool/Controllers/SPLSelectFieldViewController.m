@@ -52,10 +52,28 @@
     
     NSNumber *fieldKey = self.sortedSkiFieldKeys[indexPath.row];
     
+    if (self.selectedSkiFieldID && [fieldKey compare:self.selectedSkiFieldID] == NSOrderedSame){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
+    
     cell.textLabel.text = self.skiFields[fieldKey];
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedSkiFieldID = self.sortedSkiFieldKeys[indexPath.row];
+    [self.delegate selectSkiFieldControllerDidChangeSkiField:self];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Choose your ski field";
+}
 
 @end

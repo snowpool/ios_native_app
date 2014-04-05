@@ -8,10 +8,12 @@
 
 #import "SPLAddCarpoolViewController.h"
 #import "SPLCarpoolService.h"
+#import "SPLSkiField.h"
 
 @interface SPLAddCarpoolViewController ()
 
 @property (nonatomic, strong) SPLCarpoolService *carpoolService;
+@property (nonatomic, strong) NSNumber *selectedSkiFieldID;
 
 @end
 
@@ -31,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.carpoolService = [[SPLCarpoolService alloc] init];
 }
 
@@ -54,6 +55,11 @@
         controller.selectedDate = self.dateReturning.text;
         controller.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:@"SelectSkiField"]) {
+        SPLSelectFieldViewController *controller = segue.destinationViewController;
+        controller.selectedSkiFieldID = self.selectedSkiFieldID;
+        controller.delegate = self;
+    }
 }
 
 #pragma mark -
@@ -71,6 +77,17 @@
     [self createCarpool];
 }
 
+
+#pragma mark -
+#pragma mark SPLSelectFieldViewController methods
+
+- (void)selectSkiFieldControllerDidChangeSkiField:(SPLSelectFieldViewController *)controller
+{
+    NSLog(@"hello");
+    self.skiFieldTitle.text = [SPLSkiField titleForFieldWithID:controller.selectedSkiFieldID];
+    self.selectedSkiFieldID = controller.selectedSkiFieldID;
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark -
 #pragma mark SPLSpacesFreeViewController methods

@@ -342,8 +342,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dSd-Wu-YPc">
-                                                    <rect key="frame" x="241" y="11" width="44" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Please Select..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dSd-Wu-YPc">
+                                                    <rect key="frame" x="166" y="11" width="119" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -352,7 +352,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="x9l-h0-5Wc" kind="modal" id="DFw-iE-Lly"/>
+                                            <segue destination="x9l-h0-5Wc" kind="modal" identifier="SelectSkiField" id="DFw-iE-Lly"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -568,6 +568,7 @@
                         <outlet property="dateReturning" destination="LNX-4U-JLR" id="CLU-ee-pkq"/>
                         <outlet property="drivenHereBefore" destination="c58-g8-jM3" id="xsY-aD-j8X"/>
                         <outlet property="leavingFrom" destination="Y6V-rl-4BJ" id="HaQ-gX-wEc"/>
+                        <outlet property="skiFieldTitle" destination="dSd-Wu-YPc" id="uAU-JR-TdN"/>
                         <outlet property="spacesFree" destination="qCt-MV-biI" id="3IF-Vo-k5v"/>
                         <outlet property="telephone" destination="uLd-AX-OSk" id="NC8-A9-0cA"/>
                     </connections>

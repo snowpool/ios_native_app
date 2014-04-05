@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class SPLSelectFieldViewController;
+
+@protocol SPLSelectFieldViewControllerDelegate <NSObject>
+
+- (void)selectSkiFieldControllerDidChangeSkiField:(SPLSelectFieldViewController *)controller;
+
+@end
+
 @interface SPLSelectFieldViewController : UITableViewController
+
+@property (nonatomic, weak) NSNumber *selectedSkiFieldID;
+@property (nonatomic, weak) id<SPLSelectFieldViewControllerDelegate> delegate;
 
 @end
