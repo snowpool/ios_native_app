@@ -34,6 +34,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
     self.drivenHereBeforeLabel.text = self.carpool.hasDrivenBefore ? @"Yes" : @"No";
     self.leavingFromLabel.text = self.carpool.leavingFrom;
     self.notesTextView.text = self.carpool.message;
+
 }
 
 //delete the varpool and return 

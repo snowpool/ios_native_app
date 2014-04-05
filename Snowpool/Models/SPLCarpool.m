@@ -31,7 +31,7 @@
         _name = dict[@"name"];
         _dateReturning = dict[@"dateReturning"];
         _fieldName = dict[@"fieldName"];
-        _message = dict[@"message"];
+        _message = [self emptyStringOrMessageFromValue:dict[@"message"]];
         _telephone = dict[@"telephone"];
         _spacesFree = [dict[@"spacesFree"] integerValue];
         _userID = [dict[@"userID"] integerValue];
@@ -41,6 +41,15 @@
 
     }
     return self;
+}
+
+- (NSString *)emptyStringOrMessageFromValue:(id)value
+{
+    if ([value isKindOfClass:[NSNull class]]) {
+        return nil;
+    }else{
+        return value;
+    }
 }
 
 @end
