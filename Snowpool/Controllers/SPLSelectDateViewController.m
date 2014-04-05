@@ -34,6 +34,11 @@ NSInteger const NumberOfDaysToShow = 10;
     if ([cell.textLabel.text isEqualToString:self.selectedDate]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
+    
+    if (indexPath.row == 1) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ (Tomorrow)", cell.textLabel.text];
+    }
+
     return cell;
 }
 

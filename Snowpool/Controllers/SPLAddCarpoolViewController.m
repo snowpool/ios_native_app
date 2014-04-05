@@ -86,10 +86,16 @@
 
 - (void)selectDateViewControllerDidChangeNumberOfSpaces:(SPLSelectDateViewController *)controller
 {
-    if ([controller.dateTypeToSelect isEqualToString:@"returning"]){
-        self.dateReturning.text = controller.selectedDate;
-    }else {
+    if ([controller.dateTypeToSelect isEqualToString:@"leaving"]){
         self.dateLeaving.text = controller.selectedDate;
+        
+        if ([self.dateReturning.text isEqualToString:@"Please Select..."])
+        {
+            //we intelligently set the return date
+            self.dateReturning.text = controller.selectedDate;
+        }
+    }else {
+        self.dateReturning.text = controller.selectedDate;
     }
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
