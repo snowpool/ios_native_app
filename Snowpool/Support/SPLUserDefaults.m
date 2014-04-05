@@ -11,6 +11,8 @@
 @implementation SPLUserDefaults
 
 @dynamic selectedCountryKey;
+@dynamic telephone;
+@dynamic city;
 
 + (instancetype)standardUserDefaults
 {
