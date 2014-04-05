@@ -45,10 +45,12 @@
     else if ([segue.identifier isEqualToString:@"SelectDateLeaving"]) {
         SPLSelectDateViewController *controller = segue.destinationViewController;
         controller.dateTypeToSelect = @"leaving";
+        controller.delegate = self;
     }
     else if ([segue.identifier isEqualToString:@"SelectDateReturning"]) {
         SPLSelectDateViewController *controller = segue.destinationViewController;
         controller.dateTypeToSelect = @"returning";
+        controller.delegate = self;
     }
 }
 
@@ -77,5 +79,12 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark -
+#pragma mark SPLSelectDateViewController methods
 
+- (void)selectDateViewControllerDidChangeNumberOfSpaces:(SPLSelectDateViewController *)controller
+{
+  //  self.spacesFree.text = [NSString stringWithFormat:@"%d", controller.spacesFree];
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
 @end

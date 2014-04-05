@@ -17,7 +17,8 @@
 @end
 
 @interface SPLSpacesFreeViewController : UITableViewController
-    @property(nonatomic, assign) int spacesFree;
-    @property (nonatomic, weak) id<SPLSpacesFreeViewControllerDelegate> delegate;
+
+@property(nonatomic, assign) int spacesFree;
+@property (nonatomic, weak) id<SPLSpacesFreeViewControllerDelegate> delegate;
 
 @end

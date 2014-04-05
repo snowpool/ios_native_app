@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class SPLSelectDateViewController;
+
+@protocol SPLSelectDateViewControllerDelegate <NSObject>
+
+- (void)selectDateViewControllerDidChangeNumberOfSpaces:(SPLSelectDateViewController *)controller;
+
+@end
+
 @interface SPLSelectDateViewController : UITableViewController
 
-    @property (nonatomic, weak) NSString *dateTypeToSelect;
+@property (nonatomic, weak) NSString *dateTypeToSelect;
+@property (nonatomic, weak) id<SPLSelectDateViewControllerDelegate> delegate;
 
 @end

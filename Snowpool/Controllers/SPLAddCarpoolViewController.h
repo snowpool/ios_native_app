@@ -10,7 +10,7 @@
 #import "SPLSpacesFreeViewController.h"
 #import "SPLSelectDateViewController.h"
 
-@interface SPLAddCarpoolViewController : UITableViewController<SPLSpacesFreeViewControllerDelegate>
+@interface SPLAddCarpoolViewController : UITableViewController<SPLSpacesFreeViewControllerDelegate, SPLSelectDateViewControllerDelegate >
 
 @property (nonatomic, weak) IBOutlet UISwitch *carpoolWanted;
 @property (nonatomic, weak) IBOutlet UISwitch *drivenHereBefore;

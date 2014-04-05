@@ -48,6 +48,11 @@ NSInteger const NumberOfDaysToShow = 10;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.delegate selectDateViewControllerDidChangeNumberOfSpaces:self];
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return [NSString stringWithFormat:@"Choose date you're %@", self.dateTypeToSelect];
