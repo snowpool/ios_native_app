@@ -28,28 +28,18 @@ NSInteger const NumberOfDaysToShow = 10;
 {
     static NSString *CellIdentifier = @"SelectDateCell";
     
-    NSDate *date = [NSDate date];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
-    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
-    dayComponent.day = indexPath.row;
-    
-    NSCalendar *theCalendar = [NSCalendar currentCalendar];
-    date = [theCalendar dateByAddingComponents:dayComponent toDate:date options:0];
-    
-    //now date contains the offset from today that we want, format it into the string we want
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    
-    [dateFormatter setDateFormat:@"d-MMM-YYYY"];
-    
-    cell.textLabel.text = [dateFormatter stringFromDate:date];
-    
+    cell.textLabel.text = [self dateStringForOffsetNumberOfDays:indexPath.row];
+    if ([cell.textLabel.text isEqualToString:self.selectedDate]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectedDate = [self dateStringForOffsetNumberOfDays:indexPath.row];
     [self.delegate selectDateViewControllerDidChangeNumberOfSpaces:self];
 }
 
@@ -58,5 +48,20 @@ NSInteger const NumberOfDaysToShow = 10;
     return [NSString stringWithFormat:@"Choose date you're %@", self.dateTypeToSelect];
 }
 
+- (NSString *)dateStringForOffsetNumberOfDays:(NSInteger)offset
+{
+    NSDate *date = [NSDate date];
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = offset;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    date = [theCalendar dateByAddingComponents:dayComponent toDate:date options:0];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    
+    [dateFormatter setDateFormat:@"d-MMMM-YYYY"];
+    
+    return [dateFormatter stringFromDate:date];
+}
 
 @end

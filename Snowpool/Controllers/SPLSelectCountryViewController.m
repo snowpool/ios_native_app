@@ -65,7 +65,7 @@ NSString *const SPLCountryDidChangeNotification = @"SPLCountryDidChangeNotificat
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{   
     SPLUserDefaults *defaults = [SPLUserDefaults standardUserDefaults];
     defaults.selectedCountryKey = self.sortedCountryKeys[indexPath.row];
     [defaults synchronize];

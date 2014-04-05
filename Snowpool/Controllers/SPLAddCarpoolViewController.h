@@ -18,6 +18,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *telephone;
 @property (nonatomic, weak) IBOutlet UITextView *message;
 @property (weak, nonatomic) IBOutlet UILabel *spacesFree;
+@property (weak, nonatomic) IBOutlet UILabel *dateLeaving;
+@property (weak, nonatomic) IBOutlet UILabel *dateReturning;
 
 
 - (IBAction)cancelButtonPressed:(id)sender;

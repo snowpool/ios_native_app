@@ -19,6 +19,7 @@
 @interface SPLSelectDateViewController : UITableViewController
 
 @property (nonatomic, weak) NSString *dateTypeToSelect;
+@property (nonatomic, weak) NSString *selectedDate;
 @property (nonatomic, weak) id<SPLSelectDateViewControllerDelegate> delegate;
 
 @end
