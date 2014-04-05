@@ -55,7 +55,7 @@
                 drivenHereBefore:(Boolean)drivenHereBefore
                          message:(NSString *)message
                          success:(void (^)())success
-                         failure:(void (^)(NSError *error, NSInteger statusCode))failure
+                         failure:(void (^)(NSError *error, NSInteger statusCode, NSDictionary *errorsHash))failure
 {
     NSDictionary *params = @{
                             @"token": [SPLUser currentUser].token,
@@ -76,7 +76,9 @@
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
               success();
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              failure(error, operation.response.statusCode);
+              //get errors hash into dictionary
+              NSDictionary *errorsHash = operation.responseObject;
+              failure(error, operation.response.statusCode, errorsHash);
           }];
 }
 

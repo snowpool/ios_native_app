@@ -26,7 +26,7 @@
                 drivenHereBefore:(Boolean)drivenHereBefore
                          message:(NSString *)message
                             success:(void (^)())success
-                            failure:(void (^)(NSError *error, NSInteger statusCode))failure;
+                            failure:(void (^)(NSError *error, NSInteger statusCode, NSDictionary *errorMessages))failure;
 
 - (void)sendMessageToCarpoolWithID:(NSInteger)carpoolID
                            message:(NSString *)message

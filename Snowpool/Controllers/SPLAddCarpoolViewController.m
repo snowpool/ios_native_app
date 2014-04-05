@@ -10,6 +10,7 @@
 #import "SPLCarpoolService.h"
 #import "SPLSkiField.h"
 #import "SPLUserDefaults.h"
+#import "SPLUser.h"
 
 @interface SPLAddCarpoolViewController ()
 
@@ -41,6 +42,16 @@
     }
 }
 
+- (NSString *)errorMessagesFromDictionary:(NSDictionary *)errors
+{
+    NSMutableString *errorString = [NSMutableString string];
+    [errorString appendString:@"Errors, Please add:\n"];
+    for (NSString *key in errors) {
+        [errorString appendString:[NSString stringWithFormat:@"%@\n", key]];
+    }
+    return errorString;
+}
+
 - (void)createCarpool
 {
     [SVProgressHUD showWithStatus:@"Creating Carpool"];
@@ -60,10 +71,16 @@
                                           [self dismissViewControllerAnimated:YES completion:^(void) {
                                               [SVProgressHUD showSuccessWithStatus:@"Carpool has been created"];
                                           }];
-                                      } failure:^(NSError *error, NSInteger statusCode) {
-                                        NSLog(@"failure: %@", error);
-                                          [SVProgressHUD showErrorWithStatus:@"Couldn't create carpool.  Please check you've added all details"];
+                                      } failure:^(NSError *error, NSInteger statusCode, NSDictionary *errorsHash) {
                                           NSLog(@"Error creating carpool: %@", error);
+                                          if (statusCode == 401) {
+                                              [SVProgressHUD showErrorWithStatus:@"Cannot create carpool, has your password changed?"];
+                                              [[SPLUser currentUser] signOut];
+                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                          }else{
+                                              [SVProgressHUD showErrorWithStatus:[self errorMessagesFromDictionary:errorsHash[@"errors"]]];
+                                              NSLog(@"Error sending message: %@", error);
+                                          }
                                       }];
 
     
