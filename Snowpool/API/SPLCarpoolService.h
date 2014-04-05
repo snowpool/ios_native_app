@@ -17,8 +17,8 @@
                             failure:(void (^)(NSError *error))failure;
 
 - (void)createCarpoolWithFieldID:(NSInteger)fieldID
-                     dateLeaving:(NSDate *)dateLeaving
-                   dateReturning:(NSDate *)dateReturning
+                     dateLeaving:(NSString *)dateLeaving
+                   dateReturning:(NSString *)dateReturning
                       spacesFree:(NSInteger)spacesFree
                      leavingFrom:(NSString *)leavingFrom
                        telephone:(NSString *)telephone
@@ -26,7 +26,7 @@
                 drivenHereBefore:(Boolean)drivenHereBefore
                          message:(NSString *)message
                             success:(void (^)())success
-                            failure:(void (^)(NSError *error))failure;
+                            failure:(void (^)(NSError *error, NSInteger statusCode))failure;
 
 - (void)sendMessageToCarpoolWithID:(NSInteger)carpoolID
                            message:(NSString *)message

@@ -21,10 +21,30 @@
 
 - (void)createCarpool
 {
-    NSLog(@"this telephone %@",self.telephone.text);
-    NSLog( self.drivenHereBefore.isOn ? @"YES" : @"NO");
-    [SVProgressHUD showSuccessWithStatus:@"Carpool Created"];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [SVProgressHUD showWithStatus:@"Creating Carpool"];
+    [_carpoolService createCarpoolWithFieldID:[self.selectedSkiFieldID intValue]
+                                  dateLeaving:self.dateLeaving.text
+                                dateReturning:self.dateReturning.text
+                                   spacesFree:[self.spacesFree.text intValue]
+                                  leavingFrom:self.leavingFrom.text
+                                    telephone:self.telephone.text
+                                carpoolWanted:self.carpoolWanted.isOn
+                             drivenHereBefore:self.drivenHereBefore.isOn
+                                      message:self.message.text
+                                      success:^() {
+                                          [SVProgressHUD dismiss];
+                                          
+                                          [self dismissViewControllerAnimated:YES completion:^(void) {
+                                              [SVProgressHUD showSuccessWithStatus:@"Carpool has been created"];
+                                          }];
+                                      } failure:^(NSError *error, NSInteger statusCode) {
+                                        NSLog(@"failure: %@", error);
+                                          [SVProgressHUD showErrorWithStatus:@"Couldn't create carpool.  Please check you've added all details"];
+                                          NSLog(@"Error creating carpool: %@", error);
+                                      }];
+
+    
+    
 }
 
 #pragma mark -

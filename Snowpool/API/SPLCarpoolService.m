@@ -46,8 +46,8 @@
 }
 
 - (void)createCarpoolWithFieldID:(NSInteger)fieldID
-                     dateLeaving:(NSDate *)dateLeaving
-                   dateReturning:(NSDate *)dateReturning
+                     dateLeaving:(NSString *)dateLeaving
+                   dateReturning:(NSString *)dateReturning
                       spacesFree:(NSInteger)spacesFree
                      leavingFrom:(NSString *)leavingFrom
                        telephone:(NSString *)telephone
@@ -55,27 +55,28 @@
                 drivenHereBefore:(Boolean)drivenHereBefore
                          message:(NSString *)message
                          success:(void (^)())success
-                         failure:(void (^)(NSError *error))failure
+                         failure:(void (^)(NSError *error, NSInteger statusCode))failure
 {
+    NSDictionary *params = @{
+                            @"token": [SPLUser currentUser].token,
+                            @"pool": @{
+                                    @"leaving_from": leavingFrom,
+                                    @"field_id": @(fieldID),
+                                    @"leaving_date": dateLeaving,
+                                    @"returning_date": dateReturning,
+                                    @"spaces_free": @(spacesFree),
+                                    @"telephone": telephone,
+                                    @"seeking": @(carpoolWanted),
+                                    @"driven_here_before": @(drivenHereBefore)
+                                    }
+                            };
+
     [_manager POST:@"/pools.js"
-       parameters:@{
-                    @"token": [SPLUser currentUser].token,
-                    @"pool": @{
-                            @"leaving_from": leavingFrom,
-                            @"field_id": @(fieldID),
-                            @"leaving_date": dateLeaving,
-                            @"returning_date": dateReturning,
-                            @"spaces_free": @(spacesFree),
-                            @"telephone": telephone,
-                            @"seeking": @(carpoolWanted),
-                            @"message": message,
-                            @"driven_here_before": @(drivenHereBefore)
-                            }
-                    }
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+       parameters: params
+           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               success();
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              failure(error);
+              failure(error, operation.response.statusCode);
           }];
 }
 
