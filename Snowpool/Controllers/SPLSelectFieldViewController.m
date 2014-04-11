@@ -53,12 +53,10 @@
     
     if (self.selectedSkiFieldID && [fieldKey compare:self.selectedSkiFieldID] == NSOrderedSame){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else {
+    } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
 
-    
     cell.textLabel.text = self.skiFields[fieldKey];
     
     return cell;

@@ -50,7 +50,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
                                      if (statusCode == 401) {
                                          [SVProgressHUD showErrorWithStatus:@"Cannot delete carpool, has your password changed?"];
                                          [[SPLUser currentUser] signOut];
-                                     }else{
+                                     } else {
                                          [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                          NSLog(@"Error deleting carpool: %@", error);
                                      }
@@ -58,6 +58,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
                                  }];
 
 }
+
 #pragma mark -
 #pragma mark View lifecycle methods
 

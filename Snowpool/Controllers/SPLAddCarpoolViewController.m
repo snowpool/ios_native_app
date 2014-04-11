@@ -40,11 +40,11 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
         self.telephone.text = defaults.telephone;
     }
     
-    if (defaults.city){
+    if (defaults.city) {
         self.leavingFrom.text = defaults.city;
     }
     
-    if (defaults.lastSkiFieldVisitedID){
+    if (defaults.lastSkiFieldVisitedID) {
         self.selectedSkiFieldID = defaults.lastSkiFieldVisitedID;
         self.skiFieldTitle.text = [SPLSkiField titleForFieldWithID:self.selectedSkiFieldID];
     }
@@ -86,7 +86,7 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
                                               [SVProgressHUD showErrorWithStatus:@"Cannot create carpool, has your password changed?"];
                                               [[SPLUser currentUser] signOut];
                                               [self dismissViewControllerAnimated:YES completion:nil];
-                                          }else{
+                                          } else {
                                               [SVProgressHUD dismiss];
                                               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Creating Carpool"
                                                                                               message:[self firstErrorMessageFromErrors:errorsHash[@"errors"]]
@@ -183,15 +183,14 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
 
 - (void)selectDateViewControllerDidChangeNumberOfSpaces:(SPLSelectDateViewController *)controller
 {
-    if ([controller.dateTypeToSelect isEqualToString:@"leaving"]){
+    if ([controller.dateTypeToSelect isEqualToString:@"leaving"]) {
         self.dateLeaving.text = controller.selectedDate;
         
-        if ([self.dateReturning.text isEqualToString:@"Please Select..."])
-        {
+        if ([self.dateReturning.text isEqualToString:@"Please Select..."]) {
             //we intelligently set the return date
             self.dateReturning.text = controller.selectedDate;
         }
-    }else {
+    } else {
         self.dateReturning.text = controller.selectedDate;
     }
     [self.navigationController popViewControllerAnimated:YES];

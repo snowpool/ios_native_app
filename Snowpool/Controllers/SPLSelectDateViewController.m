@@ -31,6 +31,7 @@ NSInteger const NumberOfDaysToShow = 10;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     cell.textLabel.text = [self dateStringForOffsetNumberOfDays:indexPath.row];
+    
     if ([cell.textLabel.text isEqualToString:self.selectedDate]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }

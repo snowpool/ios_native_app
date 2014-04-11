@@ -62,13 +62,11 @@
     
     [self.refreshControl beginRefreshing];
     [_carpoolService requestCarpoolsForCountryID:selectedCountryKey success:^(NSArray *carpools) {
-        DebugLog(@"Fetched %d carpools from service", carpools.count);
         self.carpools = carpools;
         [self loadGroupedCarpools];
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
-        NSLog(@"Error requesting carpools: %@", error);
         [self.refreshControl endRefreshing];
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
@@ -240,6 +238,7 @@
 {
     [self requestCarpools];
 }
+
 #pragma mark -
 #pragma mark SPLSelectCountryViewControllerDelegate methods
 

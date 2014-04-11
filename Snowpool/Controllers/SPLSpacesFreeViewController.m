@@ -35,10 +35,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    DebugLog(@"Selected this number of spaces with key %d", indexPath.row);
-    
-    //kill the old cell
     [self clearOldCellOnTableView:tableView andActivateNewCellForIndexPath:indexPath];
 
     [self.delegate spacesFreeViewControllerDidChangeNumberOfSpaces:self];
