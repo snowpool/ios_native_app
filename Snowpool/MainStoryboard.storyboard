@@ -569,6 +569,7 @@
                         <connections>
                             <outlet property="dataSource" destination="MxM-ED-ay4" id="Gox-EP-j7X"/>
                             <outlet property="delegate" destination="MxM-ED-ay4" id="3a2-xc-Ohf"/>
+                            <outletCollection property="gestureRecognizers" destination="mjg-3F-gcu" appends="YES" id="fm8-aU-7bX"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Carpool" id="0ub-dA-8ze">
@@ -598,9 +599,9 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLo-Gw-lio" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="t1h-od-gn2">
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="mjg-3F-gcu">
                     <connections>
-                        <action selector="viewWasTapped:" destination="MxM-ED-ay4" id="WPY-o6-8QR"/>
+                        <action selector="viewWasTapped:" destination="MxM-ED-ay4" id="iEe-Hm-ck4"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

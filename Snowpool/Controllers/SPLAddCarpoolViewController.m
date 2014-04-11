@@ -145,6 +145,10 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
     [self createCarpool];
 }
 
+- (IBAction)viewWasTapped:(id)sender
+{
+    [self.view endEditing:YES];
+}
 
 #pragma mark -
 #pragma mark SPLSelectFieldViewController methods
