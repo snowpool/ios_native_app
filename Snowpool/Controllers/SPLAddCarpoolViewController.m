@@ -50,14 +50,16 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
     }
 }
 
-- (NSString *)errorMessagesFromDictionary:(NSDictionary *)errors
+- (NSString *)firstErrorMessageFromErrors:(NSDictionary *)errors
 {
-    NSMutableString *errorString = [NSMutableString string];
-    [errorString appendString:@"Errors, Please add:\n"];
-    for (NSString *key in errors) {
-        [errorString appendString:[NSString stringWithFormat:@"%@\n", key]];
-    }
-    return errorString;
+    NSString *key = [[errors allKeys] objectAtIndex:0];
+    NSString *errorMessage = [errors objectForKey:key][0];
+    key = [[key stringByReplacingOccurrencesOfString:@"_"
+                                    withString:@" "] mutableCopy];
+    key = [key stringByReplacingCharactersInRange: NSMakeRange(0,1)
+                                        withString:[[key substringToIndex:1] capitalizedString]];;
+    
+    return [NSString stringWithFormat:@"%@ %@", key, errorMessage];
 }
 
 - (void)createCarpool
@@ -85,7 +87,14 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
                                               [[SPLUser currentUser] signOut];
                                               [self dismissViewControllerAnimated:YES completion:nil];
                                           }else{
-                                              [SVProgressHUD showErrorWithStatus:[self errorMessagesFromDictionary:errorsHash[@"errors"]]];
+                                              [SVProgressHUD dismiss];
+                                              UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Creating Carpool"
+                                                                                              message:[self firstErrorMessageFromErrors:errorsHash[@"errors"]]
+                                                                                             delegate:self
+                                                                                    cancelButtonTitle:@"OK"
+                                                                                    otherButtonTitles:nil];
+                                              [alert show];
+
                                               NSLog(@"Error sending message: %@", error);
                                           }
                                       }];
