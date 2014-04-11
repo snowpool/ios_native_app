@@ -153,7 +153,7 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
 {
     self.skiFieldTitle.text = [SPLSkiField titleForFieldWithID:controller.selectedSkiFieldID];
     self.selectedSkiFieldID = controller.selectedSkiFieldID;
-    [controller dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -162,7 +162,7 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
 - (void)spacesFreeViewControllerDidChangeNumberOfSpaces:(SPLSpacesFreeViewController *)controller
 {
     self.spacesFree.text = [NSString stringWithFormat:@"%d", controller.spacesFree];
-    [controller dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -181,6 +181,6 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
     }else {
         self.dateReturning.text = controller.selectedDate;
     }
-    [controller dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
