@@ -3,16 +3,16 @@ Tasks for Snowpool
 
  - [y] Create Project
  - [y] Create Icons and Splash screens
- - [ ] Create Storyboards
- - [ ] Select Country
- - [ ] Display Carpools
- - [ ] Filter Carpools
- - [ ] Refresh Carpools
- - [ ] View Carpool Details
- - [ ] Sign In
- - [ ] Add Carpool
- - [ ] Send Message
- - [ ] Delete if yours
+ - [y] Create Storyboards
+ - [y] Select Country
+ - [y] Display Carpools
+ - [y] Filter Carpools
+ - [y] Refresh Carpools
+ - [y] View Carpool Details
+ - [y] Sign In
+ - [y] Add Carpool
+ - [y] Send Message
+ - [y] Delete if yours
 
 
 API Details
