@@ -35,14 +35,9 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
 - (void)setupDefaults
 {
     SPLUserDefaults *defaults = [SPLUserDefaults standardUserDefaults];
-    
-    if (defaults.telephone) {
-        self.telephone.text = defaults.telephone;
-    }
-    
-    if (defaults.city) {
-        self.leavingFrom.text = defaults.city;
-    }
+
+    self.telephone.text = defaults.telephone;
+    self.leavingFrom.text = defaults.city;
     
     if (defaults.lastSkiFieldVisitedID) {
         self.selectedSkiFieldID = defaults.lastSkiFieldVisitedID;
