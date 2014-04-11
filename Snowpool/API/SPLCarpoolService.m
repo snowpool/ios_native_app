@@ -87,7 +87,7 @@
                            success:(void (^)())success
                            failure:(void (^)(NSError *error, NSInteger statusCode))failure;
 {
-    [_manager POST:[NSString stringWithFormat:@"/pools/%ld/sendmessage.js", carpoolID]
+    [_manager POST:[NSString stringWithFormat:@"/pools/%ld/sendmessage.js", (long)carpoolID]
         parameters:@{
                      @"token": [SPLUser currentUser].token, // TODO: What if user is not signed in?
                      @"message": message
@@ -103,7 +103,7 @@
                     success:(void (^)())success
                     failure:(void (^)(NSError *, NSInteger statusCode))failure
 {
-    [_manager POST:[NSString stringWithFormat:@"/pools/%ld.js", carpoolID]
+    [_manager POST:[NSString stringWithFormat:@"/pools/%ld.js", (long)carpoolID]
         parameters:@{
                      @"token": [SPLUser currentUser].token,
                      @"_method": @"delete"
