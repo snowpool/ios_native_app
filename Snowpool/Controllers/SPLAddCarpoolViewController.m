@@ -60,42 +60,47 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
 - (void)createCarpool
 {
     [SVProgressHUD showWithStatus:@"Creating Carpool"];
-    [_carpoolService createCarpoolWithFieldID:[self.selectedSkiFieldID intValue]
-                                  dateLeaving:self.dateLeaving.text
-                                dateReturning:self.dateReturning.text
-                                   spacesFree:[self.spacesFree.text intValue]
-                                  leavingFrom:self.leavingFrom.text
-                                    telephone:self.telephone.text
-                                carpoolWanted:self.carpoolWanted.isOn
-                             drivenHereBefore:self.drivenHereBefore.isOn
-                                      message:self.message.text
-                                      success:^() {
-                                          [SVProgressHUD dismiss];
-                                          [self saveLastValidCity:self.leavingFrom.text andTelephone:self.telephone.text andSkiFieldID:self.selectedSkiFieldID];
-                                          [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidCreateCarpoolNotification object:nil];
-                                          //why is this dismiss not pop?
-                                          [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-                                      } failure:^(NSError *error, NSInteger statusCode, NSDictionary *errorsHash) {
-                                          NSLog(@"Error creating carpool: %@", error);
-                                          if (statusCode == 401) {
-                                              [SVProgressHUD showErrorWithStatus:@"Cannot create carpool, has your password changed?"];
-                                              [[SPLUser currentUser] signOut];
-                                              [self dismissViewControllerAnimated:YES completion:nil];
-                                          } else {
-                                              [SVProgressHUD dismiss];
-                                              UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Creating Carpool"
-                                                                                              message:[self firstErrorMessageFromErrors:errorsHash[@"errors"]]
-                                                                                             delegate:self
-                                                                                    cancelButtonTitle:@"OK"
-                                                                                    otherButtonTitles:nil];
-                                              [alert show];
-
-                                              NSLog(@"Error sending message: %@", error);
-                                          }
-                                      }];
-
     
-    
+    [_carpoolService createCarpoolWithBlock:^NSDictionary *{
+        
+        return @{
+                 @"token": [SPLUser currentUser].token,
+                 @"pool": @{
+                         @"leaving_from": self.leavingFrom.text,
+                         @"message": self.message.text,
+                         @"field_id": @([self.selectedSkiFieldID intValue]),
+                         @"leaving_date": self.dateLeaving.text,
+                         @"returning_date": self.dateReturning.text,
+                         @"spaces_free": @([self.spacesFree.text intValue]),
+                         @"telephone": self.telephone.text,
+                         @"seeking": @(self.carpoolWanted.isOn),
+                         @"driven_here_before": @(self.drivenHereBefore.isOn)
+                         }
+                 };
+    }  success:^() {
+        [SVProgressHUD dismiss];
+        [self saveLastValidCity:self.leavingFrom.text andTelephone:self.telephone.text andSkiFieldID:self.selectedSkiFieldID];
+        [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidCreateCarpoolNotification object:nil];
+        //why is this dismiss not pop?
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(NSError *error, NSInteger statusCode, NSDictionary *errorsHash) {
+        NSLog(@"Error creating carpool: %@", error);
+        if (statusCode == 401) {
+            [SVProgressHUD showErrorWithStatus:@"Cannot create carpool, has your password changed?"];
+            [[SPLUser currentUser] signOut];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [SVProgressHUD dismiss];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Creating Carpool"
+                                                            message:[self firstErrorMessageFromErrors:errorsHash[@"errors"]]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            
+            NSLog(@"Error sending message: %@", error);
+        }
+    }];
 }
 
 #pragma mark -

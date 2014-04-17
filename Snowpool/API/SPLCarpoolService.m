@@ -45,42 +45,22 @@
            }];
 }
 
-- (void)createCarpoolWithFieldID:(NSInteger)fieldID
-                     dateLeaving:(NSString *)dateLeaving
-                   dateReturning:(NSString *)dateReturning
-                      spacesFree:(NSInteger)spacesFree
-                     leavingFrom:(NSString *)leavingFrom
-                       telephone:(NSString *)telephone
-                   carpoolWanted:(Boolean)carpoolWanted
-                drivenHereBefore:(Boolean)drivenHereBefore
-                         message:(NSString *)message
-                         success:(void (^)())success
-                         failure:(void (^)(NSError *error, NSInteger statusCode, NSDictionary *errorsHash))failure
-{
-    NSDictionary *params = @{
-                            @"token": [SPLUser currentUser].token,
-                            @"pool": @{
-                                    @"leaving_from": leavingFrom,
-                                    @"message": message,
-                                    @"field_id": @(fieldID),
-                                    @"leaving_date": dateLeaving,
-                                    @"returning_date": dateReturning,
-                                    @"spaces_free": @(spacesFree),
-                                    @"telephone": telephone,
-                                    @"seeking": @(carpoolWanted),
-                                    @"driven_here_before": @(drivenHereBefore)
-                                    }
-                            };
-
+- (void)createCarpoolWithBlock:(NSDictionary* (^)(void))blah
+                       success:(void (^)())success
+                       failure:(void (^)(NSError *error, NSInteger statusCode, NSDictionary *errorMessages))failure {
+    NSDictionary *params = blah();
     [_manager POST:@"/pools.js"
-       parameters: params
+        parameters: params
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              success();
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              //get errors hash into dictionary
-              NSDictionary *errorsHash = operation.responseObject;
-              failure(error, operation.response.statusCode, errorsHash);
-          }];
+               success();
+           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+               //get errors hash into dictionary
+               NSDictionary *errorsHash = operation.responseObject;
+               failure(error, operation.response.statusCode, errorsHash);
+           }];
+
+    return;
+
 }
 
 - (void)sendMessageToCarpoolWithID:(NSInteger)carpoolID message:(NSString *)message
