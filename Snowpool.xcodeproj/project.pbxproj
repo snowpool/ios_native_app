@@ -22,6 +22,7 @@
 		6BE7A9B618CBC247008D49C9 /* SPLSkiField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7A9B518CBC247008D49C9 /* SPLSkiField.m */; };
 		6BE9571A18EF5C52003D9B7A /* SPLSpacesFreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9571918EF5C52003D9B7A /* SPLSpacesFreeViewController.m */; };
 		6BE9571D18EF7DF5003D9B7A /* SPLSelectDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE9571C18EF7DF5003D9B7A /* SPLSelectDateViewController.m */; };
+		6BF916421901BDFA001635F2 /* NSDictionary+NullValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF916411901BDFA001635F2 /* NSDictionary+NullValues.m */; };
 		EA68B44918CA71C30048CE7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44818CA71C30048CE7C /* Foundation.framework */; };
 		EA68B44B18CA71C30048CE7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */; };
 		EA68B44D18CA71C30048CE7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA68B44C18CA71C30048CE7C /* UIKit.framework */; };
@@ -90,6 +91,8 @@
 		6BE9571918EF5C52003D9B7A /* SPLSpacesFreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSpacesFreeViewController.m; sourceTree = "<group>"; };
 		6BE9571B18EF7DF5003D9B7A /* SPLSelectDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLSelectDateViewController.h; sourceTree = "<group>"; };
 		6BE9571C18EF7DF5003D9B7A /* SPLSelectDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLSelectDateViewController.m; sourceTree = "<group>"; };
+		6BF916401901BDFA001635F2 /* NSDictionary+NullValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NullValues.h"; sourceTree = "<group>"; };
+		6BF916411901BDFA001635F2 /* NSDictionary+NullValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NullValues.m"; sourceTree = "<group>"; };
 		EA68B44518CA71C30048CE7C /* Snowpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snowpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA68B44818CA71C30048CE7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA68B44A18CA71C30048CE7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -309,6 +312,8 @@
 				22E2153518D3E385007C7999 /* UIButton+Appearance.m */,
 				22C0D44218D53DE300A21A5C /* UILabel+Appearance.h */,
 				22C0D44318D53DE300A21A5C /* UILabel+Appearance.m */,
+				6BF916401901BDFA001635F2 /* NSDictionary+NullValues.h */,
+				6BF916411901BDFA001635F2 /* NSDictionary+NullValues.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				EA68B49518CAEFC90048CE7C /* SPLSignInViewController.m in Sources */,
 				EA68B48918CA88D00048CE7C /* SPLSendMessageViewController.m in Sources */,
 				6BE7A9B318CB0105008D49C9 /* SPLCountry.m in Sources */,
+				6BF916421901BDFA001635F2 /* NSDictionary+NullValues.m in Sources */,
 				22C0D43B18D3FD5100A21A5C /* SPLModalNavigationController.m in Sources */,
 				EA68B48618CA844D0048CE7C /* SPLCarpoolViewController.m in Sources */,
 				22C0D44118D53AD800A21A5C /* SPLTableSectionHeaderView.m in Sources */,

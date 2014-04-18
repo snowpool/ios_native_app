@@ -7,6 +7,7 @@
 //
 
 #import "SPLCarpool.h"
+#import "NSDictionary+NullValues.h"
 
 @implementation SPLCarpool
 
@@ -31,7 +32,7 @@
         _name = dict[@"name"];
         _dateReturning = dict[@"dateReturning"];
         _fieldName = dict[@"fieldName"];
-        _message = [self emptyStringOrMessageFromValue:dict[@"message"]];
+        _message = [dict objectForKeyNotNull:@"message"];
         _telephone = dict[@"telephone"];
         _spacesFree = [dict[@"spacesFree"] integerValue];
         _userID = [dict[@"userID"] integerValue];
@@ -41,15 +42,6 @@
 
     }
     return self;
-}
-
-- (NSString *)emptyStringOrMessageFromValue:(id)value
-{
-    if ([value isKindOfClass:[NSNull class]]) {
-        return nil;
-    }else{
-        return value;
-    }
 }
 
 @end
