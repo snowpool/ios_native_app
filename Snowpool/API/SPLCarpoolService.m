@@ -46,8 +46,8 @@
 }
 
 - (void)createCarpoolWithFieldID:(NSInteger)fieldID
-                     dateLeaving:(NSDate *)dateLeaving
-                   dateReturning:(NSDate *)dateReturning
+                     dateLeaving:(NSString *)dateLeaving
+                   dateReturning:(NSString *)dateReturning
                       spacesFree:(NSInteger)spacesFree
                      leavingFrom:(NSString *)leavingFrom
                        telephone:(NSString *)telephone
@@ -55,27 +55,31 @@
                 drivenHereBefore:(Boolean)drivenHereBefore
                          message:(NSString *)message
                          success:(void (^)())success
-                         failure:(void (^)(NSError *error))failure
+                         failure:(void (^)(NSError *error, NSInteger statusCode, NSDictionary *errorsHash))failure
 {
+    NSDictionary *params = @{
+                            @"token": [SPLUser currentUser].token,
+                            @"pool": @{
+                                    @"leaving_from": leavingFrom,
+                                    @"message": message,
+                                    @"field_id": @(fieldID),
+                                    @"leaving_date": dateLeaving,
+                                    @"returning_date": dateReturning,
+                                    @"spaces_free": @(spacesFree),
+                                    @"telephone": telephone,
+                                    @"seeking": @(carpoolWanted),
+                                    @"driven_here_before": @(drivenHereBefore)
+                                    }
+                            };
+
     [_manager POST:@"/pools.js"
-       parameters:@{
-                    @"token": [SPLUser currentUser].token,
-                    @"pool": @{
-                            @"leaving_from": leavingFrom,
-                            @"field_id": @(fieldID),
-                            @"leaving_date": dateLeaving,
-                            @"returning_date": dateReturning,
-                            @"spaces_free": @(spacesFree),
-                            @"telephone": telephone,
-                            @"seeking": @(carpoolWanted),
-                            @"message": message,
-                            @"driven_here_before": @(drivenHereBefore)
-                            }
-                    }
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+       parameters: params
+           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               success();
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              failure(error);
+              //get errors hash into dictionary
+              NSDictionary *errorsHash = operation.responseObject;
+              failure(error, operation.response.statusCode, errorsHash);
           }];
 }
 
@@ -83,7 +87,7 @@
                            success:(void (^)())success
                            failure:(void (^)(NSError *error, NSInteger statusCode))failure;
 {
-    [_manager POST:[NSString stringWithFormat:@"/pools/%d/sendmessage.js", carpoolID]
+    [_manager POST:[NSString stringWithFormat:@"/pools/%ld/sendmessage.js", (long)carpoolID]
         parameters:@{
                      @"token": [SPLUser currentUser].token, // TODO: What if user is not signed in?
                      @"message": message
@@ -99,7 +103,7 @@
                     success:(void (^)())success
                     failure:(void (^)(NSError *, NSInteger statusCode))failure
 {
-    [_manager POST:[NSString stringWithFormat:@"/pools/%d.js", carpoolID]
+    [_manager POST:[NSString stringWithFormat:@"/pools/%ld.js", (long)carpoolID]
         parameters:@{
                      @"token": [SPLUser currentUser].token,
                      @"_method": @"delete"

@@ -7,6 +7,7 @@
 //
 
 #import "SPLSkiField.h"
+#import "SPLUserDefaults.h"
 
 @implementation SPLSkiField
 
@@ -14,6 +15,13 @@
 {
     return [[self class] all][countryID];
     
+}
+
++ (NSString *)titleForFieldWithID:(NSNumber *)fieldID
+{
+    NSNumber *usersCountry = [SPLUserDefaults standardUserDefaults].selectedCountryKey;
+    NSDictionary *fields = [SPLSkiField allForCountryWithID:usersCountry];
+    return fields[fieldID];
 }
 
 + (NSDictionary *)all

@@ -12,6 +12,7 @@
 #import "SPLCarpoolService.h"
 #import "SPLCarpool.h"
 #import "SPLCarpoolViewController.h"
+#import "SPLAddCarpoolViewController.h"
 #import "SPLTableSectionHeaderView.h"
 
 @interface SPLDashboardViewController ()
@@ -61,13 +62,11 @@
     
     [self.refreshControl beginRefreshing];
     [_carpoolService requestCarpoolsForCountryID:selectedCountryKey success:^(NSArray *carpools) {
-        DebugLog(@"Fetched %d carpools from service", carpools.count);
         self.carpools = carpools;
         [self loadGroupedCarpools];
         [self.refreshControl endRefreshing];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
-        NSLog(@"Error requesting carpools: %@", error);
         [self.refreshControl endRefreshing];
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }];
@@ -105,6 +104,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(carpoolWasDeleted:)
                                                  name:SPLDidDeleteCarpoolNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(carpoolWasCreated:)
+                                                 name:SPLDidCreateCarpoolNotification object:nil];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
@@ -231,6 +233,12 @@
 {
     [self requestCarpools];
 }
+
+- (void)carpoolWasCreated:(NSNotification *)notification
+{
+    [self requestCarpools];
+}
+
 #pragma mark -
 #pragma mark SPLSelectCountryViewControllerDelegate methods
 

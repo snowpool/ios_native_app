@@ -12,5 +12,6 @@
 
 + (NSDictionary *)allForCountryWithID:(NSNumber *)countryID;
 + (NSDictionary *)all;
++ (NSString *)titleForFieldWithID:(NSNumber *)fieldID;
 
 @end

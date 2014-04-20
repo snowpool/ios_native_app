@@ -29,11 +29,12 @@ NSString * const kCarpoolActionDelete = @"Delete";
     self.dateLeavingLabel.text = self.carpool.start;
     self.dateReturningLabel.text = self.carpool.dateReturning;
     self.nameLabel.text = self.carpool.name;
-    self.spacesLabel.text = [NSString stringWithFormat:@"%d", self.carpool.spacesFree];
+    self.spacesLabel.text = [NSString stringWithFormat:@"%ld", (long)self.carpool.spacesFree];
     self.telephoneLabel.text = self.carpool.telephone;
     self.drivenHereBeforeLabel.text = self.carpool.hasDrivenBefore ? @"Yes" : @"No";
     self.leavingFromLabel.text = self.carpool.leavingFrom;
     self.notesTextView.text = self.carpool.message;
+
 }
 
 //delete the varpool and return 
@@ -49,7 +50,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
                                      if (statusCode == 401) {
                                          [SVProgressHUD showErrorWithStatus:@"Cannot delete carpool, has your password changed?"];
                                          [[SPLUser currentUser] signOut];
-                                     }else{
+                                     } else {
                                          [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                          NSLog(@"Error deleting carpool: %@", error);
                                      }
@@ -57,6 +58,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
                                  }];
 
 }
+
 #pragma mark -
 #pragma mark View lifecycle methods
 
@@ -75,8 +77,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
         UINavigationController *navController = segue.destinationViewController;
         SPLSendMessageViewController *controller = (SPLSendMessageViewController *)navController.topViewController;
         controller.carpoolID = self.carpool.carpoolID;
-    }else if ([segue.identifier isEqualToString:@"Delete"]) {
-           }
+    }
 }
 
 #pragma mark -
@@ -95,7 +96,7 @@ NSString * const kCarpoolActionDelete = @"Delete";
 {
     if (indexPath.section == 1 && self.carpool.message.length > 0) {
         CGRect textRect = [self.carpool.message boundingRectWithSize:CGSizeMake(self.notesTextView.frame.size.width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: self.notesTextView.font} context:nil];
-        return textRect.size.height + 28;
+        return textRect.size.height + 88;
     } else {
         return 44.f;
     }

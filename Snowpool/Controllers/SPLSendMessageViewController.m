@@ -33,7 +33,7 @@
                                                [SVProgressHUD showErrorWithStatus:@"Cannot send message, has your password changed?"];
                                                [[SPLUser currentUser] signOut];
                                                [self dismissViewControllerAnimated:YES completion:nil];
-                                           }else{
+                                           } else {
                                                [SVProgressHUD showErrorWithStatus:@"Couldn't send message, did you send an empty message?, are you connected to the internet?"];
                                                NSLog(@"Error sending message: %@", error);
                                            }
