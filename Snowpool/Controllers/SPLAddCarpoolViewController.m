@@ -76,6 +76,8 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
                                                         telephone:self.telephone.text
                                                        skiFieldID:self.selectedSkiFieldID];
                                           [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidCreateCarpoolNotification object:nil];
+                                          
+                                          [[SPLAnalytics sharedInstance] sendEventUserDidCreateCarpoolWithSkifieldID:self.selectedSkiFieldID];
 
                                           [self.navigationController dismissViewControllerAnimated:YES completion:nil];
                                       } failure:^(NSError *error, NSInteger statusCode, NSDictionary *errorsHash) {
@@ -109,6 +111,8 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
     [super viewDidLoad];
     self.carpoolService = [[SPLCarpoolService alloc] init];
     [self setupDefaults];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Add Carpool"];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

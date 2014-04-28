@@ -32,6 +32,8 @@
     [super viewDidLoad];
     NSNumber *usersCountry = [SPLUserDefaults standardUserDefaults].selectedCountryKey;
     self.skiFields = [SPLSkiField allForCountryWithID:usersCountry];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Select Field"];
 }
 
 

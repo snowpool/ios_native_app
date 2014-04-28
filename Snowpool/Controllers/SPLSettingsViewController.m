@@ -27,6 +27,8 @@
     if (![SPLUser currentUser].isAuthenticated) {
         self.navigationItem.rightBarButtonItem = nil;
     }
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Settings"];
 }
 
 - (void)viewWillAppear:(BOOL)animated

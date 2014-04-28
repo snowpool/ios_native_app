@@ -47,6 +47,8 @@
     
     self.authService = [[SPLAuthService alloc] init];
     [self.emailTextField becomeFirstResponder];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Sign In"];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender

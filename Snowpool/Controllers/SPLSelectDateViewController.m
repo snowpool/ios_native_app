@@ -17,6 +17,16 @@
 NSInteger const NumberOfDaysToShow = 10;
 
 #pragma mark -
+#pragma mark View lifecycle methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Select Date"];
+}
+
+#pragma mark -
 #pragma mark UITableView methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
