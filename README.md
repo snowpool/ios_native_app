@@ -1,20 +1,3 @@
-Tasks for Snowpool
-================
-
- - [y] Create Project
- - [y] Create Icons and Splash screens
- - [y] Create Storyboards
- - [y] Select Country
- - [y] Display Carpools
- - [y] Filter Carpools
- - [y] Refresh Carpools
- - [y] View Carpool Details
- - [y] Sign In
- - [y] Add Carpool
- - [y] Send Message
- - [y] Delete if yours
-
-
 API Details
 ===========
 
@@ -28,3 +11,6 @@ is the api (also contains pretty up to date documentation)
 Those two endpoints use the same database.  You can sign up etc. all that
 functionality should be working fine.
 
+Like it?  Tell us how you're using it!
+======================================
+[![Thank a developer](https://raw.githubusercontent.com/thankadeveloper/thankadeveloper/master/app/assets/images/badge.png)](http:/thankadeveloper.org?repo=snowpool/ios_native_app)

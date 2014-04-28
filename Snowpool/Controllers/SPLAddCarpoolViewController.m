@@ -23,7 +23,7 @@
 
 NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotification";
 
-- (void)saveLastValidCity:(NSString *)city andTelephone:(NSString *)telephone andSkiFieldID:(NSNumber *)skiFieldID
+- (void)saveLastValidCity:(NSString *)city telephone:(NSString *)telephone skiFieldID:(NSNumber *)skiFieldID
 {
     SPLUserDefaults *defaults = [SPLUserDefaults standardUserDefaults];
     defaults.telephone = telephone;
@@ -47,8 +47,9 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
 
 - (NSString *)firstErrorMessageFromErrors:(NSDictionary *)errors
 {
-    NSString *key = [[errors allKeys] objectAtIndex:0];
-    NSString *errorMessage = [errors objectForKey:key][0];
+    NSString *key = [[errors allKeys] firstObject];
+    NSString *errorMessage = [errors[key] firstObject];
+    
     key = [[key stringByReplacingOccurrencesOfString:@"_"
                                     withString:@" "] mutableCopy];
     key = [key stringByReplacingCharactersInRange: NSMakeRange(0,1)
@@ -60,7 +61,6 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
 - (void)createCarpool
 {
     [SVProgressHUD showWithStatus:@"Creating Carpool"];
-    
     [_carpoolService createCarpoolWithBlock:^NSDictionary *{
         
         return @{
@@ -79,7 +79,8 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
                  };
     }  success:^() {
         [SVProgressHUD dismiss];
-        [self saveLastValidCity:self.leavingFrom.text andTelephone:self.telephone.text andSkiFieldID:self.selectedSkiFieldID];
+
+        [self saveLastValidCity:self.leavingFrom.text telephone:self.telephone.text skiFieldID:self.selectedSkiFieldID];
         [[NSNotificationCenter defaultCenter] postNotificationName:SPLDidCreateCarpoolNotification object:nil];
         //why is this dismiss not pop?
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -88,7 +89,7 @@ NSString *const SPLDidCreateCarpoolNotification = @"SPLDidCreateCarpoolNotificat
         if (statusCode == 401) {
             [SVProgressHUD showErrorWithStatus:@"Cannot create carpool, has your password changed?"];
             [[SPLUser currentUser] signOut];
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         } else {
             [SVProgressHUD dismiss];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Creating Carpool"
