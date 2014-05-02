@@ -16,7 +16,24 @@
 {
     [SPLAppearance configure];
     
+    [[SPLAnalytics sharedInstance] startSession];
+    
     return YES;
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[SPLAnalytics sharedInstance] startSession];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[SPLAnalytics sharedInstance] endSession];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    [[SPLAnalytics sharedInstance] endSession];
 }
 
 @end

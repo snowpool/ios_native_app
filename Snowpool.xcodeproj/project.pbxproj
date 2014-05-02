@@ -48,6 +48,7 @@
 		EA68B4ED18CBCE310048CE7C /* SPLCarpoolService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4EC18CBCE310048CE7C /* SPLCarpoolService.m */; };
 		EA68B4F018CBCE460048CE7C /* SPLAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4EF18CBCE460048CE7C /* SPLAuthService.m */; };
 		EA68B4F318CBD0630048CE7C /* SPLCarpool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA68B4F218CBD0630048CE7C /* SPLCarpool.m */; };
+		EA7ECAF6190EF90E0009D725 /* SPLAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECAF5190EF90E0009D725 /* SPLAnalytics.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,8 @@
 		EA68B4EF18CBCE460048CE7C /* SPLAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAuthService.m; sourceTree = "<group>"; };
 		EA68B4F118CBD0630048CE7C /* SPLCarpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLCarpool.h; sourceTree = "<group>"; };
 		EA68B4F218CBD0630048CE7C /* SPLCarpool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLCarpool.m; sourceTree = "<group>"; };
+		EA7ECAF4190EF90E0009D725 /* SPLAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLAnalytics.h; sourceTree = "<group>"; };
+		EA7ECAF5190EF90E0009D725 /* SPLAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLAnalytics.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +317,8 @@
 				22C0D44318D53DE300A21A5C /* UILabel+Appearance.m */,
 				6BF916401901BDFA001635F2 /* NSDictionary+NullValues.h */,
 				6BF916411901BDFA001635F2 /* NSDictionary+NullValues.m */,
+				EA7ECAF4190EF90E0009D725 /* SPLAnalytics.h */,
+				EA7ECAF5190EF90E0009D725 /* SPLAnalytics.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 				22C0D44418D53DE300A21A5C /* UILabel+Appearance.m in Sources */,
 				EA68B4F018CBCE460048CE7C /* SPLAuthService.m in Sources */,
 				6BC3BC8A18EFA7E5005806A4 /* SPLSelectFieldViewController.m in Sources */,
+				EA7ECAF6190EF90E0009D725 /* SPLAnalytics.m in Sources */,
 				EA68B4ED18CBCE310048CE7C /* SPLCarpoolService.m in Sources */,
 				EA68B4F318CBD0630048CE7C /* SPLCarpool.m in Sources */,
 				EA68B49F18CB11BF0048CE7C /* SPLUser.m in Sources */,

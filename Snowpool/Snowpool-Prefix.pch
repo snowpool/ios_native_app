@@ -15,4 +15,5 @@
     #import <Foundation/Foundation.h>
     #import <SVProgressHUD/SVProgressHUD.h>
     #import "SPLConstants.h"
+    #import "SPLAnalytics.h"
 #endif

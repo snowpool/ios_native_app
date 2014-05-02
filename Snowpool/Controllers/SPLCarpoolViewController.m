@@ -69,6 +69,8 @@ NSString * const kCarpoolActionDelete = @"Delete";
     self.carpoolService = [[SPLCarpoolService alloc] init];
     
     [self displayCarpool];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Carpool Details"];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

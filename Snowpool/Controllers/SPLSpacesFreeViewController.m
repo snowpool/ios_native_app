@@ -17,6 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Select Spaces Free"];
 }
 
 

@@ -34,6 +34,8 @@ NSString *const SPLCountryDidChangeNotification = @"SPLCountryDidChangeNotificat
     [super viewDidLoad];
     
     self.countries = [SPLCountry all];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Select Country"];
 }
 
 #pragma mark -

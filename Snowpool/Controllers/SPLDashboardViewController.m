@@ -120,6 +120,8 @@
     if ([SPLUserDefaults standardUserDefaults].selectedCountryKey == nil) {
         [self performSegueWithIdentifier:@"SelectCountry" sender:self];
     }
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Dashboard"];
 }
 
 - (void)dealloc

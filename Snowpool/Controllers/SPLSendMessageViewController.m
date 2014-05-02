@@ -48,6 +48,8 @@
     [super viewDidLoad];
     
     self.carpoolService = [[SPLCarpoolService alloc] init];
+    
+    [[SPLAnalytics sharedInstance] sendScreenView:@"Send Message"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
