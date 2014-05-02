@@ -46,7 +46,6 @@
                        @16 : @"Mt. Lyford",
                        @17 : @"Roundhill",
                        @18 : @"Snowfarm",
-                       @19 : @"Snow Park",
                        @20 : @"Rainbow",
                        @21 : @"Whakapapa",
                        @22 : @"Turoa",
