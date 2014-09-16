@@ -9,6 +9,7 @@
 #import "SPLAppDelegate.h"
 #import "SPLAppearance.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 
 @implementation SPLAppDelegate
 
@@ -17,6 +18,8 @@
     [SPLAppearance configure];
     
     [[SPLAnalytics sharedInstance] startSession];
+    
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
     
     return YES;
 }

@@ -39,7 +39,8 @@
     [_manager GET:[NSString stringWithFormat:@"/countries/%@.js", countryID]
         parameters:nil
            success:^(AFHTTPRequestOperation *operation, id responseObject) {
-               success([SPLCarpool carpoolsFromArray:responseObject]);
+               NSArray *carpools = [SPLCarpool carpoolsFromArray:responseObject];
+               success(carpools);
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                failure(error);
            }];

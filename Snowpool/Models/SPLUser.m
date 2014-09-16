@@ -40,7 +40,7 @@ NSString *const SPLUserAuthenticationDidChangeNotification = @"SPLUserAuthentica
 - (void)signInWithUserID:(NSInteger )userID token:(NSString *)token
 {
     [RSSecrets setString:token forKey:SPLAuthTokenKey];
-    [RSSecrets setString:[NSString stringWithFormat:@"%d", userID] forKey: SPLAuthUserID];
+    [RSSecrets setString:[NSString stringWithFormat:@"%ld", (long)userID] forKey: SPLAuthUserID];
     [[NSNotificationCenter defaultCenter] postNotificationName:SPLUserAuthenticationDidChangeNotification object:self];
 }
 
