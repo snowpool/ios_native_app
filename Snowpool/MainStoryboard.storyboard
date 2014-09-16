@@ -838,7 +838,7 @@
                             <rect key="frame" x="0.0" y="167" width="320" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPD-Kx-KmV" customClass="SPLRoundedButton">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPD-Kx-KmV" customClass="SPLRoundedButton">
                                     <rect key="frame" x="15" y="15" width="290" height="36"/>
                                     <color key="backgroundColor" red="0.16862745098039217" green="0.50196078431372548" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Log In">
@@ -851,6 +851,12 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="qPD-Kx-KmV" firstAttribute="top" secondItem="jWM-m0-7Dj" secondAttribute="top" constant="15" id="Dhg-5O-ugz"/>
+                                <constraint firstItem="qPD-Kx-KmV" firstAttribute="leading" secondItem="jWM-m0-7Dj" secondAttribute="leading" constant="15" id="Kby-7l-P9e"/>
+                                <constraint firstItem="qPD-Kx-KmV" firstAttribute="centerX" secondItem="jWM-m0-7Dj" secondAttribute="centerX" id="iwp-Ri-G5C"/>
+                                <constraint firstItem="qPD-Kx-KmV" firstAttribute="centerY" secondItem="jWM-m0-7Dj" secondAttribute="centerY" id="sbI-Y3-Ohh"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="nco-ys-bO4">
