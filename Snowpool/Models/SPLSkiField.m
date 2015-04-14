@@ -54,7 +54,8 @@
                        @25 : @"Awakino",
                        @26 : @"Mt. Cook Village",
                        @27 : @"HeliPark",
-                       @109 : @"Tukino"
+                       @109 : @"Tukino",
+                       @130 : @"SnowPlanet"
                        },
                @2 : @{
                        @28 : @"Charlotte Pass",
